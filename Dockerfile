@@ -22,25 +22,20 @@ RUN echo '<Directory /var/www/html/public/>\n\
 </Directory>' > /etc/apache2/conf-available/slfbc.conf \
     && a2enconf slfbc
 
-# Copy project files into container
-WORKDIR /var/www/html
-COPY . /var/www/html
-
-# Ensure write permissions on storage directories and uploads (creating them explicitly if missing)
-RUN mkdir -p /var/www/html/storage/documents \
-             /var/www/html/storage/logs \
-             /var/www/html/public/uploads \
-    && chown -R www-data:www-data /var/www/html/storage /var/www/html/public/uploads \
-    && chmod -R 775 /var/www/html/storage /var/www/html/public/uploads
-
 # Configure Production PHP settings
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
     && echo "upload_max_filesize = 12M\npost_max_size = 15M\nmemory_limit = 256M" > "$PHP_INI_DIR/conf.d/uploads.ini"
 
-# Render provides the port dynamically in $PORT (defaults to 80 if not set)
-RUN sed -i 's/Listen 80/Listen ${PORT:-80}/' /etc/apache2/ports.conf \
-    && sed -i 's/<VirtualHost \*:80>/<VirtualHost \*:${PORT:-80}>/' /etc/apache2/sites-available/000-default.conf
+# Copy project files into container
+WORKDIR /var/www/html
+COPY . /var/www/html
 
-EXPOSE 80
+# Prepare entrypoint script and storage directories
+RUN chmod +x /var/www/html/docker-entrypoint.sh \
+    && mkdir -p /var/www/html/storage/documents \
+                /var/www/html/storage/logs \
+                /var/www/html/public/uploads \
+    && chown -R www-data:www-data /var/www/html/storage /var/www/html/public/uploads \
+    && chmod -R 775 /var/www/html/storage /var/www/html/public/uploads
 
-CMD ["apache2-foreground"]
+ENTRYPOINT ["/var/www/html/docker-entrypoint.sh"]
