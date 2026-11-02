@@ -26,8 +26,10 @@ RUN echo '<Directory /var/www/html/public/>\n\
 WORKDIR /var/www/html
 COPY . /var/www/html
 
-# Ensure write permissions on storage directories for SQLite, logs, and document uploads
-RUN mkdir -p /var/www/html/storage/documents /var/www/html/storage/logs \
+# Ensure write permissions on storage directories and uploads (creating them explicitly if missing)
+RUN mkdir -p /var/www/html/storage/documents \
+             /var/www/html/storage/logs \
+             /var/www/html/public/uploads \
     && chown -R www-data:www-data /var/www/html/storage /var/www/html/public/uploads \
     && chmod -R 775 /var/www/html/storage /var/www/html/public/uploads
 
