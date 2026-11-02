@@ -13,8 +13,8 @@ $publicEmail = \App\Models\SiteSetting::get('secretariat_email', 'info@slfbc.lk'
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
       <!-- 1. Brand & Mission with White Container -->
       <div class="flex flex-col gap-4">
-        <div class="bg-white p-2.5 rounded max-w-fit shadow-sm">
-          <img src="<?= asset('assets/images/logo.svg') ?>" alt="Sri Lanka–France Business Council Official Emblem" class="h-9 w-auto object-contain">
+        <div class="bg-white p-2 rounded max-w-fit shadow-sm">
+          <img src="<?= asset('assets/images/slfbc-logo.png') ?>" alt="Sri Lanka–France Business Council Official Emblem" class="h-10 w-auto object-contain">
         </div>
         <p class="text-sm leading-relaxed text-slate-300">
           The Sri Lanka–France Business Council (SLFBC) was inaugurated under the aegis of the Ceylon Chamber of Commerce to foster, promote, and expand bilateral trade, investment, joint ventures, and economic cooperation between Sri Lanka and the Republic of France.

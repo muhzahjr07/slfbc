@@ -42,7 +42,7 @@ $phoneParis = \App\Models\SiteSetting::get('paris_phone', '+33 1 45 61 00');
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-20">
     <!-- Brand Logo -->
     <a class="flex items-center py-1 group" href="<?= url('/') ?>" aria-label="Sri Lanka–France Business Council Homepage">
-      <img src="<?= asset('assets/images/logo.svg') ?>" alt="Sri Lanka–France Business Council Official Emblem" class="h-10 sm:h-11 w-auto object-contain">
+      <img src="<?= asset('assets/images/slfbc-logo.png') ?>" alt="Sri Lanka–France Business Council Official Emblem" class="h-12 sm:h-14 w-auto object-contain">
     </a>
 
     <!-- Desktop Navigation Menu -->
@@ -92,7 +92,7 @@ $phoneParis = \App\Models\SiteSetting::get('paris_phone', '+33 1 45 61 00');
 <div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
   <div class="mobile-drawer-content">
     <div class="flex items-center justify-between pb-4 border-b border-slate-200">
-      <img src="<?= asset('assets/images/logo.svg') ?>" alt="SLFBC Emblem" class="h-8 w-auto">
+      <img src="<?= asset('assets/images/slfbc-logo.png') ?>" alt="SLFBC Emblem" class="h-10 w-auto object-contain">
       <button type="button" id="mobile-drawer-close" class="p-1 rounded text-slate-500 hover:text-slate-800" aria-label="Close menu">
         <span class="material-symbols-outlined text-2xl">close</span>
       </button>

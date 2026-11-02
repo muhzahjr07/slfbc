@@ -392,13 +392,18 @@ SQL;
             $eStmt->execute($ev);
         }
 
-        // Leadership
+        // Leadership (Term 2026/27 - Verified 22nd AGM)
         $leaders = [
-            [1, '2025/26', 'president', 'Executive President', 'Jean-Pierre Dubois', 'Director, European Regional Operations', 'Seasoned cross-border business executive with over two decades of leadership directing European corporate expansions and strategic investments across the Indo-Pacific.', 'assets/images/president-dubois.jpg', 1, 1],
-            [2, '2025/26', 'vice_president', 'Vice President (Sri Lanka)', 'Asoka Wickremasinghe', 'Aitken Spence PLC', 'Managing Director of Maritime & Freight Corridors with comprehensive expertise in multimodal transport, port logistics, and South Asian trade corridor optimization.', null, 2, 1],
-            [3, '2025/26', 'vice_president', 'Vice President (France)', 'Hervé Laurent', 'Schneider Electric', 'Regional Director of South Asia Energy Systems, championing clean power transitions, industrial automation, and Franco-Lankan energy collaboration.', null, 3, 1],
-            [4, '2025/26', 'officer', 'Honorary Secretary & Secretariat', 'Niroshini Rathnayake', 'The Ceylon Chamber of Commerce', 'Senior Director of Bilateral Affairs at the Ceylon Chamber of Commerce, stewarding institutional protocol, statutory compliance, and bilateral governance.', null, 4, 1],
-            [5, '2025/26', 'officer', 'Honorary Treasurer', 'Charles de Montmirail', 'South Asian Commercial Banking', 'Head of Trade Finance and Commercial Banking Desks, specializing in cross-border letter of credit facilities, foreign exchange management, and export insurance.', null, 5, 1],
+            [1, '2026/27', 'president', 'President', 'Shaameel Mohideen', 'Spillburg Holdings (Pvt) Ltd', 'Executive Director & Chief Executive Officer of Spillburg Holdings. Elected President of the Sri Lanka–France Business Council at its 22nd Annual General Meeting, stewarding bilateral trade expansion, direct European enterprise connections, and cross-border investment corridors.', 'assets/images/president-shaameel.jpg', 1, 1],
+            [2, '2026/27', 'vice_president', 'Senior Vice President', 'Zafir Hashim', 'John Keells Holdings PLC', 'Sector Head of Transportation and Senior Vice President at John Keells Holdings PLC, directing international supply chains, shipping lines, and maritime logistics infrastructure.', null, 2, 1],
+            [3, '2026/27', 'vice_president', 'Vice President', 'Husni Salieh', 'Noyon Lanka (Pvt) Ltd', 'Senior Executive Director representing global apparel and lace manufacturing, spearheading strategic exports and sustainable supply lines into French and European fashion houses.', null, 3, 1],
+            [4, '2026/27', 'officer', 'Honorary Treasurer', 'Manura Wickramasinghe', 'Puritas (Pvt) Ltd (Hayleys Group)', 'Head of Corporate Finance and Sustainable Environmental Systems at Puritas / Hayleys Group, championing green industrial purification and carbon-neutral clean technologies.', null, 4, 1],
+            [5, '2026/27', 'officer', 'Immediate Past President', 'Andre Fernando', 'MAC Holdings (Pvt) Ltd', 'Chairman and Managing Director of MAC Holdings, providing senior advisory stewardship and bilateral continuity across logistics, aviation, and renewable maritime solutions.', null, 5, 1],
+            [6, '2026/27', 'committee', 'Committee Member', 'Representative', 'A. Baur & Co. (Pvt) Ltd', 'Representing century-old Swiss-French-Sri Lankan agricultural innovation, high-tech industrial chemicals, and healthcare equipment.', null, 6, 1],
+            [7, '2026/27', 'committee', 'Committee Member', 'Representative', 'Aitken Spence Travels (Pvt) Ltd', 'Representing premier luxury destination management, inbound French tourism growth, and sustainable hospitality corridors.', null, 7, 1],
+            [8, '2026/27', 'committee', 'Committee Member', 'Representative', 'CEVA Logistics Lanka (Pvt) Ltd', 'Part of CMA CGM Group, delivering end-to-end multimodal contract freight logistics connecting Colombo to Le Havre and Marseille.', null, 8, 1],
+            [9, '2026/27', 'committee', 'Committee Member', 'Representative', 'Diesel & Motor Engineering PLC (DIMO)', 'Engineering, mobility, and industrial power systems conglomerate active in French high-precision agricultural equipment and power distribution.', null, 9, 1],
+            [10, '2026/27', 'committee', 'Committee Member', 'Representative', 'Universal Travel Bureau (Pvt) Ltd', 'Leading corporate travel management agency facilitating outbound executive trade delegations and diplomatic summits to France.', null, 10, 1],
         ];
         $lStmt = $pdo->prepare("INSERT OR IGNORE INTO leadership (id, term_year, category, role_title, name, organization, bio, portrait_path, display_order, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         foreach ($leaders as $ld) {
@@ -427,11 +432,11 @@ SQL;
             ['paris_phone', '+33 1 45 61 00', 'Paris Liaison Phone'],
             ['secretariat_email', 'info@slfbc.lk', 'Public Enquiries Email'],
             ['official_secretariat_email', 'slfbc@chamber.lk', 'Internal Ceylon Chamber Secretariat Email'],
-            ['committee_term', '2025/26', 'Current Committee Term Year'],
+            ['committee_term', '2026/27', 'Current Committee Term Year'],
             ['historical_established_year', '2004', 'Council Founding Year'],
             ['member_count_display', '70+ Corporate Members (Verified)', 'Verified Membership Display'],
-            ['bilateral_announcement', '2026 BILATERAL FORUM REGISTRATIONS OPEN | ACCREDITED UNDER THE CEYLON CHAMBER OF COMMERCE', 'Top Banner Announcement Text'],
-            ['president_quote', 'Our bilateral trade corridor is entering an era defined not merely by transactions, but by structural joint ventures in maritime transshipment, renewable hydrogen, and advanced knowledge engineering.', 'Presidential Quote on Homepage'],
+            ['bilateral_announcement', 'EXECUTIVE COMMITTEE 2026/27 CONVENED | ACCREDITED UNDER THE CEYLON CHAMBER OF COMMERCE', 'Top Banner Announcement Text'],
+            ['president_quote', 'Our bilateral mission is dedicated to fostering tangible, high-value joint ventures between Sri Lanka and France, bridging enterprise innovation with sovereign institutional support.', 'Presidential Quote on Homepage'],
         ];
         $stStmt = $pdo->prepare("INSERT OR IGNORE INTO site_settings (key_name, key_value, description) VALUES (?, ?, ?)");
         foreach ($settings as $st) {

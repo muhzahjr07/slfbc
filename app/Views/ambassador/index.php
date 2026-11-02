@@ -32,8 +32,9 @@
             <span class="material-symbols-outlined text-5xl text-[#002654]">account_balance</span>
           </div>
           
-          <h2 class="font-serif-diplomatic text-xl font-bold text-[#0b1e3b] mb-1">Embassy of France</h2>
-          <p class="text-xs text-slate-500 font-semibold mb-3">To Sri Lanka and the Maldives</p>
+          <h2 class="font-serif-diplomatic text-xl font-bold text-[#0b1e3b] mb-1">H.E. Rémi Lambert</h2>
+          <p class="text-xs text-slate-700 font-semibold mb-1">Ambassador of the French Republic</p>
+          <p class="text-xs text-slate-500 font-medium mb-3">To Sri Lanka and the Maldives</p>
           <span class="px-3 py-1 bg-[#002654] text-white text-xs font-bold uppercase rounded-full inline-block mb-4">
             Patron of the Council
           </span>
@@ -89,8 +90,8 @@
 
           <div class="mt-8 pt-6 border-t border-dashed border-slate-300 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <p class="font-bold text-[#002654] text-sm mb-0.5">Economic Service &amp; Chancellery</p>
-              <p class="text-xs text-slate-500 m-0">Embassy of the French Republic in Sri Lanka</p>
+              <p class="font-bold text-[#002654] text-sm mb-0.5">H.E. Rémi Lambert</p>
+              <p class="text-xs text-slate-500 m-0">Ambassador Extraordinary and Plenipotentiary of the French Republic</p>
             </div>
             <a href="<?= url('/contact') ?>" class="px-5 py-2.5 bg-[#002654] hover:bg-[#001c3f] text-white font-bold text-xs uppercase tracking-wider rounded text-center transition-all">
               Diplomatic &amp; Secretariat Inquiries

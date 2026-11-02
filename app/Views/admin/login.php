@@ -34,8 +34,8 @@
   <div class="w-full max-w-md">
     <!-- Header Card -->
     <div class="text-center mb-8">
-      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 text-amber-400 mb-4 border border-white/20">
-        <span class="material-symbols-outlined text-3xl">admin_panel_settings</span>
+      <div class="inline-flex items-center justify-center p-3 rounded-xl bg-white mb-4 border border-white/20 shadow-lg">
+        <img src="<?= \App\Core\View::asset('assets/images/slfbc-logo.png') ?>" alt="SLFBC Logo" class="h-12 w-auto object-contain">
       </div>
       <h1 class="text-2xl font-serif font-bold text-white tracking-tight">SLFBC Administration</h1>
       <p class="text-slate-400 text-xs uppercase tracking-wider mt-1">The Ceylon Chamber of Commerce Secretariat</p>

@@ -40,10 +40,10 @@
 <body class="bg-slate-100 font-sans-diplomatic text-slate-800 antialiased min-h-screen flex flex-col">
   <!-- Top Admin Bar -->
   <header class="bg-[#002654] text-white h-16 border-b border-[#001c3f] flex items-center justify-between px-6 sticky top-0 z-40 shadow-sm">
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-3">
       <a href="<?= url('/admin') ?>" class="flex items-center gap-2.5 text-white font-serif-diplomatic font-bold text-lg tracking-tight">
-        <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-        SLFBC Administration
+        <img src="<?= asset('assets/images/slfbc-logo.png') ?>" alt="SLFBC Logo" class="h-8 w-auto bg-white p-0.5 rounded shadow-sm">
+        <span>SLFBC Administration</span>
       </a>
       <span class="text-slate-400 text-xs uppercase tracking-wider hidden sm:inline">| Ceylon Chamber of Commerce Secretariat</span>
     </div>

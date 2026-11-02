@@ -67,14 +67,19 @@ INSERT INTO `events` (`id`, `title`, `slug`, `category`, `start_datetime`, `end_
 'assets/images/bilateral-summit.jpg', NULL, 'closed', 'published')
 ON DUPLICATE KEY UPDATE `title` = VALUES(`title`);
 
--- 7. Leadership & Executive Committee (Term 2025/26 - Configurable)
+-- 7. Leadership & Executive Committee (Term 2026/27 - Verified 22nd AGM)
 INSERT INTO `leadership` (`id`, `term_year`, `category`, `role_title`, `name`, `organization`, `bio`, `portrait_path`, `display_order`, `is_active`) VALUES
-(1, '2025/26', 'president', 'Executive President', 'Jean-Pierre Dubois', 'Director, European Regional Operations', 'Seasoned cross-border business executive with over two decades of leadership directing European corporate expansions and strategic investments across the Indo-Pacific.', 'assets/images/president-dubois.jpg', 1, 1),
-(2, '2025/26', 'vice_president', 'Vice President (Sri Lanka)', 'Asoka Wickremasinghe', 'Aitken Spence PLC', 'Managing Director of Maritime & Freight Corridors with comprehensive expertise in multimodal transport, port logistics, and South Asian trade corridor optimization.', NULL, 2, 1),
-(3, '2025/26', 'vice_president', 'Vice President (France)', 'Hervé Laurent', 'Schneider Electric', 'Regional Director of South Asia Energy Systems, championing clean power transitions, industrial automation, and Franco-Lankan energy collaboration.', NULL, 3, 1),
-(4, '2025/26', 'officer', 'Honorary Secretary & Secretariat', 'Niroshini Rathnayake', 'The Ceylon Chamber of Commerce', 'Senior Director of Bilateral Affairs at the Ceylon Chamber of Commerce, stewarding institutional protocol, statutory compliance, and bilateral governance.', NULL, 4, 1),
-(5, '2025/26', 'officer', 'Honorary Treasurer', 'Charles de Montmirail', 'South Asian Commercial Banking', 'Head of Trade Finance and Commercial Banking Desks, specializing in cross-border letter of credit facilities, foreign exchange management, and export insurance.', NULL, 5, 1)
-ON DUPLICATE KEY UPDATE `name` = VALUES(`name`);
+(1, '2026/27', 'president', 'President', 'Shaameel Mohideen', 'Spillburg Holdings (Pvt) Ltd', 'Executive Director & Chief Executive Officer of Spillburg Holdings. Elected President of the Sri Lanka–France Business Council at its 22nd Annual General Meeting, stewarding bilateral trade expansion, direct European enterprise connections, and cross-border investment corridors.', 'assets/images/president-shaameel.jpg', 1, 1),
+(2, '2026/27', 'vice_president', 'Senior Vice President', 'Zafir Hashim', 'John Keells Holdings PLC', 'Sector Head of Transportation and Senior Vice President at John Keells Holdings PLC, directing international supply chains, shipping lines, and maritime logistics infrastructure.', NULL, 2, 1),
+(3, '2026/27', 'vice_president', 'Vice President', 'Husni Salieh', 'Noyon Lanka (Pvt) Ltd', 'Senior Executive Director representing global apparel and lace manufacturing, spearheading strategic exports and sustainable supply lines into French and European fashion houses.', NULL, 3, 1),
+(4, '2026/27', 'officer', 'Honorary Treasurer', 'Manura Wickramasinghe', 'Puritas (Pvt) Ltd (Hayleys Group)', 'Head of Corporate Finance and Sustainable Environmental Systems at Puritas / Hayleys Group, championing green industrial purification and carbon-neutral clean technologies.', NULL, 4, 1),
+(5, '2026/27', 'officer', 'Immediate Past President', 'Andre Fernando', 'MAC Holdings (Pvt) Ltd', 'Chairman and Managing Director of MAC Holdings, providing senior advisory stewardship and bilateral continuity across logistics, aviation, and renewable maritime solutions.', NULL, 5, 1),
+(6, '2026/27', 'committee', 'Committee Member', 'Representative', 'A. Baur & Co. (Pvt) Ltd', 'Representing century-old Swiss-French-Sri Lankan agricultural innovation, high-tech industrial chemicals, and healthcare equipment.', NULL, 6, 1),
+(7, '2026/27', 'committee', 'Committee Member', 'Representative', 'Aitken Spence Travels (Pvt) Ltd', 'Representing premier luxury destination management, inbound French tourism growth, and sustainable hospitality corridors.', NULL, 7, 1),
+(8, '2026/27', 'committee', 'Committee Member', 'Representative', 'CEVA Logistics Lanka (Pvt) Ltd', 'Part of CMA CGM Group, delivering end-to-end multimodal contract freight logistics connecting Colombo to Le Havre and Marseille.', NULL, 8, 1),
+(9, '2026/27', 'committee', 'Committee Member', 'Representative', 'Diesel & Motor Engineering PLC (DIMO)', 'Engineering, mobility, and industrial power systems conglomerate active in French high-precision agricultural equipment and power distribution.', NULL, 9, 1),
+(10, '2026/27', 'committee', 'Committee Member', 'Representative', 'Universal Travel Bureau (Pvt) Ltd', 'Leading corporate travel management agency facilitating outbound executive trade delegations and diplomatic summits to France.', NULL, 10, 1)
+ON DUPLICATE KEY UPDATE `name` = VALUES(`name`), `role_title` = VALUES(`role_title`), `organization` = VALUES(`organization`), `bio` = VALUES(`bio`), `portrait_path` = VALUES(`portrait_path`);
 
 -- 8. Business Opportunities
 INSERT INTO `business_opportunities` (`id`, `title`, `slug`, `track`, `icon`, `corridor`, `summary`, `status_label`, `is_featured`, `display_order`) VALUES
