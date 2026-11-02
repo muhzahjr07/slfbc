@@ -1,0 +1,26 @@
+# Sri Lanka–France Business Council (SLFBC) Portal
+# Root Protection & cPanel Fallback Handler
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Prevent direct access to sensitive core directories and files
+    RewriteRule ^(\.env|\.git|app|config|database|docs|storage|tests) - [F,L]
+
+    # If web server document root cannot be pointed to /public directly:
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    RewriteCond %{REQUEST_URI} ^/$
+    RewriteRule ^$ public/index.php [L]
+</IfModule>
+
+# Disable Directory Browsing
+Options -Indexes
+
+# Strictly Deny Access to .env and SQL files
+<FilesMatch "(\.env|\.sql|\.sqlite|\.log|\.md)$">
+    Require all denied
+</FilesMatch>

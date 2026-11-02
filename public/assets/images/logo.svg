@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 76" width="460" height="76">
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eec14b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Circular Bilateral Emblem -->
+  <g transform="translate(38, 38)">
+    <!-- Outer Deep Navy Ring -->
+    <circle cx="0" cy="0" r="34" fill="#002654"/>
+    <!-- Outer White Buffer Ring -->
+    <circle cx="0" cy="0" r="30" fill="#ffffff"/>
+    
+    <!-- France Red Arc Accent -->
+    <path d="M -21 21 A 30 30 0 0 1 -21 -21" fill="none" stroke="#b91c1c" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- Navy Arc Accent -->
+    <path d="M 21 -21 A 30 30 0 0 1 21 21" fill="none" stroke="#002654" stroke-width="4.5" stroke-linecap="round"/>
+    
+    <!-- Central Navy Core -->
+    <circle cx="0" cy="0" r="22" fill="#0b1e3b"/>
+    <!-- Gold Border Ring -->
+    <circle cx="0" cy="0" r="21" fill="none" stroke="url(#gold-grad)" stroke-width="1.5"/>
+
+    <!-- Central Diplomatic Starburst / Compass -->
+    <!-- Cardinal Points in Gold -->
+    <polygon points="0,-16 3,-4 16,0 3,4 0,16 -3,4 -16,0 -3,-4" fill="url(#gold-grad)"/>
+    <!-- Diagonal Minor Points in Bilateral Crimson -->
+    <polygon points="0,-10 2,-2 10,0 2,2 0,10 -2,2 -10,0 -2,-2" fill="#b91c1c" transform="rotate(45)"/>
+    <!-- Center Dot in Crisp White -->
+    <circle cx="0" cy="0" r="2.5" fill="#ffffff"/>
+  </g>
+
+  <!-- Wordmark -->
+  <!-- Top Line: SRI LANKA–FRANCE -->
+  <text x="90" y="32" font-family="'Merriweather', Georgia, serif" font-size="21" font-weight="700" fill="#002654" letter-spacing="0.04em">SRI LANKA–FRANCE</text>
+  
+  <!-- Middle Line: BUSINESS COUNCIL -->
+  <text x="90" y="52" font-family="'Source Sans 3', sans-serif" font-size="14" font-weight="800" fill="#b91c1c" letter-spacing="0.18em">BUSINESS COUNCIL</text>
+  
+  <!-- Bottom Baseline: Chamber Affiliation -->
+  <text x="91" y="67" font-family="'Source Sans 3', sans-serif" font-size="9.5" font-weight="600" fill="#64748b" letter-spacing="0.08em">CEYLON CHAMBER OF COMMERCE • BILATERAL PARTNERSHIP</text>
+</svg>

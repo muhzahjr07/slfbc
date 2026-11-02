@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Classic diplomatic typography: Merriweather for authoritative serif headers, Source Sans 3 for crisp, accessible body -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#002654",
+            "primary-hover": "#001b3f",
+            "primary-light": "#eef4ff",
+            "secondary": "#b91c1c",
+            "secondary-dark": "#991b1b",
+            "gold": "#b45309",
+            "gold-dark": "#8d4004",
+            "gold-light": "#fef3c7",
+            "diplomatic-navy": "#0b1e3b",
+            "surface-pure": "#ffffff",
+            "surface-stone": "#f8fafc",
+            "surface-warm": "#fcfbf9",
+            "border-diplomatic": "#e2e8f0",
+            "border-strong": "#cbd5e1",
+            "text-main": "#0f172a",
+            "text-muted": "#475569",
+            "text-soft": "#64748b"
+          },
+          fontFamily: {
+            "serif-diplomatic": ["Merriweather", "Georgia", "serif"],
+            "sans-diplomatic": ["\"Source Sans 3\"", "-apple-system", "sans-serif"],
+          },
+          fontSize: {
+            "display-hero": ["48px", { lineHeight: "58px", letterSpacing: "-0.015em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "42px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "34px", letterSpacing: "-0.005em", fontWeight: "700" }],
+            "headline-sm": ["20px", { lineHeight: "30px", fontWeight: "700" }],
+            "body-lead": ["19px", { lineHeight: "32px", fontWeight: "400" }],
+            "body-default": ["16px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-sm": ["14.5px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-caps": ["12px", { lineHeight: "18px", letterSpacing: "0.08em", fontWeight: "700" }],
+            "label-default": ["15px", { lineHeight: "22px", fontWeight: "600" }]
+          },
+          boxShadow: {
+            "diplomatic": "0 1px 3px 0 rgba(0, 38, 84, 0.05), 0 1px 2px -1px rgba(0, 38, 84, 0.05)",
+            "diplomatic-md": "0 4px 14px -1px rgba(0, 38, 84, 0.07), 0 2px 6px -2px rgba(0, 38, 84, 0.05)",
+            "diplomatic-lg": "0 12px 28px -4px rgba(0, 38, 84, 0.09), 0 4px 12px -3px rgba(0, 38, 84, 0.05)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface-pure font-sans-diplomatic text-body-default text-text-main antialiased selection:bg-gold-light selection:text-gold-dark">
+<!-- TOP PROTOCOL BAR (Diplomatic Grounding Header Strip) -->
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+<div class="w-full border-b border-[#001c3f] bg-[#002654] text-white py-2 px-6 lg:px-12">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<p class="font-sans-diplomatic uppercase tracking-wider text-slate-200 font-semibold">
+            Sri Lanka–France Bilateral Chamber <span class="text-slate-400 mx-1">|</span> Affiliated with The Ceylon Chamber of Commerce &amp; Embassy of France
+          </p>
+</div>
+<div class="flex items-center gap-4 uppercase tracking-wider font-semibold text-slate-200">
+<div class="flex items-center gap-1.5 text-slate-300">
+<span class="text-white underline cursor-pointer">EN</span>
+<span class="text-slate-500">/</span>
+<span class="hover:text-white cursor-pointer transition-colors">FR</span>
+</div>
+<span class="text-slate-500">|</span>
+<a class="text-amber-300 hover:text-white transition-colors" data-path="member-portal" href="#">Member Portal</a>
+<span class="text-slate-500 hidden md:inline">|</span>
+<span class="hidden md:inline text-slate-300">Colombo: <strong class="text-white">+94 11 558 8800</strong></span>
+<span class="text-slate-500 hidden md:inline">|</span>
+<span class="hidden md:inline text-slate-300">Paris: <strong class="text-white">+33 1 45 61 00</strong></span>
+</div>
+</div>
+</div>
+<!-- MAIN NAVIGATION BAR -->
+<div class="h-20 w-full px-6 lg:px-12 flex items-center justify-between max-w-7xl mx-auto bg-white">
+<div class="flex items-center gap-4">
+<!-- Exact Brand Logo on luminous white background -->
+<a class="flex items-center py-1" href="#">
+<img alt="Sri Lanka-France Business Council Official Emblem &amp; Wordmark" class="h-10 sm:h-11 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wgm4QehvbdlbYUACw4hEpyxHbL3JrsHmsYg8Zo0okUDaqazcVbUYWRW9wvfWvCkD3pW8KW5fTFSUxV2aIhbZ9o1N3dVw4N9uOKPjocRJmDg3OaRsz33JqmX2V1NnJIykZn47tEIyvV7R0esjZeGYL_lITtZ-D1-Xu34UQ8tbYSvrcr4mQrgsstEKUEKTikOYrez-6r3dvQZrfe2TbTUhu71MJ1v1i2iflot6Y99YzpIZp-pEQpuXzf"/>
+</a>
+</div>
+<nav class="hidden xl:flex items-center gap-1 text-[15px] font-semibold text-slate-700" data-active-classes="text-primary border-b-2 border-primary font-bold">
+<a aria-current="page" class="px-3 py-2 text-primary border-b-2 border-primary font-bold transition-all" data-path="home" href="#">Home</a>
+<a class="px-3 py-2 hover:text-primary transition-colors border-b-2 border-transparent hover:border-slate-300" data-path="about-slfbc" href="#">About SLFBC</a>
+<a class="px-3 py-2 hover:text-primary transition-colors border-b-2 border-transparent hover:border-slate-300" data-path="bilateral-relations" href="#">Bilateral Relations</a>
+<a class="px-3 py-2 hover:text-primary transition-colors border-b-2 border-transparent hover:border-slate-300" data-path="business-opportunities" href="#">Business Opportunities</a>
+<a class="px-3 py-2 hover:text-primary transition-colors border-b-2 border-transparent hover:border-slate-300" data-path="membership" href="#">Membership</a>
+<a class="px-3 py-2 hover:text-primary transition-colors border-b-2 border-transparent hover:border-slate-300" data-path="leadership-exco" href="#">Leadership &amp; ExCo</a>
+<a class="px-3 py-2 hover:text-primary transition-colors border-b-2 border-transparent hover:border-slate-300" data-path="news-events" href="#">News &amp; Events</a>
+<a class="px-3 py-2 hover:text-primary transition-colors border-b-2 border-transparent hover:border-slate-300" data-path="contact" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-3">
+<a class="font-sans-diplomatic text-[15px] font-semibold text-slate-700 hover:text-primary hidden md:inline-block px-3 py-2 transition-colors" data-path="sign-in" href="#">
+          Sign In
+        </a>
+<a class="inline-flex items-center justify-center px-5 py-2.5 font-sans-diplomatic text-sm font-bold tracking-wide uppercase bg-secondary text-white hover:bg-secondary-dark rounded shadow-sm transition-all" data-path="membership-application" href="#">
+          Become a Member
+        </a>
+</div>
+</div>
+</header>
+<main class="w-full pt-28 bg-surface-pure min-h-screen">
+<div class="flex flex-col w-full">
+<!-- TOP PROTOCOL / OFFICIAL BILATERAL ANNOUNCEMENT STRIP -->
+<section class="w-full bg-slate-100 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-3 flex flex-wrap items-center justify-between gap-3 text-sm">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-300 text-[#002654] font-bold text-xs uppercase tracking-wider rounded">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              OFFICIAL BILATERAL REGISTER
+            </span>
+<span class="text-slate-600 font-medium hidden md:inline">
+              Under the Secretariat Administration of The Ceylon Chamber of Commerce
+            </span>
+</div>
+<div class="flex items-center gap-5 text-xs uppercase font-bold tracking-wider text-slate-600">
+<span class="flex items-center gap-2 text-primary">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block ring-2 ring-emerald-100"></span>
+              2026 FORUM REGISTRATIONS OPEN
+            </span>
+<span class="hidden sm:inline text-slate-300">|</span>
+<span class="text-secondary font-bold hover:underline cursor-pointer">
+              PARIS &amp; COLOMBO EMBASSY ACCREDITED
+            </span>
+</div>
+</div>
+</section>
+<!-- 1. HERO SECTION (Prestigious Luminous Diplomatic Aesthetic) -->
+<section class="w-full bg-gradient-to-b from-white via-slate-50 to-slate-100/60 border-b border-slate-200 relative overflow-hidden py-16 lg:py-24">
+<!-- Refined decorative bilateral subtle watermark lines -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-[radial-gradient(#002654_1px,transparent_1px)] [background-size:24px_24px] opacity-5 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Content: High-contrast typography for executive readers -->
+<div class="lg:col-span-7 flex flex-col items-start">
+<!-- Diplomatic Accreditation Badge -->
+<div class="inline-flex items-center gap-3 px-3.5 py-1.5 bg-white border border-slate-300 shadow-sm rounded mb-6">
+<div class="flex items-center gap-1 shadow-sm">
+<!-- France Tricolor micro representation -->
+<span class="w-2.5 h-4 bg-[#002654] inline-block"></span>
+<span class="w-2.5 h-4 bg-[#FFFFFF] border-y border-slate-200 inline-block"></span>
+<span class="w-2.5 h-4 bg-[#CE1126] inline-block"></span>
+</div>
+<div class="w-px h-4 bg-slate-300"></div>
+<div class="flex items-center gap-1 shadow-sm">
+<!-- Sri Lanka micro heraldic colors -->
+<span class="w-1.5 h-4 bg-[#FFBE29] inline-block"></span>
+<span class="w-1.5 h-4 bg-[#00534E] inline-block"></span>
+<span class="w-2.5 h-4 bg-[#8D153A] inline-block"></span>
+<span class="w-1.5 h-4 bg-[#EB7400] inline-block"></span>
+</div>
+<span class="font-sans-diplomatic font-bold text-xs tracking-wider text-slate-800 uppercase pl-1">
+                  CEYLON CHAMBER OF COMMERCE • EST. 2004
+                </span>
+</div>
+<!-- Hero Headline: Authoritative Serif -->
+<h1 class="font-serif-diplomatic text-display-hero text-diplomatic-navy mb-6 tracking-tight">
+                Strengthening Business Between <span class="text-primary underline decoration-gold decoration-4 underline-offset-8">Sri Lanka</span> &amp; <span class="text-secondary">France</span>
+</h1>
+<!-- Hero Subtitle: Comfortable size & line-height -->
+<p class="font-sans-diplomatic text-body-lead text-slate-700 max-w-2xl mb-8 leading-relaxed">
+                Connecting premier enterprises, sovereign capital, and institutional authorities to structure enduring cross-border trade, strategic investments, and bilateral industrial partnerships.
+              </p>
+<!-- High-Contrast CTAs -->
+<div class="flex flex-wrap items-center gap-4 w-full sm:w-auto mb-10">
+<a class="inline-flex items-center justify-center px-7 py-4 text-base font-bold tracking-wide uppercase bg-primary hover:bg-primary-hover text-white rounded shadow-diplomatic-md transition-all" data-path="membership-application" href="#">
+                  Become a Member
+                  <span class="material-symbols-outlined ml-2 text-lg">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center px-7 py-4 text-base font-bold tracking-wide uppercase bg-white border-2 border-slate-300 hover:border-primary text-slate-800 hover:text-primary rounded shadow-sm transition-all" href="#opportunities">
+                  Explore Opportunities
+                  <span class="material-symbols-outlined ml-2 text-lg">expand_more</span>
+</a>
+</div>
+<!-- Bilateral Endorsement Note -->
+<div class="flex items-center gap-3 pt-6 border-t border-slate-200 w-full max-w-xl">
+<span class="material-symbols-outlined text-gold text-2xl shrink-0">verified</span>
+<p class="text-sm font-medium text-slate-600 leading-normal">
+                  Officially recognized platform facilitating commercial dialogue with the Embassy of France in Colombo and the Sri Lankan Embassy in Paris.
+                </p>
+</div>
+</div>
+<!-- Right Visual Dossier: Summit Image with Diplomatic Frame -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="relative bg-white border-2 border-slate-200 p-3 rounded-md shadow-diplomatic-lg">
+<div class="relative overflow-hidden aspect-[4/3] rounded bg-slate-100 border border-slate-200">
+<img alt="Bilateral Summit between French and Sri Lankan delegations" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XnmGQ27tvvryL8-uJmLbieSNwgRQbGh6hwy7bhotN-vkozt9MlygzLoIw5PzQqEXA5YZIXJMJ5ysbygDgdqki5MP9iJ-Rk0h8VKieqTbQmiagAlDxumsf0jlphUXgIhYHoSex_CdTce9V-9pHr4LkL9aX4otP8ryd2DMw3n6A-rQHPBOQzUB_cP72WYs9ZETp4K5wIwYM9O2mGuvLw1fGLiyxfCDOY_B2tDwSB_wl6g03Rx-tgmqkmCA"/>
+<div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded border border-slate-200 shadow-sm flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-800">
+                      High-Level Bilateral Summit
+                    </span>
+</div>
+</div>
+<div class="p-4 bg-slate-50 rounded-b mt-2 flex items-center justify-between border-t border-slate-200">
+<div>
+<p class="text-xs font-bold uppercase tracking-wider text-gold-dark">Accredited Forum</p>
+<p class="font-serif-diplomatic text-lg font-bold text-diplomatic-navy mt-0.5">Colombo–Paris Axis</p>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-secondary uppercase tracking-wider block">Executive Protocol</span>
+<span class="text-sm text-slate-600 font-medium">CCC Bilateral Wing</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Metric Bar / Indicators: Clean White Cards with Rich Borders -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-16 pt-10 border-t border-slate-200">
+<div class="p-6 bg-white border-l-4 border-l-primary border border-slate-200 rounded shadow-sm hover:shadow-md transition-shadow">
+<p class="font-serif-diplomatic text-3xl font-bold text-diplomatic-navy">20+ <span class="text-primary text-xl font-sans-diplomatic font-semibold">Years</span></p>
+<p class="text-base font-bold text-primary mt-1">Institutional Continuity</p>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Continuous cross-border commercial facilitation under the Ceylon Chamber.</p>
+</div>
+<div class="p-6 bg-white border-l-4 border-l-secondary border border-slate-200 rounded shadow-sm hover:shadow-md transition-shadow">
+<p class="font-serif-diplomatic text-3xl font-bold text-diplomatic-navy">180+ <span class="text-secondary text-xl font-sans-diplomatic font-semibold">Firms</span></p>
+<p class="text-base font-bold text-secondary mt-1">Corporate Member Network</p>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Conglomerates, tier-1 exporters, multinationals, and strategic service providers.</p>
+</div>
+<div class="p-6 bg-white border-l-4 border-l-gold border border-slate-200 rounded shadow-sm hover:shadow-md transition-shadow">
+<p class="font-serif-diplomatic text-3xl font-bold text-diplomatic-navy">Annual</p>
+<p class="text-base font-bold text-gold-dark mt-1">Trade &amp; Investment Missions</p>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Direct delegation itineraries hosted in Paris, Lyon, Colombo, and Port City.</p>
+</div>
+<div class="p-6 bg-white border-l-4 border-l-slate-800 border border-slate-200 rounded shadow-sm hover:shadow-md transition-shadow">
+<p class="font-serif-diplomatic text-3xl font-bold text-diplomatic-navy">Official</p>
+<p class="text-base font-bold text-slate-800 mt-1">Sovereign &amp; Chamber Channel</p>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Direct conduit to MEDEF International, Business France, and statutory ministries.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. COUNCIL INTRODUCTION ("Connecting Sri Lanka & France") -->
+<section class="w-full bg-white py-20 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Eyebrow & Title -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b border-slate-200">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2.5 h-2.5 bg-secondary inline-block"></span>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Bilateral Chamber Mandate</span>
+</div>
+<h2 class="font-serif-diplomatic text-headline-lg text-diplomatic-navy">
+                Connecting Sri Lanka &amp; France
+              </h2>
+</div>
+<p class="font-sans-diplomatic text-body-lead text-slate-600 max-w-xl">
+              Operating as the primary executive vehicle for commercial diplomacy, industrial cooperation, and direct capital deployment between the two republics.
+            </p>
+</div>
+<!-- 4 Feature Cards: Crisp White, Slate Borders, Rich Navy Accents -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+<!-- Card 1 -->
+<div class="p-8 bg-surface-stone border border-slate-200 rounded hover:border-primary hover:bg-white hover:shadow-diplomatic-md transition-all flex flex-col justify-between group">
+<div>
+<div class="w-14 h-14 rounded bg-primary-light border border-blue-100 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">account_balance</span>
+</div>
+<span class="text-xs font-bold text-gold-dark uppercase tracking-wider block mb-2">Pillar 01</span>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3">Trade &amp; Investment</h3>
+<p class="text-slate-600 leading-relaxed text-[15px]">
+                  Structuring direct foreign investments, export expansion roadmaps, and high-value joint ventures across maritime logistics, energy, and advanced manufacturing.
+                </p>
+</div>
+<div class="pt-6 mt-6 border-t border-slate-200 flex items-center text-primary font-bold text-sm">
+<span>Capital Structuring</span>
+<span class="material-symbols-outlined ml-auto text-base">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-8 bg-surface-stone border border-slate-200 rounded hover:border-secondary hover:bg-white hover:shadow-diplomatic-md transition-all flex flex-col justify-between group">
+<div>
+<div class="w-14 h-14 rounded bg-red-50 border border-red-100 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">groups_3</span>
+</div>
+<span class="text-xs font-bold text-gold-dark uppercase tracking-wider block mb-2">Pillar 02</span>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3">Business Networking</h3>
+<p class="text-slate-600 leading-relaxed text-[15px]">
+                  Exclusive roundtables and bilateral c-suite summits connecting board chairs, French trade delegates, treasury advisors, and ministry policymakers in Colombo and Paris.
+                </p>
+</div>
+<div class="pt-6 mt-6 border-t border-slate-200 flex items-center text-secondary font-bold text-sm">
+<span>Executive Access</span>
+<span class="material-symbols-outlined ml-auto text-base">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-8 bg-surface-stone border border-slate-200 rounded hover:border-primary hover:bg-white hover:shadow-diplomatic-md transition-all flex flex-col justify-between group">
+<div>
+<div class="w-14 h-14 rounded bg-blue-50 border border-blue-100 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">policy</span>
+</div>
+<span class="text-xs font-bold text-gold-dark uppercase tracking-wider block mb-2">Pillar 03</span>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3">Market Access</h3>
+<p class="text-slate-600 leading-relaxed text-[15px]">
+                  Authoritative statutory guidance, EU standard compliance verification, GSP+ framework advisory, and trade barrier navigation for rapid market penetration.
+                </p>
+</div>
+<div class="pt-6 mt-6 border-t border-slate-200 flex items-center text-primary font-bold text-sm">
+<span>Regulatory Defense</span>
+<span class="material-symbols-outlined ml-auto text-base">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-8 bg-surface-stone border border-slate-200 rounded hover:border-secondary hover:bg-white hover:shadow-diplomatic-md transition-all flex flex-col justify-between group">
+<div>
+<div class="w-14 h-14 rounded bg-amber-50 border border-amber-100 flex items-center justify-center text-gold-dark mb-6 group-hover:bg-gold group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">handshake</span>
+</div>
+<span class="text-xs font-bold text-gold-dark uppercase tracking-wider block mb-2">Pillar 04</span>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3">Institutional Liaison</h3>
+<p class="text-slate-600 leading-relaxed text-[15px]">
+                  Uninterrupted access to the French Embassy, MEDEF International, Business France, the Board of Investment (BOI), and the Export Development Board of Sri Lanka.
+                </p>
+</div>
+<div class="pt-6 mt-6 border-t border-slate-200 flex items-center text-gold-dark font-bold text-sm">
+<span>Diplomatic Channels</span>
+<span class="material-symbols-outlined ml-auto text-base">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. WHY SRI LANKA / WHY FRANCE (Dual-Corridor Investment & Commerce) -->
+<section class="w-full bg-slate-50 py-20 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<div class="inline-flex items-center gap-2 mb-3">
+<span class="w-2 h-2 bg-gold inline-block"></span>
+<span class="text-xs font-bold uppercase tracking-widest text-gold-dark">Strategic Bilateral Corridors</span>
+<span class="w-2 h-2 bg-gold inline-block"></span>
+</div>
+<h2 class="font-serif-diplomatic text-headline-lg text-diplomatic-navy">
+              Two Economies. One High-Value Axis.
+            </h2>
+<p class="font-sans-diplomatic text-body-lead text-slate-600 mt-4 leading-relaxed">
+              Unlocking complementary strengths across the Indo-Pacific maritime epicenter and Europe’s premier industrial power.
+            </p>
+</div>
+<!-- Split Visual Comparison Dossier in Clean Architectural Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+<!-- Corridor A: Sri Lanka for French Enterprises -->
+<div class="bg-white border-2 border-slate-200 rounded-lg p-8 lg:p-10 flex flex-col justify-between shadow-diplomatic hover:shadow-diplomatic-md transition-all">
+<div>
+<div class="flex flex-wrap items-center justify-between pb-6 border-b border-slate-200 gap-2">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-blue-50 border border-blue-200 font-bold text-xs uppercase text-primary rounded">
+                      Inward Corridor
+                    </span>
+<span class="font-serif-diplomatic text-2xl font-bold text-diplomatic-navy">Why Sri Lanka</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500">For French Enterprises</span>
+</div>
+<p class="text-slate-700 font-medium my-6 leading-relaxed">
+                  A strategically positioned transshipment hub at the center of the world's most congested sea lanes, combining competitive operational costs with sophisticated human capital.
+                </p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 rounded bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-lg">sailing</span>
+</div>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Indian Ocean Maritime &amp; Logistics Hub</h4>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Colombo Port ranks among the world's top 25 container ports, offering French shipping and supply chain conglomerates unrivaled connectivity to South Asia.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 rounded bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-lg">energy_savings_leaf</span>
+</div>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">High-Growth Transition Sectors</h4>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Vast multi-gigawatt pipelines in offshore wind, solar, green hydrogen, alongside carbon-neutral ethical apparel manufacturing and luxury hospitality development.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 rounded bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-lg">domain</span>
+</div>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Port City Colombo Special Economic Zone</h4>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Independent common-law commercial regulatory framework, multi-currency banking, and statutory tax holidays designed explicitly for European multinationals.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="pt-8 mt-8 border-t border-slate-200 flex items-center justify-between">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-wider">BOI &amp; CCC Facilitation</span>
+<a class="text-sm font-bold text-primary hover:underline inline-flex items-center gap-1.5" data-path="market-entry-sri-lanka" href="#">
+                  Explore Entry Inquiries <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Corridor B: France for Sri Lankan Enterprises -->
+<div class="bg-white border-2 border-slate-200 rounded-lg p-8 lg:p-10 flex flex-col justify-between shadow-diplomatic hover:shadow-diplomatic-md transition-all">
+<div>
+<div class="flex flex-wrap items-center justify-between pb-6 border-b border-slate-200 gap-2">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-red-50 border border-red-200 font-bold text-xs uppercase text-secondary rounded">
+                      Outward Corridor
+                    </span>
+<span class="font-serif-diplomatic text-2xl font-bold text-diplomatic-navy">Why France</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500">For Sri Lankan Enterprises</span>
+</div>
+<p class="text-slate-700 font-medium my-6 leading-relaxed">
+                  The beating heart of Continental Europe’s single market, offering world-class infrastructure, aerospace engineering authority, and unmatched luxury consumer purchasing power.
+                </p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 rounded bg-red-50 border border-red-200 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-lg">flight</span>
+</div>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Aerospace &amp; Deep Industrial Technology</h4>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Access to Airbus supply chains, precision defense technologies, clean propulsion engineering, and joint European R&amp;D consortia.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 rounded bg-red-50 border border-red-200 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-lg">euro</span>
+</div>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Gateway to 450 Million EU Consumers</h4>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">France stands as the primary distribution nexus for Ceylon specialty single-origin tea, ethical apparel, rubber industrial products, and specialized IT export services.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 rounded bg-red-50 border border-red-200 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-lg">diamond</span>
+</div>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Global Benchmark in Luxury &amp; Gastronomy</h4>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Direct commercial alignment with leading French luxury houses, Michelin-starred culinary academies, and sustainable hospitality consortiums.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="pt-8 mt-8 border-t border-slate-200 flex items-center justify-between">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Business France Liaison</span>
+<a class="text-sm font-bold text-secondary hover:underline inline-flex items-center gap-1.5" data-path="market-access-france" href="#">
+                  Access European Market <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. BUSINESS OPPORTUNITIES -->
+<section class="w-full bg-white py-20 border-b border-slate-200" id="opportunities">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+<div>
+<span class="text-xs font-bold text-primary uppercase tracking-widest block mb-2">Priority Commercial Tracks</span>
+<h2 class="font-serif-diplomatic text-headline-lg text-diplomatic-navy">Explore Business Opportunities</h2>
+<p class="font-sans-diplomatic text-body-lead text-slate-600 mt-2 max-w-xl">
+                Targeted sectors and bilateral initiatives primed for cross-border expansion, joint ventures, and capital investments.
+              </p>
+</div>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-50 border border-slate-300 text-slate-800 hover:text-primary hover:border-primary font-bold text-sm uppercase tracking-wider rounded transition-colors shrink-0" data-path="business-opportunities" href="#">
+<span>View All Dossiers</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- 6 Clean Sector Cards with High Readability -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Opportunity 1 -->
+<div class="bg-surface-stone border border-slate-200 rounded p-8 flex flex-col justify-between hover:border-primary hover:bg-white hover:shadow-diplomatic-md transition-all group">
+<div>
+<div class="flex items-center justify-between mb-5">
+<span class="px-3 py-1 bg-blue-50 border border-blue-200 text-primary font-bold text-xs uppercase rounded">Capital Projects</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-2xl">solar_power</span>
+</div>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3 group-hover:text-primary transition-colors">
+                  Investment &amp; Renewable Infrastructure
+                </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  Direct French EPC involvement in offshore wind farms in Mannar Basin, micro-grids, commercial green hydrogen generation, and port crane electrifications.
+                </p>
+</div>
+<div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-500 uppercase">Active Project Pipeline</span>
+<span class="text-sm font-bold text-primary flex items-center">Inquire <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></span>
+</div>
+</div>
+<!-- Opportunity 2 -->
+<div class="bg-surface-stone border border-slate-200 rounded p-8 flex flex-col justify-between hover:border-secondary hover:bg-white hover:shadow-diplomatic-md transition-all group">
+<div>
+<div class="flex items-center justify-between mb-5">
+<span class="px-3 py-1 bg-red-50 border border-red-200 text-secondary font-bold text-xs uppercase rounded">Trade &amp; Export</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-secondary transition-colors text-2xl">local_shipping</span>
+</div>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3 group-hover:text-secondary transition-colors">
+                  High-Value Bilateral Trade &amp; Exports
+                </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  Expansion of GI-certified Ceylon Cinnamon, ethical apparel supply lines, aircraft tire rubber components, and high-purity graphite into French aerospace tiers.
+                </p>
+</div>
+<div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-500 uppercase">Bilateral Matchmaking</span>
+<span class="text-sm font-bold text-secondary flex items-center">Inquire <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></span>
+</div>
+</div>
+<!-- Opportunity 3 -->
+<div class="bg-surface-stone border border-slate-200 rounded p-8 flex flex-col justify-between hover:border-primary hover:bg-white hover:shadow-diplomatic-md transition-all group">
+<div>
+<div class="flex items-center justify-between mb-5">
+<span class="px-3 py-1 bg-amber-50 border border-amber-200 text-gold-dark font-bold text-xs uppercase rounded">Advisory</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-2xl">gavel</span>
+</div>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3 group-hover:text-primary transition-colors">
+                  Market Entry &amp; Regulatory Navigation
+                </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  Step-by-step establishment advisory, corporate taxation optimization, BOI Section 17 incentive structuring, and local partner vetting.
+                </p>
+</div>
+<div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-500 uppercase">Statutory Roadmaps</span>
+<span class="text-sm font-bold text-primary flex items-center">Inquire <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></span>
+</div>
+</div>
+<!-- Opportunity 4 -->
+<div class="bg-surface-stone border border-slate-200 rounded p-8 flex flex-col justify-between hover:border-secondary hover:bg-white hover:shadow-diplomatic-md transition-all group">
+<div>
+<div class="flex items-center justify-between mb-5">
+<span class="px-3 py-1 bg-slate-100 border border-slate-200 text-slate-700 font-bold text-xs uppercase rounded">Partnerships</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-secondary transition-colors text-2xl">hub</span>
+</div>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3 group-hover:text-secondary transition-colors">
+                  Maritime &amp; Supply Chain Alliances
+                </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  Strengthening joint shipping consortia, cold chain logistics for perishables, port equipment supply, and French multimodal network integration.
+                </p>
+</div>
+<div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-500 uppercase">Supply Logistics</span>
+<span class="text-sm font-bold text-secondary flex items-center">Inquire <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></span>
+</div>
+</div>
+<!-- Opportunity 5 -->
+<div class="bg-surface-stone border border-slate-200 rounded p-8 flex flex-col justify-between hover:border-primary hover:bg-white hover:shadow-diplomatic-md transition-all group">
+<div>
+<div class="flex items-center justify-between mb-5">
+<span class="px-3 py-1 bg-blue-50 border border-blue-200 text-primary font-bold text-xs uppercase rounded">Hospitality</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-2xl">hotel</span>
+</div>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3 group-hover:text-primary transition-colors">
+                  Luxury Tourism &amp; Culinary Exchange
+                </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  Co-investments in regenerative luxury eco-resorts, French hospitality brand expansions in Colombo, and bilateral Sommelier and gastronomy training institutes.
+                </p>
+</div>
+<div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-500 uppercase">Boutique Assets</span>
+<span class="text-sm font-bold text-primary flex items-center">Inquire <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></span>
+</div>
+</div>
+<!-- Opportunity 6 -->
+<div class="bg-surface-stone border border-slate-200 rounded p-8 flex flex-col justify-between hover:border-secondary hover:bg-white hover:shadow-diplomatic-md transition-all group">
+<div>
+<div class="flex items-center justify-between mb-5">
+<span class="px-3 py-1 bg-amber-50 border border-amber-200 text-gold-dark font-bold text-xs uppercase rounded">Deeptech</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-secondary transition-colors text-2xl">terminal</span>
+</div>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3 group-hover:text-secondary transition-colors">
+                  Software Engineering &amp; AI Venture Alliances
+                </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  Pairing top-quartile Sri Lankan enterprise software engineers with French Station F startups, European fintech operators, and Agritech R&amp;D centers.
+                </p>
+</div>
+<div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-500 uppercase">Engineering Corridors</span>
+<span class="text-sm font-bold text-secondary flex items-center">Inquire <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. MEMBERSHIP CONVERSION & STRATEGIC NETWORK -->
+<section class="w-full bg-slate-50 py-20 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left 7 Cols: Value Pillars -->
+<div class="lg:col-span-7">
+<span class="text-xs font-bold text-secondary uppercase tracking-widest block mb-2">Corporate Chamber Affiliation</span>
+<h2 class="font-serif-diplomatic text-headline-lg text-diplomatic-navy mb-4">
+                Become Part of the Sri Lanka–France Business Network
+              </h2>
+<p class="font-sans-diplomatic text-body-lead text-slate-600 mb-8 leading-relaxed">
+                Council membership provides institutional stature, direct c-level dialogue with sovereign trade delegations, and immediate operational leverage in both jurisdictions.
+              </p>
+<!-- 6 Pillars Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="flex items-start gap-3 bg-white p-4 rounded border border-slate-200 shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl shrink-0 mt-0.5">check_circle</span>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">High-Level Bilateral Networking</h4>
+<p class="text-sm text-slate-600 mt-1">Closed-door sessions with visiting French ministries, European ambassadors, and state delegations.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-white p-4 rounded border border-slate-200 shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl shrink-0 mt-0.5">check_circle</span>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Priority Delegation Participation</h4>
+<p class="text-sm text-slate-600 mt-1">Preferential registration on outbound trade missions to Paris, Marseille, Lyon, and MEDEF summits.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-white p-4 rounded border border-slate-200 shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl shrink-0 mt-0.5">check_circle</span>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Inward Investment Dossiers</h4>
+<p class="text-sm text-slate-600 mt-1">Quarterly intelligence briefings on regulatory adjustments, tax treaties, and commercial opportunities.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-white p-4 rounded border border-slate-200 shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl shrink-0 mt-0.5">check_circle</span>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">C-Level Matchmaking</h4>
+<p class="text-sm text-slate-600 mt-1">Direct bespoke introductions to French corporate buyers, joint-venture partners, and distributors.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-white p-4 rounded border border-slate-200 shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl shrink-0 mt-0.5">check_circle</span>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Institutional Representation</h4>
+<p class="text-sm text-slate-600 mt-1">Advocacy on bilateral commercial disputes, bilateral treaties, and trade barriers via the Ceylon Chamber.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-white p-4 rounded border border-slate-200 shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl shrink-0 mt-0.5">check_circle</span>
+<div>
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Customs &amp; Tariff Advisory</h4>
+<p class="text-sm text-slate-600 mt-1">Specialized advisory support on EU trade requirements, rules of origin, and GSP+ technical dossiers.</p>
+</div>
+</div>
+</div>
+<!-- Membership Tiers Breakdown -->
+<div class="mt-8 p-6 bg-white border border-slate-300 rounded shadow-sm">
+<h4 class="text-xs font-bold text-slate-600 uppercase tracking-wider mb-4">Recognized Membership Classifications</h4>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+<div class="p-3 bg-slate-50 border border-slate-200 rounded">
+<span class="font-bold text-secondary block text-sm">Patron Member</span>
+<span class="text-xs text-slate-500 block mt-1">Tier 1 Conglomerates</span>
+</div>
+<div class="p-3 bg-slate-50 border border-slate-200 rounded">
+<span class="font-bold text-primary block text-sm">Corporate Member</span>
+<span class="text-xs text-slate-500 block mt-1">Active Trading Firms</span>
+</div>
+<div class="p-3 bg-slate-50 border border-slate-200 rounded">
+<span class="font-bold text-slate-800 block text-sm">Associate Member</span>
+<span class="text-xs text-slate-500 block mt-1">SMEs &amp; Consultancies</span>
+</div>
+<div class="p-3 bg-slate-50 border border-slate-200 rounded">
+<span class="font-bold text-slate-600 block text-sm">Overseas Affiliate</span>
+<span class="text-xs text-slate-500 block mt-1">France-Based Entities</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 5 Cols: Application CTA Card (Crisp White Form Card with Gold & Navy Accent) -->
+<div class="lg:col-span-5 bg-white border-2 border-slate-300 rounded-lg p-8 shadow-diplomatic-lg relative">
+<div class="w-full h-1.5 bg-gradient-to-r from-primary via-secondary to-gold absolute top-0 left-0 rounded-t-lg"></div>
+<div class="flex items-center gap-2 mb-2 pt-1">
+<span class="material-symbols-outlined text-secondary text-xl">verified_user</span>
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">Secretariat Intake</span>
+</div>
+<h3 class="font-serif-diplomatic text-2xl text-diplomatic-navy mb-2">Initiate Council Accreditation</h3>
+<p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                Applications are reviewed and endorsed through the bilateral screening committee convened under the Ceylon Chamber of Commerce.
+              </p>
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Application request transmitted to the SLFBC Secretariat at The Ceylon Chamber of Commerce.');">
+<div>
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Company / Organization Legal Entity</label>
+<input class="w-full px-4 py-3 bg-white border-2 border-slate-300 text-slate-900 rounded font-sans-diplomatic text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="e.g. Hayleys PLC / CMA CGM Lanka" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Corporate Email</label>
+<input class="w-full px-4 py-3 bg-white border-2 border-slate-300 text-slate-900 rounded font-sans-diplomatic text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="corporate@enterprise.com" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Primary Corridor Interest</label>
+<select class="w-full px-3 py-3 bg-white border-2 border-slate-300 text-slate-900 rounded font-sans-diplomatic text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+<option>France Market Access (Outward)</option>
+<option>Sri Lanka Investment (Inward)</option>
+<option>Joint Venture / Maritime</option>
+<option>Technology &amp; Software R&amp;D</option>
+</select>
+</div>
+</div>
+<button class="w-full mt-3 py-4 bg-primary text-white font-bold text-sm uppercase tracking-wider rounded shadow hover:bg-primary-hover transition-colors flex items-center justify-center gap-2" type="submit">
+<span>Submit Membership Dossier</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</form>
+<div class="mt-6 pt-5 border-t border-slate-200 flex items-center justify-between">
+<span class="text-xs text-slate-500 font-medium">Prefer physical submission?</span>
+<a class="text-xs font-bold text-primary hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-base">download</span>
+                  Download Prospectus (PDF)
+                </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. NEWS & EVENTS -->
+<section class="w-full bg-white py-20 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<span class="text-xs font-bold text-primary uppercase tracking-widest block mb-2">Bilateral Dispatches</span>
+<h2 class="font-serif-diplomatic text-headline-lg text-diplomatic-navy">News &amp; Official Events</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-4 py-1.5 bg-primary text-white font-bold text-xs uppercase rounded">All Updates</span>
+<span class="px-4 py-1.5 bg-slate-100 border border-slate-300 text-slate-700 font-bold text-xs uppercase rounded hover:bg-slate-200 cursor-pointer">Summits</span>
+<span class="px-4 py-1.5 bg-slate-100 border border-slate-300 text-slate-700 font-bold text-xs uppercase rounded hover:bg-slate-200 cursor-pointer">Delegations</span>
+</div>
+</div>
+<!-- 3 Editorial Event/News Cards in White with Slate Borders -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Featured Summit -->
+<div class="bg-surface-stone border-2 border-primary/30 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-diplomatic-md transition-all group">
+<div class="p-7">
+<div class="flex items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 bg-primary text-white font-bold text-xs uppercase tracking-wider rounded">Upcoming Summit</span>
+<span class="text-xs font-bold text-secondary uppercase">OCT 22–24, 2026</span>
+</div>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3 group-hover:text-primary transition-colors">
+                  2026 Sri Lanka–France Bilateral Investment Forum
+                </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-5">
+                  Hôtel de Crillon, Place de la Concorde, Paris &amp; Hybrid Video Link. Convening chief executives and ministry delegates on sovereign infrastructure financing.
+                </p>
+<div class="flex items-center gap-2 text-slate-600 text-sm font-medium">
+<span class="material-symbols-outlined text-base text-primary">location_on</span>
+<span>Paris, France &amp; Live Satellite</span>
+</div>
+</div>
+<div class="p-6 pt-4 border-t border-slate-200 bg-white rounded-b-lg flex items-center justify-between">
+<span class="text-xs font-bold text-emerald-700 uppercase flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-600 inline-block"></span> REGISTRATION ACTIVE
+                </span>
+<a class="text-sm font-bold text-primary hover:underline flex items-center" href="#">
+                  Program Details <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Chamber News -->
+<div class="bg-surface-stone border border-slate-200 rounded-lg flex flex-col justify-between shadow-sm hover:border-slate-300 hover:shadow-diplomatic-md transition-all group">
+<div class="p-7">
+<div class="flex items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 bg-white border border-slate-300 text-slate-700 font-bold text-xs uppercase tracking-wider rounded">Chamber Communiqué</span>
+<span class="text-xs font-bold text-slate-500 uppercase">MAR 14, 2026</span>
+</div>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3 group-hover:text-primary transition-colors">
+                  French Business Delegation Concludes Indian Ocean Logistics Tour
+                </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-5">
+                  A high-level mission representing 14 French multinational industrial contractors evaluated deep-water port operations and off-grid green energy opportunities at the Port of Colombo.
+                </p>
+<div class="flex items-center gap-2 text-slate-600 text-sm font-medium">
+<span class="material-symbols-outlined text-base text-slate-500">article</span>
+<span>Joint Communiqué • Colombo Secretariat</span>
+</div>
+</div>
+<div class="p-6 pt-4 border-t border-slate-200 bg-white rounded-b-lg flex items-center justify-between">
+<span class="text-xs font-bold text-slate-500 uppercase">COMMERCIAL REPORT</span>
+<a class="text-sm font-bold text-slate-800 hover:text-primary hover:underline flex items-center" href="#">
+                  Read Briefing <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3: Gala Dinner -->
+<div class="bg-surface-stone border border-slate-200 rounded-lg flex flex-col justify-between shadow-sm hover:border-slate-300 hover:shadow-diplomatic-md transition-all group">
+<div class="p-7">
+<div class="flex items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 bg-white border border-slate-300 text-slate-700 font-bold text-xs uppercase tracking-wider rounded">Protocol Gala</span>
+<span class="text-xs font-bold text-slate-500 uppercase">FEB 02, 2026</span>
+</div>
+<h3 class="font-serif-diplomatic text-xl text-diplomatic-navy mb-3 group-hover:text-primary transition-colors">
+                  Annual Bilateral Gala Dinner &amp; Sovereign Trade Awards
+                </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-5">
+                  Hosted at the Official Residence of the Ambassador of France in Colombo, recognizing exemplary exporters in Ceylon tea, apparel innovation, and aerospace supply.
+                </p>
+<div class="flex items-center gap-2 text-slate-600 text-sm font-medium">
+<span class="material-symbols-outlined text-base text-slate-500">photo_library</span>
+<span>Official Gallery &amp; Laureates</span>
+</div>
+</div>
+<div class="p-6 pt-4 border-t border-slate-200 bg-white rounded-b-lg flex items-center justify-between">
+<span class="text-xs font-bold text-slate-500 uppercase">DIPLOMATIC ARCHIVE</span>
+<a class="text-sm font-bold text-slate-800 hover:text-primary hover:underline flex items-center" href="#">
+                  View Laureates <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. LEADERSHIP & EXECUTIVE COMMITTEE -->
+<section class="w-full bg-slate-50 py-20 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="max-w-3xl mb-14">
+<span class="text-xs font-bold text-secondary uppercase tracking-widest block mb-2">Governance &amp; Executive Leadership</span>
+<h2 class="font-serif-diplomatic text-headline-lg text-diplomatic-navy">Meet the Executive Committee</h2>
+<p class="font-sans-diplomatic text-body-lead text-slate-600 mt-2">
+              Led by captains of industry, seasoned diplomats, and corporate directors dedicated to accelerating Franco-Lankan economic partnership.
+            </p>
+</div>
+<!-- Presidential Spotlight (Split Layout with Preserved Portrait) -->
+<div class="bg-white border-2 border-slate-200 rounded-lg mb-12 shadow-diplomatic overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+<div class="lg:col-span-4 aspect-square bg-slate-100 overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-200">
+<img alt="Jean-Pierre Dubois, Executive President of Sri Lanka France Business Council" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VmRMGMT06u708z5piz_Xt78TzSj89Q57ymw0hhZiT5P6n6H436QBTF5EhLay5ahKpOjZ7uYnD3_2jcEGpJZJ4i1n6PDmJ7UM3znyGXeAbsaozMjsy7CbgGnGZ2-DpQ8ymb4y5yQQo73aRytT5ihyIIpE5Tb9xMUDK708YyQyHyPBkIdXhAtss9GqAlRaxTckv6JFLqfsf-OCpt3ZwwfWERUOnJy7Ha11-4HrY0Lx9Jvaj1cVTh_Zcs"/>
+</div>
+<div class="lg:col-span-8 p-8 lg:p-12 flex flex-col justify-between">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 border border-slate-200 rounded font-sans-diplomatic text-xs font-bold uppercase text-secondary mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    President's Dispatch
+                  </div>
+<h3 class="font-serif-diplomatic text-2xl lg:text-3xl text-diplomatic-navy">Jean-Pierre Dubois</h3>
+<p class="font-sans-diplomatic text-base font-bold text-primary mb-6">
+                    Executive President, Sri Lanka–France Business Council
+                  </p>
+<blockquote class="font-serif-diplomatic text-lg text-slate-700 italic border-l-4 border-secondary pl-5 mb-6 leading-relaxed">
+                    "Our bilateral trade corridor is entering an era defined not merely by transactions, but by structural joint ventures in maritime transshipment, renewable hydrogen, and advanced knowledge engineering. We stand ready to guide corporate leaders through both gateways."
+                  </blockquote>
+</div>
+<div class="pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4 text-sm font-semibold text-slate-600">
+<span>Affiliation: Director, European Regional Operations</span>
+<span class="text-primary font-bold">Secretariat: The Ceylon Chamber of Commerce</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Committee Members Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- VP 1 -->
+<div class="p-6 bg-white border border-slate-200 rounded shadow-sm">
+<span class="text-xs font-bold text-primary uppercase block mb-1">Vice President (Sri Lanka)</span>
+<h4 class="font-serif-diplomatic text-lg text-diplomatic-navy font-bold">Asoka Wickremasinghe</h4>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Managing Director, Maritime &amp; Freight Corridors (Aitken Spence)</p>
+<div class="mt-4 pt-4 border-t border-slate-200 text-xs font-bold text-slate-500 uppercase tracking-wider">
+                SECTOR: MARITIME LOGISTICS
+              </div>
+</div>
+<!-- VP 2 -->
+<div class="p-6 bg-white border border-slate-200 rounded shadow-sm">
+<span class="text-xs font-bold text-secondary uppercase block mb-1">Vice President (France)</span>
+<h4 class="font-serif-diplomatic text-lg text-diplomatic-navy font-bold">Hervé Laurent</h4>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Regional Director, South Asia Energy Systems (Schneider Electric)</p>
+<div class="mt-4 pt-4 border-t border-slate-200 text-xs font-bold text-slate-500 uppercase tracking-wider">
+                SECTOR: CLEAN ENERGY
+              </div>
+</div>
+<!-- Honorary Secretary -->
+<div class="p-6 bg-white border border-slate-200 rounded shadow-sm">
+<span class="text-xs font-bold text-gold-dark uppercase block mb-1">Honorary Secretary &amp; Secretariat</span>
+<h4 class="font-serif-diplomatic text-lg text-diplomatic-navy font-bold">Niroshini Rathnayake</h4>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Senior Director of Bilateral Affairs, The Ceylon Chamber of Commerce</p>
+<div class="mt-4 pt-4 border-t border-slate-200 text-xs font-bold text-slate-500 uppercase tracking-wider">
+                INSTITUTIONAL LIAISON
+              </div>
+</div>
+<!-- Honorary Treasurer -->
+<div class="p-6 bg-white border border-slate-200 rounded shadow-sm">
+<span class="text-xs font-bold text-slate-700 uppercase block mb-1">Honorary Treasurer</span>
+<h4 class="font-serif-diplomatic text-lg text-diplomatic-navy font-bold">Charles de Montmirail</h4>
+<p class="text-sm text-slate-600 mt-1 leading-relaxed">Head of Trade Finance &amp; Commercial Banking, South Asian Desks</p>
+<div class="mt-4 pt-4 border-t border-slate-200 text-xs font-bold text-slate-500 uppercase tracking-wider">
+                SECTOR: TREASURY &amp; AUDIT
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. MEMBER NETWORK & DIRECTORY SHOWCASE -->
+<section class="w-full bg-white py-20 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs font-bold text-secondary uppercase tracking-widest block mb-2">Corporate Chamber Roster</span>
+<h2 class="font-serif-diplomatic text-headline-lg text-diplomatic-navy">Trusted by Leading Bilateral Enterprises</h2>
+<p class="font-sans-diplomatic text-body-lead text-slate-600 mt-2">
+              Representing leading sovereign institutions, conglomerates, and multinational operators driving commercial value.
+            </p>
+</div>
+<!-- Searchable Directory Bar -->
+<div class="max-w-3xl mx-auto mb-12">
+<div class="flex items-center bg-slate-50 border-2 border-slate-300 rounded p-2 gap-3 shadow-sm focus-within:border-primary">
+<span class="material-symbols-outlined text-slate-500 ml-2 text-2xl">search</span>
+<input class="w-full bg-transparent border-none text-slate-900 text-base font-sans-diplomatic focus:outline-none placeholder-slate-500" placeholder="Search member directory by industry, company name, or service category..." type="text"/>
+<button class="px-6 py-2.5 bg-primary text-white font-bold text-sm uppercase tracking-wider rounded shrink-0 hover:bg-primary-hover transition-colors">
+                Search
+              </button>
+</div>
+</div>
+<!-- Architectural Dignified Tiles for Corporate Logos -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="p-8 bg-slate-50 border border-slate-200 rounded flex flex-col items-center justify-center text-center hover:border-primary hover:bg-white hover:shadow-diplomatic transition-all">
+<p class="font-serif-diplomatic text-xl tracking-widest text-diplomatic-navy font-bold uppercase">CMA CGM</p>
+<span class="text-xs font-bold text-slate-500 uppercase mt-1">Maritime Logistics</span>
+</div>
+<div class="p-8 bg-slate-50 border border-slate-200 rounded flex flex-col items-center justify-center text-center hover:border-primary hover:bg-white hover:shadow-diplomatic transition-all">
+<p class="font-serif-diplomatic text-xl tracking-widest text-diplomatic-navy font-bold uppercase">TotalEnergies</p>
+<span class="text-xs font-bold text-slate-500 uppercase mt-1">Energy &amp; Infrastructure</span>
+</div>
+<div class="p-8 bg-slate-50 border border-slate-200 rounded flex flex-col items-center justify-center text-center hover:border-primary hover:bg-white hover:shadow-diplomatic transition-all">
+<p class="font-serif-diplomatic text-xl tracking-widest text-diplomatic-navy font-bold uppercase">HAYLEYS PLC</p>
+<span class="text-xs font-bold text-slate-500 uppercase mt-1">Conglomerate &amp; Exports</span>
+</div>
+<div class="p-8 bg-slate-50 border border-slate-200 rounded flex flex-col items-center justify-center text-center hover:border-primary hover:bg-white hover:shadow-diplomatic transition-all">
+<p class="font-serif-diplomatic text-xl tracking-widest text-diplomatic-navy font-bold uppercase">DILMAH TEA</p>
+<span class="text-xs font-bold text-slate-500 uppercase mt-1">Specialty Agriculture</span>
+</div>
+<div class="p-8 bg-slate-50 border border-slate-200 rounded flex flex-col items-center justify-center text-center hover:border-primary hover:bg-white hover:shadow-diplomatic transition-all">
+<p class="font-serif-diplomatic text-xl tracking-widest text-diplomatic-navy font-bold uppercase">SCHNEIDER</p>
+<span class="text-xs font-bold text-slate-500 uppercase mt-1">Energy Management</span>
+</div>
+<div class="p-8 bg-slate-50 border border-slate-200 rounded flex flex-col items-center justify-center text-center hover:border-primary hover:bg-white hover:shadow-diplomatic transition-all">
+<p class="font-serif-diplomatic text-xl tracking-widest text-diplomatic-navy font-bold uppercase">JOHN KEELLS</p>
+<span class="text-xs font-bold text-slate-500 uppercase mt-1">Leisure &amp; Logistics</span>
+</div>
+<div class="p-8 bg-slate-50 border border-slate-200 rounded flex flex-col items-center justify-center text-center hover:border-primary hover:bg-white hover:shadow-diplomatic transition-all">
+<p class="font-serif-diplomatic text-xl tracking-widest text-diplomatic-navy font-bold uppercase">ACCOR HOTELS</p>
+<span class="text-xs font-bold text-slate-500 uppercase mt-1">Hospitality Group</span>
+</div>
+<div class="p-8 bg-slate-50 border border-slate-200 rounded flex flex-col items-center justify-center text-center hover:border-primary hover:bg-white hover:shadow-diplomatic transition-all">
+<p class="font-serif-diplomatic text-xl tracking-widest text-diplomatic-navy font-bold uppercase">MICHELIN</p>
+<span class="text-xs font-bold text-slate-500 uppercase mt-1">Industrial Rubber</span>
+</div>
+</div>
+<div class="text-center mt-10">
+<a class="text-base font-bold text-primary hover:underline inline-flex items-center gap-1.5" href="#">
+              Access Complete Verified Member Directory (180+ Enterprises)
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 9. TESTIMONIALS & BILATERAL DIALOGUES -->
+<section class="w-full bg-slate-50 py-20 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="mb-14">
+<span class="text-xs font-bold text-primary uppercase tracking-widest block mb-2">Executive Testimonials</span>
+<h2 class="font-serif-diplomatic text-headline-lg text-diplomatic-navy">Institutional Endorsements</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-8 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">format_quote</span>
+<p class="text-slate-700 leading-relaxed mb-6 font-medium text-[15.5px]">
+                  "The Council provided our engineering consortium with immediate, high-trust access to ministry decision-makers in Colombo. Their mediation was essential for establishing our regional offshore wind operations."
+                </p>
+</div>
+<div class="pt-5 border-t border-slate-200">
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">François Beaulieu</h4>
+<p class="text-xs font-semibold text-slate-500 mt-0.5">Vice President, French Clean Infrastructure Alliance</p>
+</div>
+</div>
+<div class="p-8 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4">format_quote</span>
+<p class="text-slate-700 leading-relaxed mb-6 font-medium text-[15.5px]">
+                  "Through the outbound trade delegations structured with Business France in Paris, we secured major distribution partnerships with high-end Parisian retailers for single-origin artisan Ceylon teas."
+                </p>
+</div>
+<div class="pt-5 border-t border-slate-200">
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Malik J. Fernando</h4>
+<p class="text-xs font-semibold text-slate-500 mt-0.5">Managing Director, Resplendent Ceylon &amp; Dilmah</p>
+</div>
+</div>
+<div class="p-8 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-gold-dark text-4xl mb-4">format_quote</span>
+<p class="text-slate-700 leading-relaxed mb-6 font-medium text-[15.5px]">
+                  "The Ceylon Chamber’s institutional governance backstopping the SLFBC guarantees that every corporate dialogue adheres to rigorous bilateral protocol, statutory compliance, and commercial clarity."
+                </p>
+</div>
+<div class="pt-5 border-t border-slate-200">
+<h4 class="font-serif-diplomatic text-base font-bold text-diplomatic-navy">Claire Dupont-Vasseur</h4>
+<p class="text-xs font-semibold text-slate-500 mt-0.5">Commercial Counselor, European Maritime Desk</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. FINAL STRATEGIC CTA SECTION (Grounding Executive Diplomatic Navy Banner) -->
+<section class="w-full bg-[#002654] text-white relative py-24 overflow-hidden">
+<div class="max-w-5xl mx-auto px-6 lg:px-12 text-center relative z-10">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 bg-white/10 border border-white/20 rounded font-sans-diplomatic text-xs uppercase font-bold text-amber-300 mb-6">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            Bilateral Commercial Conduit
+          </div>
+<h2 class="font-serif-diplomatic text-3xl lg:text-4xl text-white tracking-tight mb-6">
+            Let’s Build Stronger Sri Lanka–France Business Connections
+          </h2>
+<p class="font-sans-diplomatic text-slate-200 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+            Whether you are a French enterprise expanding operations into the Indian Ocean or a Sri Lankan exporter entering the European Union, the Council is your accredited bilateral authority.
+          </p>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<a class="px-8 py-4 bg-secondary text-white font-bold text-sm uppercase tracking-wider rounded hover:bg-secondary-dark transition-colors shadow-lg" data-path="membership-application" href="#">
+              Become a Member
+            </a>
+<a class="px-8 py-4 bg-white/10 hover:bg-white hover:text-primary text-white border-2 border-white/30 rounded font-bold text-sm uppercase tracking-wider transition-colors" data-path="contact" href="#">
+              Contact Secretariat
+            </a>
+</div>
+<!-- Accreditation Signoff -->
+<div class="mt-16 pt-8 border-t border-white/15 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-300 uppercase tracking-widest font-semibold">
+<span>The Ceylon Chamber of Commerce</span>
+<span>•</span>
+<span>Embassy of France in Sri Lanka &amp; Maldives</span>
+<span>•</span>
+<span>MEDEF International Partner</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- DIGNIFIED HIGH-CONTRAST FOOTER -->
+<footer class="w-full bg-[#0b1e3b] text-slate-300 border-t border-[#001c3f]">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+<!-- Brand & Mission with White Backing for Contrast -->
+<div class="flex flex-col gap-4">
+<div class="bg-white p-2.5 rounded max-w-fit shadow-sm">
+<img alt="Sri Lanka-France Business Council Official Emblem &amp; Wordmark" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wgm4QehvbdlbYUACw4hEpyxHbL3JrsHmsYg8Zo0okUDaqazcVbUYWRW9wvfWvCkD3pW8KW5fTFSUxV2aIhbZ9o1N3dVw4N9uOKPjocRJmDg3OaRsz33JqmX2V1NnJIykZn47tEIyvV7R0esjZeGYL_lITtZ-D1-Xu34UQ8tbYSvrcr4mQrgsstEKUEKTikOYrez-6r3dvQZrfe2TbTUhu71MJ1v1i2iflot6Y99YzpIZp-pEQpuXzf"/>
+</div>
+<p class="text-sm leading-relaxed text-slate-300">
+            The Sri Lanka–France Business Council (SLFBC) was inaugurated under the aegis of the Ceylon Chamber of Commerce to foster, promote, and expand bilateral trade, investment, joint ventures, and cultural exchange between Sri Lanka and the Republic of France.
+          </p>
+<div class="p-3 bg-white/5 border border-white/10 rounded">
+<p class="text-xs uppercase font-bold text-amber-400">Accredited Bilateral Chamber</p>
+<p class="text-xs text-slate-300 mt-1">Affiliated with The Ceylon Chamber of Commerce &amp; The Embassy of France.</p>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="flex flex-col gap-3">
+<h3 class="text-xs font-bold uppercase tracking-wider text-amber-400 border-b border-white/15 pb-2">Quick Links</h3>
+<ul class="flex flex-col gap-2.5 text-sm text-slate-300">
+<li><a class="hover:text-white transition-colors" data-path="about-slfbc" href="#">About SLFBC</a></li>
+<li><a class="hover:text-white transition-colors" data-path="bilateral-relations" href="#">Bilateral Relations</a></li>
+<li><a class="hover:text-white transition-colors" data-path="leadership-exco" href="#">Leadership &amp; ExCo</a></li>
+<li><a class="hover:text-white transition-colors" data-path="annual-reports" href="#">Annual Reports &amp; Audits</a></li>
+<li><a class="hover:text-white transition-colors" data-path="constitution-by-laws" href="#">Constitution &amp; By-Laws</a></li>
+</ul>
+</div>
+<!-- Opportunities & Services -->
+<div class="flex flex-col gap-3">
+<h3 class="text-xs font-bold uppercase tracking-wider text-amber-400 border-b border-white/15 pb-2">Opportunities &amp; Services</h3>
+<ul class="flex flex-col gap-2.5 text-sm text-slate-300">
+<li><a class="hover:text-white transition-colors" data-path="trade-delegations" href="#">Trade Delegations &amp; Missions</a></li>
+<li><a class="hover:text-white transition-colors" data-path="market-entry-sri-lanka" href="#">Market Entry Sri Lanka</a></li>
+<li><a class="hover:text-white transition-colors" data-path="market-access-france" href="#">Market Access France (EU)</a></li>
+<li><a class="hover:text-white transition-colors" data-path="business-matchmaking" href="#">Bilateral B2B Matchmaking</a></li>
+<li><a class="hover:text-white transition-colors" data-path="customs-regulatory-guides" href="#">Customs &amp; Tariffs Dossiers</a></li>
+</ul>
+</div>
+<!-- Secretariats -->
+<div class="flex flex-col gap-3">
+<h3 class="text-xs font-bold uppercase tracking-wider text-amber-400 border-b border-white/15 pb-2">Secretariats</h3>
+<div class="space-y-4 text-sm text-slate-300">
+<div>
+<p class="font-bold text-white">Colombo Secretariat:</p>
+<p>The Ceylon Chamber of Commerce, 50 Navam Mawatha, Colombo 02, Sri Lanka</p>
+<p class="mt-1 text-amber-300 font-medium">+94 11 558 8800 | info@srilankafrance.biz</p>
+</div>
+<div class="pt-3 border-t border-white/10">
+<p class="font-bold text-white">Paris Liaison Office:</p>
+<p>27 Rue de Berri, 75008 Paris, France</p>
+<p class="mt-1 text-amber-300 font-medium">paris@srilankafrance.biz</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Copyright -->
+<div class="w-full border-t border-white/10 bg-[#071326] py-5 px-6 lg:px-12 text-xs text-slate-400">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-semibold">
+<p>© 2026 Sri Lanka–France Business Council. All Rights Reserved.</p>
+<div class="flex items-center gap-4">
+<a class="hover:text-white transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a>
+<span class="text-slate-600">|</span>
+<a class="hover:text-white transition-colors" data-path="terms-of-membership" href="#">Terms of Membership</a>
+<span class="text-slate-600">|</span>
+<a class="hover:text-white transition-colors" data-path="diplomatic-protocol-disclaimer" href="#">Diplomatic Protocol Disclaimer</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

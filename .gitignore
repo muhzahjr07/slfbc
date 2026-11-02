@@ -1,0 +1,27 @@
+# Environment & Secrets
+.env
+.env.backup
+.env.local
+.env.*.local
+
+# Application dynamic storage & cache
+storage/database.sqlite
+storage/database.sqlite-journal
+storage/logs/*.log
+storage/documents/*
+!storage/documents/.gitkeep
+
+# Temporary / OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor caches
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+

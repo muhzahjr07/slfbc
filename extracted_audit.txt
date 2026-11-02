@@ -1,0 +1,207 @@
+
+
+WEBSITE AUDIT &POSITIONING STRATEGY REPORT
+Sri Lanka – France Business Council (SLFBC)
+Audit target: https://www.slfbc.lk/index.php
+
+Prepared: 24 September 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Scope: content architecture, positioning, UI/UX, functionality, trust, mobile readiness, SEO fundamentals and modernization opportunities.
+This audit evaluates the requested www.slfbc.lk site.
+
+Executive Summary
+Key Finding: The current SLFBC website communicates the council's basic purpose, membership and contact information, but its presentation and information architecture feel closer to a legacy institutional website than a modern bilateral business council platform. The strongest opportunity is not simply a visual redesign: the site should make the Council's value to Sri Lanka–France business relationships immediately clear, while making membership, events, partnerships, trade/investment opportunities and council leadership easy to discover.
+The requested site currently contains a useful navigation structure—About, Membership, News & Events, Country and Contact—but several pages rely on older PHP URLs, legacy external links, inconsistent contact details and content that appears dated. The homepage also has limited conversion-oriented messaging beyond informational content.
+Primary Priorities
+Modernize the homepage around the Council's bilateral business value: connect, facilitate, promote and represent.
+Create clear pathways for Members, Prospective Members, French Businesses, Sri Lankan Businesses and Institutional Partners.
+Bring leadership and committee information up to date and present it with consistent professional portraits and role information.
+Consolidate news/event content into the SLFBC domain instead of relying on legacy external event destinations.
+Standardize contact details, social links, footer information and copyright/version information.
+Improve mobile responsiveness, spacing, typography, image treatment and accessibility.
+Introduce stronger calls to action such as Join the Council, Explore Members, View Upcoming Events and Contact the Secretariat.
+Create a more useful France / Sri Lanka country-information section with business-relevant content rather than generic country information.
+Overall Website Direction
+Recommended direction: A premium, institutional, bilateral-business platform combining the credibility of the Ceylon Chamber of Commerce with a modern international-business presentation. The site should feel authoritative and current without becoming overly corporate or promotional.
+
+1. Proposed Homepage Content & Structure
+Hero Section
+Replace the generic introductory treatment with a concise bilateral-business proposition.
+Suggested headline: Connecting Sri Lanka & France for Business, Trade and Investment
+Supporting line: The Sri Lanka–France Business Council connects businesses, institutions and investors to strengthen commercial relationships between the two countries.
+Primary CTA: Join the Council
+Secondary CTA: Explore Members
+Homepage Sections
+Hero: bilateral business proposition + two clear CTAs.
+
+Council at a Glance: Established 2004 | 70 members (subject to current verification) | Ceylon Chamber of Commerce.
+What We Do: Trade & Business Facilitation; Investment & Partnerships; Networking & Events; Market & Country Information; Institutional Coordination.
+Why SLFBC: Access to business networks, bilateral dialogue, market connections, events and institutional relationships.
+Featured Members: selected member logos with Explore All Members CTA.
+Upcoming Events: 3–4 current events with dates, location and registration CTA.
+Latest News: current news/articles with publication dates.
+Leadership: President and key committee members with professional portraits.
+France–Sri Lanka Business Focus: concise current themes, sectors or opportunities.
+Partners & Institutions: Chamber, Embassy and relevant institutional relationships.
+Final CTA: Join the Council / Contact the Secretariat.
+Homepage Content Issue
+The current homepage uses a Vision, Mission and Services block, but these statements are abstract. They should be retained as supporting content rather than the main conversion message. The homepage should answer three questions within the first screen: What is SLFBC? Who is it for? What can a visitor do next?
+
+
+
+
+
+
+
+
+
+
+
+
+2. About, Governance & Leadership
+About the Council
+The existing About page contains the Council's history and objectives. These are valuable institutional assets and should remain, but the copy should be broken into shorter sections with clear headings and visual anchors.
+Who We Are
+Our History — Founded in 2004
+Our Role within the Ceylon Chamber of Commerce
+Our Objectives
+Sri Lanka–France Business Relationship
+Our Network & Institutional Connections
+Leadership / Committee Page
+The committee page should clearly state the applicable year, for example 'Executive Committee 2025/26', and avoid mixing historical committee years with current information. The current indexed slfbc.lk version lists a 2025/26 committee, including a President, Senior Vice President, Vice Presidents, committee members and invited institutional representatives.
+Recommended presentation: consistent professional headshots, name, role, organization and a short 1–2 line professional profile. Avoid displaying personal phone numbers or private contact information unless the Council has explicitly approved publication.
+Ambassador Message
+The Ambassador Message should be visually elevated as an institutional message page, with the Ambassador's name, title, date/year and a high-quality official portrait. The page should be reviewed annually so that the displayed Ambassador and message remain current.
+
+4. Membership Experience
+Membership is one of the strongest assets of the website. The current member page contains a substantial directory of companies, including international and Sri Lankan organizations across logistics, manufacturing, tourism, finance, ICT and other sectors.
+However, the current presentation is essentially a long text list. This makes the directory difficult to scan and does not communicate the scale or diversity of the network visually.
+Recommended Member Directory
+Search by company name.
+Filter by sector.
+Filter by Sri Lankan / French / international organization where applicable.
+Display company logo, company name and sector.
+Optional company profile page or external website link.
+Feature selected members on the homepage.
+Show a clear 'Become a Member' CTA.
+Membership Application
+The existing application page asks applicants to submit a business registration certificate, company profile, audited accounts for two years, applicable fees and two membership recommendations. The current page therefore contains useful operational information but should be redesigned into a clear application journey.
+Step 1 — Confirm eligibility
+Step 2 — Prepare required documents
+Step 3 — Complete application
+Step 4 — Submit to the Secretariat
+Step 5 — Committee review / membership confirmation
+The application fee/subscription figures should be reviewed and dated before publication because membership charges can change.
+
+5. News, Events & Media
+The current Events page contains a mixture of recent and older items, including Annual General Meetings, Ambassador meetings, networking sessions and events dating back to 2019. Several 'Read more' links point to slfbc.biz rather than keeping the visitor within the main website.
+Recommended News & Events Architecture
+Upcoming Events
+Past Events
+News & Announcements
+Business Delegations
+Ambassador / Institutional Meetings
+Networking & Member Activities
+Media / Press Releases
+Photo Gallery
+Event Card Standard
+Every event should consistently show:
+Event title
+Date
+Location
+Short description
+Event image
+Registration or contact CTA
+Photo gallery / report after the event
+Content Freshness
+The homepage and event archive should not make the site appear dormant. If there are no upcoming events, replace an empty/old event block with a curated 'Latest Activities' or 'Upcoming Opportunities' section.
+
+6. Country Information: France & Sri Lanka
+The current navigation includes About France and About Sri Lanka. This is a useful differentiator for a bilateral business council, but these pages should be positioned as business intelligence resources rather than generic country descriptions.
+About France — Recommended Content
+Business environment overview
+Key industries relevant to Sri Lankan companies
+Trade and investment relationship
+Major business regions/cities
+Market-entry considerations
+Useful French institutions and business organizations
+Trade fairs / business events
+Useful links and resources
+About Sri Lanka — Recommended Content
+Economic and business overview
+Key export and investment sectors
+Infrastructure and logistics
+Tourism and services
+Investment ecosystem
+Market-entry considerations
+Relevant government/institutional links
+Business setup resources
+Add a prominent 'Last Updated' date to both country pages. This makes the information more credible and helps prevent visitors from treating old content as current.
+
+7. Contact & Conversion
+Current Contact Issues
+The requested website presents contact information in the footer, while other indexed SLFBC versions use different telephone numbers, email addresses and footer details. This creates a trust and maintenance issue.
+Recommended Canonical Contact Block
+Use one approved dataset across every page:
+Sri Lanka–France Business Council
+The Ceylon Chamber of Commerce
+50, Nawam Mawatha, Colombo 02, Sri Lanka
+Telephone — verify current official number
+Email — verify current official Secretariat email
+Website — use one canonical SLFBC domain
+Contact Form
+Name *
+Company
+Email *
+Phone
+Subject / Enquiry Type
+Message *
+Consent / privacy notice
+Submit Enquiry
+After submission, show a clear confirmation:
+Thank you. Your enquiry has been received. Our team will contact you shortly.
+
+9. SEO & Content Structure
+Recommended Page Titles
+Page
+Suggested SEO Title
+Home
+Sri Lanka–France Business Council | Ceylon Chamber of Commerce
+About
+About the Sri Lanka–France Business Council | SLFBC
+Membership
+SLFBC Membership | Sri Lanka–France Business Council
+Members
+Member Directory | Sri Lanka–France Business Council
+Events
+Events & Business Activities | SLFBC
+News
+News & Updates | Sri Lanka–France Business Council
+France
+Doing Business with France | SLFBC
+Sri Lanka
+Doing Business in Sri Lanka | SLFBC
+Contact
+Contact the Sri Lanka–France Business Council | SLFBC
+SEO Content Improvements
+Add logo to the title of the page
+Add unique title tags and meta descriptions to every important page.
+Use one H1 per page and logical H2/H3 sections.
+Add descriptive image alt text.
+Keep publication dates and update dates visible on news and country-information pages.
+Use internal links between Members, Events, About, Membership and Contact.
+
+Conclusion
+SLFBC already has the most important raw ingredients for a strong institutional website: a defined bilateral mission, a long operating history, a substantial member network, committee leadership, event activity and a relationship with the Ceylon Chamber of Commerce. The main requirement is to turn these assets into a modern, current and easier-to-use digital platform.
+The redesign should therefore focus on three outcomes: first, make the Council's bilateral business value immediately understandable; second, make the network and activities easy to explore; and third, make every important action—joining, attending, contacting, finding a member or learning about an opportunity—simple to complete.
+Reference & Verification Sources
+Audit target: https://www.slfbc.lk/index.php
+SLFBC homepage and navigation: https://www.slfbc.lk/index.php
+SLFBC Members: https://www.slfbc.lk/members.php
+SLFBC Application: https://www.slfbc.lk/application.php
+SLFBC Events: https://www.slfbc.lk/events.php
+SLFBC Contact: https://www.slfbc.lk/contact.php
+SLFBC About: https://www.slfbc.lk/about_layout.php
+SLFBC Constitution: https://slfbc.lk/constitution.php
+
+Audit note: This report is a website/content/UX audit based on the requested public site and publicly indexed supporting pages reviewed on 24 September 2026. Technical issues such as form submission, server errors, mobile breakpoints, analytics configuration and accessibility conformance should be confirmed with a live browser/device QA pass before development sign-off.
