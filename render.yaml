@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: slfbc-portal
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: APP_NAME
+        value: "Sri Lanka–France Business Council"
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        sync: false
+      - key: APP_SECRET
+        generateValue: true
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: storage/database.sqlite
+      - key: SESSION_LIFETIME
+        value: 7200
+      - key: SESSION_COOKIE_NAME
+        value: slfbc_session
+      - key: SESSION_SECURE_COOKIE
+        value: true
+      - key: ADMIN_RATE_LIMIT_ATTEMPTS
+        value: 5
+      - key: ADMIN_RATE_LIMIT_MINUTES
+        value: 15
