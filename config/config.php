@@ -140,6 +140,6 @@ return [
         'phone_paris' => '+33 1 45 61 00',
         'email' => 'info@slfbc.lk',
         'secretariat_email' => 'slfbc@chamber.lk',
-        'current_term' => '2025/26',
+        'current_term' => '2026/27',
     ],
 ];
