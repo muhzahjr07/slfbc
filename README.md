@@ -1,26 +1,40 @@
 # Sri Lanka–France Business Council (SLFBC) Portal
 
-> **Official Bilateral Business Portal** accredited under the aegis of **The Ceylon Chamber of Commerce** and supported by the **Embassy of France in Colombo**.
+<p align="center">
+  <img src="public/assets/images/logo.svg" alt="SLFBC Logo" width="320">
+</p>
+
+<p align="center">
+  <strong>Official Bilateral Business Portal</strong><br>
+  Accredited under the aegis of <strong>The Ceylon Chamber of Commerce</strong> & supported by the <strong>Embassy of France in Colombo</strong>.
+</p>
+
+<p align="center">
+  <a href="https://github.com/muhzahjr07/slfbc/actions/workflows/ci.yml"><img src="https://img.shields.io/badge/build-passing-brightgreen?style=flat-square&logo=githubactions" alt="Build Status"></a>
+  <a href="https://www.php.net/"><img src="https://img.shields.io/badge/php-%3E%3D%208.2-777bb4.svg?style=flat-square&logo=php" alt="PHP Version"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
+  <a href="tests/run-tests.php"><img src="https://img.shields.io/badge/tests-77%20passed-success?style=flat-square" alt="Test Suite"></a>
+  <a href="tests/http-verify.php"><img src="https://img.shields.io/badge/endpoints-43%20verified-success?style=flat-square" alt="HTTP Endpoints"></a>
+</p>
 
 ---
 
-## 1. Project Overview
+## 1. Executive Overview
 
-The **Sri Lanka–France Business Council (SLFBC)** website is a multi-page, database-driven PHP 8.2+ web application designed to foster, promote, and expand bilateral trade, investment, joint ventures, and economic cooperation between Sri Lanka and the French Republic.
+The **Sri Lanka–France Business Council (SLFBC)** web application is an institutional, multi-page, database-driven PHP 8.2+ platform designed to foster, promote, and expand bilateral trade, investment, joint ventures, and economic cooperation between Sri Lanka and the French Republic.
 
-This application has been developed to replace legacy static pages and fragmented registration endpoints with an editorial, secure, and mobile-responsive institutional platform. It integrates verified member directories, bilateral summit calendars, strategic trade corridors, high-level chamber dispatches, and an authenticated secretariat administration panel.
+Developed to replace fragmented legacy endpoints with a modern, high-performance, and mobile-responsive architecture, the platform integrates verified corporate member directories, bilateral summit calendars, strategic trade corridors, presidential and ambassadorial dispatches, and an authenticated administrative management panel for the Ceylon Chamber Secretariat.
 
 ---
 
-## 2. Technology Stack & Architecture
+## 2. Technology Stack & Architectural Patterns
 
-- **Backend Runtime:** PHP 8.2+ (strictly typed, object-oriented MVC architecture).
-- **Database Engine:** MySQL 8+ / MariaDB 10.4+ in production (compatible with standard cPanel hosting); built-in SQLite auto-provisioning for automated local testing.
-- **Database Layer:** Native PHP Data Objects (`PDO`) with prepared statements and parameter binding.
-- **Frontend Layer:** Semantic HTML5, Vanilla CSS + compiled Tailwind design tokens (reused and adapted from the official Stitch prototype), and Vanilla JavaScript (zero permanent Node.js runtime dependency in production).
-- **Web Server:** Apache 2.4+ with `mod_rewrite` enabled (`.htaccess` routing) or Nginx with standard FastCGI/PHP-FPM rewrite directives.
+- **Runtime:** PHP 8.2+ (strictly typed `declare(strict_types=1);`, clean object-oriented MVC architecture).
+- **Database Layer:** Native PHP Data Objects (`PDO`) with prepared statements and parameter binding. Dual compatibility with MySQL 8+ / MariaDB 10.4+ in production and zero-configuration SQLite for local automated testing.
+- **Frontend Layer:** Semantic HTML5, Vanilla CSS + Tailwind utility tokens (zero permanent Node.js runtime dependency in production).
+- **Web Server:** Apache 2.4+ (`.htaccess` URL rewriting) or Nginx with standard FastCGI/PHP-FPM directives.
 - **Security Engineering:**
-  - Cryptographic CSRF tokens (`hash_hmac` / `random_bytes`) on all state-changing `POST` routes.
+  - Cryptographic HMAC-SHA256 CSRF tokens on all state-changing `POST` routes.
   - Brute-force rate limiting (5 attempts per 15-minute sliding window) on administrative authentication.
   - One-way password hashing using `PASSWORD_BCRYPT` with cost factor 10.
   - Protected document storage (`storage/documents/`) with streaming file downloads accessible only to authorized administrators.
@@ -30,23 +44,16 @@ This application has been developed to replace legacy static pages and fragmente
 
 ---
 
-## 3. Directory Structure
+## 3. Repository Architecture & Directory Structure
 
 ```text
 slfbc/
+├── .github/
+│   ├── workflows/ci.yml        # Automated GitHub Actions test workflow
+│   └── pull_request_template.md # PR review and verification guidelines
 ├── app/
 │   ├── Controllers/            # Application controllers
-│   │   ├── Admin/              # Protected administrative controllers
-│   │   │   ├── ApplicationAdminController.php
-│   │   │   ├── AuthController.php
-│   │   │   ├── DashboardController.php
-│   │   │   ├── EnquiryAdminController.php
-│   │   │   ├── EventAdminController.php
-│   │   │   ├── LeadershipAdminController.php
-│   │   │   ├── MemberAdminController.php
-│   │   │   ├── NewsAdminController.php
-│   │   │   ├── OpportunityAdminController.php
-│   │   │   └── SettingsAdminController.php
+│   │   ├── Admin/              # Protected administrative controllers (Dashboard, Members, News, Events, Applications, etc.)
 │   │   ├── AboutController.php
 │   │   ├── AmbassadorController.php
 │   │   ├── ContactController.php
@@ -72,66 +79,67 @@ slfbc/
 │   │   ├── Validator.php       # Server-side data & file validator
 │   │   └── View.php            # Template rendering engine
 │   ├── Helpers/
-│   │   └── helpers.php         # Global helpers (e, url, asset, csrf_field, etc.)
+│   │   └── helpers.php         # Global template helpers (e, url, asset, csrf_field, etc.)
 │   ├── Middleware/
 │   │   ├── AuthMiddleware.php  # Protected admin route guard
 │   │   └── CSRFMiddleware.php  # State-changing token validator
-│   ├── Models/                 # PDO Active-Record-style Data Models
+│   ├── Models/                 # Active-Record style PDO Data Models
 │   └── Views/                  # Blade-inspired semantic PHP templates
-│       ├── admin/              # Admin dashboard and management views
-│       ├── layouts/            # Header, footer, and navigation layouts
-│       └── [public pages]/     # Home, About, Members, Events, etc.
 ├── bin/
-│   └── create-admin.php        # CLI script to provision administrators
+│   └── create-admin.php        # CLI utility to provision administrative accounts
 ├── config/
 │   ├── config.php              # Global application configuration
 │   └── database.php            # Database connections configuration
 ├── database/
 │   ├── schema.sql              # Production MySQL 8+ schema (InnoDB, utf8mb4)
 │   └── seeds.sql               # Verified initial seed records
-├── docs/
+├── docs/                       # Comprehensive documentation & manuals
 │   ├── CONTENT_VERIFICATION_CHECKLIST.md
 │   ├── CPANEL_DEPLOYMENT_GUIDE.md
 │   ├── DATABASE_OPERATIONS.md
-│   └── SECURITY_AND_TESTING_REPORT.md
+│   ├── SECURITY_AND_TESTING_REPORT.md
+│   └── SLFBC_LAYOUT_WIREFRAME_AND_SEO_BLUEPRINT.md
 ├── public/                     # Web server document root
 │   ├── .htaccess               # Apache URL rewrite rules & security headers
 │   ├── index.php               # Single front controller entrypoint
-│   ├── assets/                 # CSS, JS, SVG, and optimized imagery
-│   └── uploads/                # Publicly served uploads (logos, covers)
+│   └── assets/                 # CSS, JS, SVG, and optimized imagery
 ├── routes/
 │   └── web.php                 # Route definitions & legacy 301 redirects
-├── storage/                    # Non-public application logs & documents
-│   └── documents/              # Confidential uploaded applicant files
-└── tests/
-    ├── run-tests.php           # 70-assertion automated QA & security test suite
-    └── http-verify.php         # End-to-end HTTP integration test suite
+├── screenshots/                # 56 Full-page desktop screenshots across all views
+├── storage/                    # Non-public application logs & applicant documents
+├── tests/
+│   ├── run-tests.php           # 77-assertion automated unit & security test suite
+│   └── http-verify.php         # 43-endpoint end-to-end HTTP integration test suite
+├── CHANGELOG.md                # Detailed release notes and version history
+├── composer.json               # Project manifest, PSR-4 autoloading, and metadata
+├── CONTRIBUTING.md             # Contribution guidelines
+├── LICENSE                     # MIT License
+└── SECURITY.md                 # Security vulnerability disclosure policy
 ```
 
 ---
 
-## 4. Local Development Setup
+## 4. Local Development Quick Start
 
 ### Prerequisites
-- PHP 8.2 or 8.3 with extensions enabled: `pdo`, `pdo_mysql`, `pdo_sqlite`, `fileinfo`, `mbstring`, `curl`, `openssl`.
-- MySQL 8.0+ / MariaDB (or SQLite for automated testing without external server).
+- PHP 8.2 or 8.3 with extensions: `pdo`, `pdo_mysql`, `pdo_sqlite`, `fileinfo`, `mbstring`, `curl`, `openssl`.
 
-### Quick Start (Zero-Configuration Local Server)
-1. **Clone or navigate to the project directory:**
+### Installation & Launch
+1. **Clone the repository:**
    ```bash
-   cd "C:\Users\User\Desktop\Spillburg Admin\projects\slfbc"
+   git clone https://github.com/muhzahjr07/slfbc.git
+   cd slfbc
    ```
 
 2. **Configure environment:**
-   Copy the example environment configuration:
    ```bash
    cp .env.example .env
    ```
-   *Note: By default, the application is pre-configured to use SQLite (`DB_CONNECTION=sqlite`) for immediate zero-dependency testing, or MySQL (`DB_CONNECTION=mysql`) for production.*
+   *(By default, `.env` uses `DB_CONNECTION=sqlite`, automatically provisioning `storage/database.sqlite` with seed records on first run).*
 
-3. **Start the PHP development server:**
+3. **Start the local PHP server:**
    ```bash
-   php -S localhost:8000 -t public
+   php -S localhost:8000 -t public public/index.php
    ```
 
 4. **Access the application in your browser:**
@@ -149,10 +157,10 @@ slfbc/
 - **Passphrase:** `Admin@SLFBC2026!`
 - **Role:** Super Administrator (`super_admin`)
 
-*(Important: Change this passphrase immediately upon production deployment).*
+*(Important: Change this passphrase immediately upon deployment via `/admin/settings` or CLI).*
 
-### Provisioning New Administrators via CLI
-To create a new administrator account securely without exposing passwords in source code:
+### Provisioning Administrators via CLI
+To provision an administrator account securely without exposing passwords in source code:
 ```bash
 php bin/create-admin.php "Jane Doe" jane.doe@slfbc.lk "SecurePassphrase123!" super_admin
 ```
@@ -161,13 +169,12 @@ php bin/create-admin.php "Jane Doe" jane.doe@slfbc.lk "SecurePassphrase123!" sup
 
 ## 6. Automated Testing & Verification
 
-The application includes an automated Quality Assurance and Security test suite with **77 assertions** covering database integrity, route resolution, legacy 301 redirects, CSRF protection, file upload sanitization, brute-force rate-limiting, and form persistence, plus an end-to-end HTTP verification suite covering **43 endpoints**.
+The application includes an automated test suite with **77 assertions** covering database integrity, route resolution, legacy 301 redirects, CSRF protection, file upload sanitization, brute-force rate-limiting, and form persistence, plus an end-to-end HTTP verification suite covering **43 endpoints**.
 
-### Run the Unit & Integration Test Suite:
+### Run Core Unit & Integration Suite:
 ```bash
 php tests/run-tests.php
 ```
-**Test Results:**
 ```text
 =======================================================
  TEST EXECUTION SUMMARY
@@ -180,11 +187,10 @@ All test suites passed successfully!
 ```
 
 ### Run End-to-End HTTP Server Verification:
-Ensure the server is running on `http://localhost:8000`, then run:
+With the server running on `http://localhost:8000`:
 ```bash
 php tests/http-verify.php
 ```
-**HTTP Results:**
 ```text
 =======================================================
  HTTP VERIFICATION COMPLETE
@@ -196,61 +202,26 @@ php tests/http-verify.php
 
 ---
 
-## 7. Public Website Information Architecture
+## 7. SEO, Search Engine Indexing & Wireframe Portfolio
 
-| Route | Page Title | Purpose / Content |
-|---|---|---|
-| `/` | Homepage | Hero bilateral section, core pillars, verified members, upcoming events, Chamber affiliation. |
-| `/about` | About the Council | History, role within Ceylon Chamber of Commerce, statutory objectives, bilateral ties. |
-| `/governance` or `/leadership` | Leadership & Governance | Executive Committee directory, President, VPs, Chamber Secretariat, configurable term. |
-| `/ambassador-message`| Ambassador's Message | Official message from the Ambassador of France to Sri Lanka & the Maldives. |
-| `/membership` | Membership Overview | Membership tiers, eligibility criteria, corporate requirements, fee schedules. |
-| `/membership/apply` or `/apply` | Membership Application | Multi-step corporate application form with secure document uploads and review tracking. |
-| `/members` | Member Directory | Real-time database-driven search by company name and live/server filter by industry sector. |
-| `/members/{slug}` | Member Profile | Company profile, logo, sector categorization, export corridor, and official website URL. |
-| `/news` | News & Communiqués | Chamber news archive with category filters, publication dates, and excerpts. |
-| `/news/{slug}` | News Article Detail | Full communiqué text, cover imagery, SEO tags, and related bilateral articles. |
-| `/events` | Bilateral Events & Summits | Upcoming forums, ministerial delegations, networking mixers, and past archives. |
-| `/events/{slug}` | Event Detail | Event agenda, venue details, calendar dates, and registration links. |
-| `/opportunities` | Priority Corridors | Strategic bilateral investment, maritime, green hydrogen, tech, and export opportunities. |
-| `/opportunities/{slug}` | Opportunity Detail | Dedicated dossier breakdown, scope, institutional partners (BOI, EDB, Business France). |
-| `/france` or `/france-business` | Doing Business with France | Trade environment, French regional hubs, EU regulatory standards, bilateral incentives. |
-| `/sri-lanka` or `/srilanka-business` | Doing Business in Sri Lanka | Strategic transshipment location, BOI incentives, Colombo Port City, export corridors. |
-| `/gallery` | Photo Gallery & Media | High-resolution photography of delegations, protocol ceremonies, and galas. |
-| `/contact` | Contact Secretariat | Official Secretariat address at Ceylon Chamber of Commerce, telephone, email, and inquiry form. |
-| `/faq` | FAQs Redirect | 301 Redirect to `/membership#faqs` anchor. |
-| `/constitution` | Constitution Redirect | 301 Redirect to `/about#constitution` anchor. |
-| `/sitemap.xml` | XML Sitemap | Dynamic search engine index of all active public routes, news, and events. |
-| `/robots.txt` | Robots Policy | Crawl directives allowing public indexing while disallowing `/admin/` and `/storage/`. |
+- **Dynamic XML Sitemap:** Automatically generated at [`/sitemap.xml`](http://localhost:8000/sitemap.xml).
+- **Search Directives:** Configured at [`/robots.txt`](http://localhost:8000/robots.txt).
+- **Metadata Blueprint:** Full copywriting specifications and keyword mappings are detailed in [`docs/SLFBC_LAYOUT_WIREFRAME_AND_SEO_BLUEPRINT.md`](docs/SLFBC_LAYOUT_WIREFRAME_AND_SEO_BLUEPRINT.md).
+- **Screenshot Portfolio:** Complete 56-page visual archive available in [`screenshots/`](screenshots/).
 
 ---
 
-## 8. Secretariat Administration Panel
+## 8. Deployment & Production Hosting
 
-Access path: `/admin` (redirects to `/admin/login` if unauthenticated).
-
-- **Dashboard:** Real-time counters (Active Members, Published News, Upcoming Events, Pending Applications, Unread Inquiries).
-- **Member Management (`/admin/members`):** Full CRUD, sector assignment, patron/corporate tiering, logo uploads, and homepage featuring toggles.
-- **News Management (`/admin/news`):** Editorial drafting, category classification, rich text formatting, cover image uploads, and SEO metadata configuration.
-- **Event Management (`/admin/events`):** Date/time scheduling, venue details, registration link management, and automatic upcoming/past archiving.
-- **Membership Application Review (`/admin/applications`):** Application inspection, audit notes, review status updates (`pending`, `under_review`, `approved`, `rejected`), and **secure streaming download** of confidential applicant documents (`/admin/applications/{id}/documents/{doc_id}/download`).
-- **Inquiry Management (`/admin/enquiries`):** Inbox for incoming public inquiries with read/unread tracking, status tagging, and internal notes.
-- **Leadership Management (`/admin/leadership`):** Executive Committee roster editing, portrait uploads, and configurable term year.
-- **Business Opportunities (`/admin/opportunities`):** Priority project pipeline management with corridor tagging.
-- **Site Settings (`/admin/settings`):** Global contact details, Secretariat address, telephone numbers, and top announcement banner configuration.
+Comprehensive step-by-step instructions for deploying to standard Apache/Nginx cPanel hosting environments (including MySQL database importation, document storage permissions, and URL rewrites) are documented in [`docs/CPANEL_DEPLOYMENT_GUIDE.md`](docs/CPANEL_DEPLOYMENT_GUIDE.md).
 
 ---
 
-## 9. Deployment & Operations Documentation
+## 9. License & Institutional Attribution
 
-Detailed operational guides are available in the [`docs/`](file:///c:/Users/User/Desktop/Spillburg%20Admin/projects/slfbc/docs) directory:
-- [cPanel Deployment Guide](file:///c:/Users/User/Desktop/Spillburg%20Admin/projects/slfbc/docs/CPANEL_DEPLOYMENT_GUIDE.md): Step-by-step instructions for uploading files, configuring MySQL on cPanel, setting up PHP 8.2+, and securing document roots.
-- [Database Operations](file:///c:/Users/User/Desktop/Spillburg%20Admin/projects/slfbc/docs/DATABASE_OPERATIONS.md): MySQL schema import, initial seeding, backup/restore procedures, and foreign key indexes.
-- [Content Verification Checklist](file:///c:/Users/User/Desktop/Spillburg%20Admin/projects/slfbc/docs/CONTENT_VERIFICATION_CHECKLIST.md): Editorial checklist for Council officials to confirm leadership rosters, membership fee schedules, and ambassador statements prior to launch.
-- [Security & Testing Report](file:///c:/Users/User/Desktop/Spillburg%20Admin/projects/slfbc/docs/SECURITY_AND_TESTING_REPORT.md): Full audit report detailing security controls, OWASP protections, and test suite execution logs.
+This project is released under the **[MIT License](LICENSE)**.
 
----
-
-## 10. License & Copyright
-
-© 2026 Sri Lanka–France Business Council (SLFBC). Affiliated with The Ceylon Chamber of Commerce. All rights reserved.
+- **Operating Body:** Sri Lanka–France Business Council (SLFBC)
+- **Accredited Chamber:** [The Ceylon Chamber of Commerce](https://www.chamber.lk), 50, Nawam Mawatha, Colombo 02, Sri Lanka.
+- **Diplomatic Patronage:** Embassy of the French Republic, Colombo, Sri Lanka.
+- **Architect & Engineering:** Spillburg Technologies.

@@ -1,0 +1,68 @@
+{
+    "name": "spillburg/slfbc-portal",
+    "description": "Official Bilateral Trade and Investment Portal of the Sri Lanka–France Business Council (SLFBC), accredited under The Ceylon Chamber of Commerce and supported by the Embassy of France in Colombo.",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Spillburg Tech & Engineering Team",
+            "email": "frm.zaharan.jr@gmail.com",
+            "role": "Lead Architect & Developer"
+        },
+        {
+            "name": "The Ceylon Chamber of Commerce Bilateral Secretariat",
+            "email": "slfbc@chamber.lk",
+            "role": "Secretariat Administrator"
+        }
+    ],
+    "keywords": [
+        "sri-lanka",
+        "france",
+        "business-council",
+        "ceylon-chamber-of-commerce",
+        "bilateral-trade",
+        "foreign-investment",
+        "trade-portal",
+        "php8",
+        "mvc",
+        "tailwind-css",
+        "cpanel-deployment",
+        "diplomatic-trade"
+    ],
+    "homepage": "https://github.com/muhzahjr07/slfbc",
+    "support": {
+        "email": "info@slfbc.lk",
+        "docs": "https://github.com/muhzahjr07/slfbc#readme"
+    },
+    "require": {
+        "php": ">=8.2.0",
+        "ext-pdo": "*",
+        "ext-mbstring": "*",
+        "ext-fileinfo": "*",
+        "ext-openssl": "*",
+        "ext-curl": "*"
+    },
+    "suggest": {
+        "ext-pdo_mysql": "Required for MySQL / MariaDB in production environments",
+        "ext-pdo_sqlite": "Used for zero-configuration local automated testing"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Helpers/helpers.php"
+        ]
+    },
+    "scripts": {
+        "test": "php tests/run-tests.php",
+        "http-verify": "php tests/http-verify.php",
+        "serve": "php -S localhost:8000 -t public public/index.php"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
