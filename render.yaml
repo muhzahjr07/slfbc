@@ -32,3 +32,4 @@ services:
         value: 5
       - key: ADMIN_RATE_LIMIT_MINUTES
         value: 15
+

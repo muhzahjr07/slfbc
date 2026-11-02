@@ -18,3 +18,4 @@ chmod -R 775 /var/www/html/storage /var/www/html/public/uploads
 
 echo "Starting Apache on port ${PORT}..."
 exec apache2-foreground
+

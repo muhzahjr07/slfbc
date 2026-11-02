@@ -80,3 +80,4 @@ Once Render shows **Live**:
   - **Email:** `admin@slfbc.lk`
   - **Passphrase:** `Admin@SLFBC2026!`
 - *Important: Immediately log in to `/admin/settings` or update your admin password upon production rollout.*
+
