@@ -64,12 +64,32 @@ if (!function_exists('env')) {
     }
 }
 
+// Auto-detect base URL when APP_URL is unset, default localhost, or in cloud environments like Render
+if (!function_exists('detectAppUrl')) {
+    function detectAppUrl(): string {
+        $envUrl = env('APP_URL');
+        if (!empty($envUrl) && $envUrl !== 'http://localhost:8000') {
+            return rtrim((string)$envUrl, '/');
+        }
+
+        // Detect from host headers if running on Render / production reverse proxies
+        if (!empty($_SERVER['HTTP_HOST'])) {
+            $proto = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+                     (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+                     ? 'https' : 'http';
+            return $proto . '://' . $_SERVER['HTTP_HOST'];
+        }
+
+        return !empty($envUrl) ? rtrim((string)$envUrl, '/') : 'http://localhost:8000';
+    }
+}
+
 return [
     'app' => [
         'name' => env('APP_NAME', 'Sri Lanka–France Business Council'),
         'env' => env('APP_ENV', 'production'),
         'debug' => env('APP_DEBUG', false),
-        'url' => rtrim((string)env('APP_URL', 'http://localhost:8000'), '/'),
+        'url' => detectAppUrl(),
         'secret' => env('APP_SECRET', 'slfbc-secret-bilateral-key-2026'),
         'root_dir' => $rootPath,
         'public_dir' => $rootPath . '/public',
