@@ -202,7 +202,56 @@ php tests/http-verify.php
 
 ---
 
-## 7. SEO, Search Engine Indexing & Wireframe Portfolio
+## 7. Visual Interface & Screenshot Gallery
+
+A comprehensive 56-page desktop screenshot portfolio is archived in the [`screenshots/`](screenshots/) directory. Below is a curated gallery showcasing key public pages, dynamic directories, and protected administration consoles:
+
+### 7.1 Public Institutional Portal
+
+| Homepage (`/`) | Membership Hub (`/membership`) |
+|:---:|:---:|
+| <a href="screenshots/01-home.png"><img src="screenshots/01-home.png" alt="Homepage" width="420"/></a> | <a href="screenshots/05-membership-overview.png"><img src="screenshots/05-membership-overview.png" alt="Membership Overview" width="420"/></a> |
+| *Diplomatic strip, 4 core pillars, statistics & corridors* | *3-tier corporate matrix, criteria & fee schedules* |
+
+| Corporate Application (`/membership/apply`) | Application Confirmation (`/membership/apply/success`) |
+|:---:|:---:|
+| <a href="screenshots/06-membership-apply.png"><img src="screenshots/06-membership-apply.png" alt="Membership Application" width="420"/></a> | <a href="screenshots/07-membership-apply-success.png"><img src="screenshots/07-membership-apply-success.png" alt="Application Confirmation Receipt" width="420"/></a> |
+| *5-stage verified intake with encrypted file upload* | *Formal Secretariat receipt & tracking reference* |
+
+| Member Directory (`/members`) | Member Profile Detail (`/members/{slug}`) |
+|:---:|:---:|
+| <a href="screenshots/08-members-directory.png"><img src="screenshots/08-members-directory.png" alt="Member Directory" width="420"/></a> | <a href="screenshots/09-member-detail-cma-cgm-lanka.png"><img src="screenshots/09-member-detail-cma-cgm-lanka.png" alt="Member Detail - CMA CGM" width="420"/></a> |
+| *Real-time keyword search & sector filter pills* | *Bilateral trade footprint, operations & contact desks* |
+
+| Governance & ExCo (`/governance`) | Ambassador's Dispatch (`/ambassador-message`) |
+|:---:|:---:|
+| <a href="screenshots/03-governance-leadership.png"><img src="screenshots/03-governance-leadership.png" alt="Governance & Executive Committee" width="420"/></a> | <a href="screenshots/04-ambassador-message.png"><img src="screenshots/04-ambassador-message.png" alt="Ambassador's Message" width="420"/></a> |
+| *Term 2025/26 Executive Committee directory* | *Official diplomatic address & embassy commercial desk* |
+
+| Bilateral Summits & Events (`/events`) | Event Detail (`/events/{slug}`) |
+|:---:|:---:|
+| <a href="screenshots/20-events-summits.png"><img src="screenshots/20-events-summits.png" alt="Events Calendar" width="420"/></a> | <a href="screenshots/21-event-detail-bilateral-investment-forum.png"><img src="screenshots/21-event-detail-bilateral-investment-forum.png" alt="Event Detail" width="420"/></a> |
+| *Summits, delegation itineraries & gala banquets* | *2026 Bilateral Investment Forum (Hôtel de Crillon)* |
+
+---
+
+### 7.2 Protected Secretariat Administration Panel (`/admin`)
+
+| Admin Login (`/admin/login`) | Secretariat Dashboard (`/admin`) |
+|:---:|:---:|
+| <a href="screenshots/35-admin-login.png"><img src="screenshots/35-admin-login.png" alt="Admin Login" width="420"/></a> | <a href="screenshots/36-admin-dashboard.png"><img src="screenshots/36-admin-dashboard.png" alt="Secretariat Dashboard" width="420"/></a> |
+| *Sliding-window rate-limiting & session guards* | *Live KPI metrics, workflow queues & inbox counters* |
+
+| Application Dossier Review (`/admin/applications/1`) | Directory Management (`/admin/members`) |
+|:---:|:---:|
+| <a href="screenshots/47-admin-application-detail.png"><img src="screenshots/47-admin-application-detail.png" alt="Application Dossier Review" width="420"/></a> | <a href="screenshots/37-admin-members-list.png"><img src="screenshots/37-admin-members-list.png" alt="Member Directory Management" width="420"/></a> |
+| *Due diligence notes, ratification & secure document streaming* | *Corporate member CRUD & sector assignments* |
+
+> *Explore the complete collection of all 56 full-page screenshots in the [`screenshots/`](screenshots/) directory.*
+
+---
+
+## 8. SEO, Search Engine Indexing & Wireframe Portfolio
 
 - **Dynamic XML Sitemap:** Automatically generated at [`/sitemap.xml`](http://localhost:8000/sitemap.xml).
 - **Search Directives:** Configured at [`/robots.txt`](http://localhost:8000/robots.txt).
@@ -211,13 +260,14 @@ php tests/http-verify.php
 
 ---
 
-## 8. Deployment & Production Hosting
+## 9. Deployment & Production Hosting
 
-Comprehensive step-by-step instructions for deploying to standard Apache/Nginx cPanel hosting environments (including MySQL database importation, document storage permissions, and URL rewrites) are documented in [`docs/CPANEL_DEPLOYMENT_GUIDE.md`](docs/CPANEL_DEPLOYMENT_GUIDE.md).
+- **Render.com Cloud Hosting:** Complete Dockerfile and blueprint definitions are available in [`render.yaml`](render.yaml) and documented in [`docs/RENDER_DEPLOYMENT_GUIDE.md`](docs/RENDER_DEPLOYMENT_GUIDE.md).
+- **cPanel / Apache / Nginx Deployment:** Comprehensive step-by-step instructions for deploying to standard cPanel hosting environments are documented in [`docs/CPANEL_DEPLOYMENT_GUIDE.md`](docs/CPANEL_DEPLOYMENT_GUIDE.md).
 
 ---
 
-## 9. License & Institutional Attribution
+## 10. License & Institutional Attribution
 
 This project is released under the **[MIT License](LICENSE)**.
 
