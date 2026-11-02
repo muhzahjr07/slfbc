@@ -24,3 +24,4 @@ If you discover a potential security vulnerability within this application (incl
 - **XSS Mitigation:** Strict UTF-8 escaping via `e()` across all template views.
 - **Brute Force Protection:** Sliding-window IP rate limiting on administrative endpoints.
 - **Confidential Document Protection:** Candidate application files stored outside web root (`storage/documents/`) with streaming authorization checks.
+

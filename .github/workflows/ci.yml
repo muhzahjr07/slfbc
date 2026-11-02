@@ -42,3 +42,4 @@ jobs:
       - name: Execute End-to-End HTTP 43-Endpoint Verification Suite
         run: |
           php tests/http-verify.php
+

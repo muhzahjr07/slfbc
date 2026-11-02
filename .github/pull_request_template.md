@@ -19,3 +19,4 @@ Briefly describe the change, feature, or bug fix introduced by this PR.
 - [ ] Code follows PSR-12 and strict typing (`declare(strict_types=1);`).
 - [ ] No plaintext passwords or confidential document paths committed.
 - [ ] Semantic HTML and Tailwind tokens verified across mobile and desktop.
+

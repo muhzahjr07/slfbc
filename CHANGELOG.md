@@ -53,3 +53,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Design & Wireframe Portfolio:**
   - Complete 56-page full-height screenshot archive across all public and admin views (`screenshots/`).
   - Visual layout and copywriting architecture blueprint (`SLFBC_LAYOUT_WIREFRAME_AND_SEO_BLUEPRINT.md`).
+

@@ -28,3 +28,4 @@ php tests/http-verify.php
 - Use semantic commit messages (e.g., `feat: ...`, `fix: ...`, `docs: ...`, `chore: ...`).
 - Complete all sections in `.github/pull_request_template.md`.
 - Pull requests must be reviewed and signed off by the lead technical maintainer and Ceylon Chamber Secretariat.
+
