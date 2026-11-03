@@ -86,6 +86,8 @@ $publicEmail = \App\Models\SiteSetting::get('secretariat_email', 'info@slfbc.lk'
         <span class="text-slate-600">|</span>
         <a class="hover:text-white transition-colors" href="<?= url('/membership') ?>">Terms of Membership</a>
         <span class="text-slate-600">|</span>
+        <a class="hover:text-white transition-colors" href="<?= url('/sitemap.xml') ?>" target="_blank">Sitemap</a>
+        <span class="text-slate-600">|</span>
         <a class="hover:text-white transition-colors" href="<?= url('/contact') ?>">Secretariat Inquiries</a>
       </div>
     </div>
