@@ -647,7 +647,7 @@ $memberCountDisplay = $settings['member_count_display'] ?? '70+ Firms (Verified)
       <div class="bg-white border-2 border-slate-200 rounded-lg mb-12 shadow-sm overflow-hidden">
         <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
           <div class="lg:col-span-4 aspect-square bg-slate-100 overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-200">
-            <img src="<?= asset($president['portrait_path'] ?? 'assets/images/president-dubois.jpg') ?>" alt="<?= e($president['name']) ?>" class="w-full h-full object-cover">
+            <img src="<?= asset($president['portrait_path'] ?? 'assets/images/president-dubois.jpg') ?>" alt="<?= e($president['name']) ?>" class="w-full h-full object-cover object-[35%_25%]">
           </div>
           <div class="lg:col-span-8 p-8 lg:p-12 flex flex-col justify-between">
             <div>
