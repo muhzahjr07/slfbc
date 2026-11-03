@@ -33,7 +33,7 @@
           The <strong>Sri Lanka–France Business Council (SLFBC)</strong> operates under the constitution and administrative stewardship of <strong>The Ceylon Chamber of Commerce</strong> (established 1839) in close diplomatic affiliation with the <strong>Embassy of the French Republic in Sri Lanka</strong>.
         </p>
         <p>
-          By accessing this digital portal (<a href="<?= url('/') ?>" class="text-[#002654] font-semibold underline">slfbc-portal.onrender.com</a>), submitting an application for membership, registering for council-sponsored bilateral summits, or engaging with our commercial matchmaking directories, you agree to be bound by these Terms and Conditions and the Council's Constitution.
+          By accessing this digital portal (<a href="<?= url('/') ?>" class="text-[#002654] font-semibold underline">slfbc.lk</a>), submitting an application for membership, registering for council-sponsored bilateral summits, or engaging with our commercial matchmaking directories, you agree to be bound by these Terms and Conditions and the Council's Constitution.
         </p>
       </div>
 
@@ -115,3 +115,4 @@
     </div>
   </div>
 </section>
+
