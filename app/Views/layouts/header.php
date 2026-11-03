@@ -7,28 +7,20 @@ $phoneColombo = \App\Models\SiteSetting::get('secretariat_phone', '+94 11 558 88
 $phoneParis = \App\Models\SiteSetting::get('paris_phone', '+33 1 45 61 00');
 ?>
 <!-- TOP PROTOCOL BAR (Diplomatic Grounding Header Strip) -->
-<div class="w-full bg-[#002654] text-white py-2 px-4 sm:px-6 lg:px-12 border-b border-[#001c3f] text-xs font-sans">
-  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-    <div class="flex items-center gap-2.5">
-      <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-      <p class="uppercase tracking-wider text-slate-200 font-semibold text-[11px] sm:text-xs">
-        Sri Lanka–France Bilateral Chamber <span class="text-slate-400 mx-1">|</span> Affiliated with The Ceylon Chamber of Commerce &amp; Embassy of France
+<div class="w-full bg-[#002654] text-white py-2 px-3 sm:px-6 lg:px-12 border-b border-[#001c3f] text-xs font-sans overflow-hidden">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4 whitespace-nowrap">
+    <div class="flex items-center gap-2 min-w-0 overflow-hidden">
+      <span class="w-2 h-2 rounded-full bg-amber-400 shrink-0"></span>
+      <p class="uppercase tracking-wider text-slate-200 font-semibold text-[11px] sm:text-xs truncate m-0">
+        Sri Lanka–France Bilateral Chamber <span class="text-slate-400 mx-1 hidden sm:inline">|</span> <span class="text-slate-300 hidden sm:inline">Affiliated with The Ceylon Chamber of Commerce &amp; Embassy of France</span>
       </p>
     </div>
-    <div class="flex items-center gap-3 sm:gap-4 uppercase tracking-wider font-semibold text-slate-200 text-[11px] sm:text-xs">
+    <div class="flex items-center gap-3 sm:gap-4 uppercase tracking-wider font-semibold text-slate-200 text-[11px] sm:text-xs shrink-0">
       <div class="flex items-center gap-1 text-slate-300">
         <span class="text-white underline cursor-pointer">EN</span>
         <span class="text-slate-500">/</span>
         <span class="hover:text-white cursor-pointer transition-colors" title="Version française">FR</span>
       </div>
-      <span class="text-slate-500">|</span>
-      <?php if (\App\Core\Auth::check()): ?>
-        <a class="text-emerald-400 hover:text-white transition-colors flex items-center gap-1" href="<?= url('/admin') ?>">
-          <span class="material-symbols-outlined text-sm">dashboard</span> Admin Portal
-        </a>
-      <?php else: ?>
-        <a class="text-amber-300 hover:text-white transition-colors" href="<?= url('/admin/login') ?>">Admin Login</a>
-      <?php endif; ?>
       <span class="text-slate-500 hidden md:inline">|</span>
       <span class="hidden md:inline text-slate-300">Colombo: <strong class="text-white"><?= e($phoneColombo) ?></strong></span>
       <span class="text-slate-500 hidden lg:inline">|</span>
@@ -117,9 +109,6 @@ $phoneParis = \App\Models\SiteSetting::get('paris_phone', '+33 1 45 61 00');
     <div class="pt-4 border-t border-slate-200 mt-auto flex flex-col gap-2">
       <a class="w-full py-3 text-center bg-[#b91c1c] text-white font-bold text-sm uppercase tracking-wider rounded" href="<?= url('/apply') ?>">
         Become a Member
-      </a>
-      <a class="w-full py-2.5 text-center border border-slate-300 text-slate-700 font-bold text-sm uppercase tracking-wider rounded" href="<?= url('/admin/login') ?>">
-        Admin Portal Login
       </a>
     </div>
   </div>
