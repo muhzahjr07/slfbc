@@ -153,6 +153,9 @@ $publicRoutes = [
     '/srilanka-business' => 'Doing Business in Sri Lanka Alias',
     '/gallery' => 'Photo Gallery & Media',
     '/contact' => 'Contact the Secretariat',
+    '/sitemap' => 'Visual Sitemap & Directory Index',
+    '/terms' => 'Terms and Conditions',
+    '/privacy' => 'Privacy Policy',
     '/robots.txt' => 'Robots.txt Output',
     '/sitemap.xml' => 'XML Sitemap Output',
 ];

@@ -32,6 +32,9 @@ class SitemapController
             'sri-lanka',
             'gallery',
             'contact',
+            'sitemap',
+            'terms',
+            'privacy',
         ];
 
         $members = Member::allActive(null, null, 1, 1000);
@@ -97,5 +100,25 @@ class SitemapController
         $out .= "\n";
         $out .= "Sitemap: {$baseUrl}/sitemap.xml\n";
         return $out;
+    }
+
+    /**
+     * Visual HTML Sitemap with categorized openable links
+     */
+    public function html(Request $request, Response $response): string
+    {
+        $members = Member::allActive(null, null, 1, 100);
+        $articles = News::allPublished(null, null, 1, 50);
+        $upcomingEvents = Event::getUpcoming(20);
+        $pastEvents = Event::getPast(20);
+
+        return View::render('sitemap.index', [
+            'pageTitle' => 'Visual Sitemap & Directory Map | Sri Lanka–France Business Council',
+            'metaDescription' => 'Explore the complete directory structure and page index of the official Sri Lanka–France Business Council portal under The Ceylon Chamber of Commerce.',
+            'members' => $members,
+            'articles' => $articles,
+            'upcomingEvents' => $upcomingEvents,
+            'pastEvents' => $pastEvents,
+        ]);
     }
 }

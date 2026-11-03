@@ -35,6 +35,7 @@ $publicEmail = \App\Models\SiteSetting::get('secretariat_email', 'info@slfbc.lk'
           <li><a class="hover:text-white transition-colors" href="<?= url('/members') ?>">Member Directory</a></li>
           <li><a class="hover:text-white transition-colors" href="<?= url('/membership') ?>">Membership Information &amp; Fees</a></li>
           <li><a class="hover:text-white transition-colors" href="<?= url('/about#constitution') ?>">Constitution &amp; By-Laws</a></li>
+          <li><a class="hover:text-white transition-colors" href="<?= url('/sitemap') ?>">Visual Sitemap</a></li>
         </ul>
       </div>
 
@@ -81,12 +82,12 @@ $publicEmail = \App\Models\SiteSetting::get('secretariat_email', 'info@slfbc.lk'
   <div class="w-full border-t border-white/10 bg-[#071326] py-5 px-4 sm:px-6 lg:px-12 text-xs text-slate-400">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-medium">
       <p>© <?= date('Y') ?> Sri Lanka–France Business Council. Affiliated with The Ceylon Chamber of Commerce. All rights reserved.</p>
-      <div class="flex items-center gap-4">
-        <a class="hover:text-white transition-colors" href="<?= url('/about') ?>">Institutional Charter</a>
+      <div class="flex flex-wrap items-center gap-4">
+        <a class="hover:text-white transition-colors" href="<?= url('/terms') ?>">Terms &amp; Conditions</a>
         <span class="text-slate-600">|</span>
-        <a class="hover:text-white transition-colors" href="<?= url('/membership') ?>">Terms of Membership</a>
+        <a class="hover:text-white transition-colors" href="<?= url('/privacy') ?>">Privacy Policy</a>
         <span class="text-slate-600">|</span>
-        <a class="hover:text-white transition-colors" href="<?= url('/sitemap.xml') ?>" target="_blank">Sitemap</a>
+        <a class="hover:text-white transition-colors" href="<?= url('/sitemap') ?>">Sitemap</a>
         <span class="text-slate-600">|</span>
         <a class="hover:text-white transition-colors" href="<?= url('/contact') ?>">Secretariat Inquiries</a>
       </div>

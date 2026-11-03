@@ -20,6 +20,7 @@ use App\Controllers\CountryController;
 use App\Controllers\GalleryController;
 use App\Controllers\ContactController;
 use App\Controllers\SitemapController;
+use App\Controllers\LegalController;
 
 // Admin Controllers
 use App\Controllers\Admin\AuthController;
@@ -94,7 +95,14 @@ $router->get('/constitution', function ($req, $res) {
     $res->redirect(\App\Core\View::url('about') . '#constitution', 301);
 });
 
-// SEO & Search Engine Indexing
+// Legal, Privacy & Compliance
+$router->get('/terms', [LegalController::class, 'terms']);
+$router->get('/terms-and-conditions', [LegalController::class, 'terms']);
+$router->get('/privacy', [LegalController::class, 'privacy']);
+$router->get('/privacy-policy', [LegalController::class, 'privacy']);
+
+// HTML Visual Sitemap & Search Engine Indexing
+$router->get('/sitemap', [SitemapController::class, 'html']);
 $router->get('/sitemap.xml', [SitemapController::class, 'xml']);
 $router->get('/robots.txt', [SitemapController::class, 'robots']);
 
