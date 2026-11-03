@@ -435,7 +435,7 @@ SQL;
             ['committee_term', '2026/27', 'Current Committee Term Year'],
             ['historical_established_year', '2004', 'Council Founding Year'],
             ['member_count_display', '70+ Corporate Members (Verified)', 'Verified Membership Display'],
-            ['bilateral_announcement', 'EXECUTIVE COMMITTEE 2026/27 CONVENED | ACCREDITED UNDER THE CEYLON CHAMBER OF COMMERCE', 'Top Banner Announcement Text'],
+            ['bilateral_announcement', 'Executive Committee 2026/27 Convened — Bilateral Facilitation Active', 'Top Banner Announcement Text'],
             ['president_quote', 'Our bilateral mission is dedicated to fostering tangible, high-value joint ventures between Sri Lanka and France, bridging enterprise innovation with sovereign institutional support.', 'Presidential Quote on Homepage'],
         ];
         $stStmt = $pdo->prepare("INSERT OR IGNORE INTO site_settings (key_name, key_value, description) VALUES (?, ?, ?)");

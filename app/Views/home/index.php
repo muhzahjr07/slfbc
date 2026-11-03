@@ -9,22 +9,20 @@ $memberCountDisplay = $settings['member_count_display'] ?? '70+ Firms (Verified)
 ?>
 
 <!-- TOP PROTOCOL / OFFICIAL BILATERAL ANNOUNCEMENT STRIP -->
-<section class="w-full bg-slate-100 border-b border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-3 flex flex-wrap items-center justify-between gap-3 text-sm">
-    <div class="flex items-center gap-3">
-      <span class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-300 text-[#002654] font-bold text-xs uppercase tracking-wider rounded">
+<section class="w-full bg-slate-50 border-b border-slate-200 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-2 flex items-center justify-between gap-4 text-xs whitespace-nowrap">
+    <div class="flex items-center gap-2.5 min-w-0">
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white border border-slate-300 text-[#002654] font-bold uppercase tracking-wider rounded shrink-0">
         <span class="w-2 h-2 rounded-full bg-[#b91c1c]"></span>
-        OFFICIAL BILATERAL REGISTER
+        Council Dispatch
       </span>
-      <span class="text-slate-600 font-medium hidden md:inline text-xs sm:text-sm">
-        Under the Secretariat Administration of The Ceylon Chamber of Commerce
-      </span>
+      <p class="font-medium text-slate-700 truncate m-0">
+        <?= e(str_ireplace([' | ACCREDITED UNDER THE CEYLON CHAMBER OF COMMERCE', 'under the secretariat administration of the ceylon chamber of commerce', '| ACCREDITED UNDER CCC'], '', $announcement)) ?>
+      </p>
     </div>
-    <div class="flex items-center gap-4 text-xs uppercase font-bold tracking-wider text-slate-600">
-      <span class="flex items-center gap-2 text-[#002654]">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block ring-2 ring-emerald-100"></span>
-        <?= e($announcement) ?>
-      </span>
+    <div class="hidden sm:flex items-center gap-2 text-slate-500 font-semibold shrink-0">
+      <span class="w-2 h-2 rounded-full bg-emerald-600 inline-block"></span>
+      <span class="uppercase tracking-wider text-[11px] text-emerald-800">Term 2026/27 Active</span>
     </div>
   </div>
 </section>

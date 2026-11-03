@@ -102,6 +102,6 @@ INSERT INTO `site_settings` (`key_name`, `key_value`, `description`) VALUES
 ('committee_term', '2025/26', 'Current Committee Term Year'),
 ('historical_established_year', '2004', 'Council Founding Year'),
 ('member_count_display', '70+ Corporate Members (Verified)', 'Verified Membership Display'),
-('bilateral_announcement', '2026 BILATERAL FORUM REGISTRATIONS OPEN | ACCREDITED UNDER THE CEYLON CHAMBER OF COMMERCE', 'Top Banner Announcement Text'),
+('bilateral_announcement', 'Executive Committee 2026/27 Convened — Bilateral Facilitation Active', 'Top Banner Announcement Text'),
 ('president_quote', 'Our bilateral trade corridor is entering an era defined not merely by transactions, but by structural joint ventures in maritime transshipment, renewable hydrogen, and advanced knowledge engineering.', 'Presidential Quote on Homepage')
 ON DUPLICATE KEY UPDATE `key_value` = VALUES(`key_value`);
