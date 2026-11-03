@@ -25,11 +25,13 @@
     <!-- Presidential Spotlight Card -->
     <?php if ($president): ?>
       <div class="bg-white border-2 border-slate-200 rounded-lg shadow-sm overflow-hidden mb-16">
-        <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-          <div class="lg:col-span-4 xl:col-span-4 relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-auto lg:min-h-full bg-slate-100 overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-200">
-            <img src="<?= asset($president['portrait_path'] ?? 'assets/images/president-dubois.jpg') ?>" alt="<?= e($president['name']) ?>" class="w-full h-full object-cover object-top">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+          <div class="lg:col-span-4 p-6 sm:p-8 flex items-center justify-center bg-slate-50 border-b lg:border-b-0 lg:border-r border-slate-200">
+            <div class="relative w-48 sm:w-56 md:w-60 aspect-[496/781] rounded-lg overflow-hidden shadow-md border border-slate-200 bg-white">
+              <img src="<?= asset($president['portrait_path'] ?? 'assets/images/president-dubois.jpg') ?>" alt="<?= e($president['name']) ?>" class="w-full h-full object-contain">
+            </div>
           </div>
-          <div class="lg:col-span-8 xl:col-span-8 p-8 lg:p-12 flex flex-col justify-between">
+          <div class="lg:col-span-8 p-8 lg:p-12 flex flex-col justify-between">
             <div>
               <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 border border-slate-200 rounded font-sans text-xs font-bold uppercase text-[#b91c1c] mb-4">
                 <span class="w-2 h-2 rounded-full bg-[#b91c1c]"></span>
