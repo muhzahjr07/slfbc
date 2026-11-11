@@ -179,6 +179,19 @@ foreach ($publicRoutes as $path => $name) {
     }
 }
 
+// Navigation Route Highlighting Isolation
+$GLOBALS['current_request_path'] = '/membership';
+$t->assert("isRouteActive('/membership') is true on /membership", isRouteActive('/membership') === true);
+$t->assert("isRouteActive('/members') is false on /membership (no collision with directory)", isRouteActive('/members') === false);
+
+$GLOBALS['current_request_path'] = '/members';
+$t->assert("isRouteActive('/members') is true on /members", isRouteActive('/members') === true);
+$t->assert("isRouteActive('/membership') is false on /members", isRouteActive('/membership') === false);
+
+$GLOBALS['current_request_path'] = '/members/michelin-lanka';
+$t->assert("isRouteActive('/members') is true on nested /members/...", isRouteActive('/members') === true);
+$t->assert("isRouteActive('/membership') is false on nested /members/...", isRouteActive('/membership') === false);
+
 /* -------------------------------------------------------------
  * 4. SEARCH, FILTERING, & EMPTY STATES
  * ------------------------------------------------------------- */

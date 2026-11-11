@@ -54,7 +54,7 @@ $phoneParis = \App\Models\SiteSetting::get('paris_phone', '+33 1 45 61 00');
       <a class="px-2.5 py-2 hover:text-[#002654] transition-colors border-b-2 <?= isRouteActive('/opportunities') ? 'text-[#002654] border-[#002654] font-bold' : 'border-transparent hover:border-slate-300' ?>" href="<?= url('/opportunities') ?>">Opportunities</a>
 
       <!-- Membership -->
-      <a class="px-2.5 py-2 hover:text-[#002654] transition-colors border-b-2 <?= isRouteActive('/membership') ? 'text-[#002654] border-[#002654] font-bold' : 'border-transparent hover:border-slate-300' ?>" href="<?= url('/membership') ?>">Membership</a>
+      <a class="px-2.5 py-2 hover:text-[#002654] transition-colors border-b-2 <?= (isRouteActive('/membership') || isRouteActive('/apply')) ? 'text-[#002654] border-[#002654] font-bold' : 'border-transparent hover:border-slate-300' ?>" href="<?= url('/membership') ?>">Membership</a>
 
       <!-- Member Directory -->
       <a class="px-2.5 py-2 hover:text-[#002654] transition-colors border-b-2 <?= isRouteActive('/members') ? 'text-[#002654] border-[#002654] font-bold' : 'border-transparent hover:border-slate-300' ?>" href="<?= url('/members') ?>">Directory</a>
@@ -95,7 +95,7 @@ $phoneParis = \App\Models\SiteSetting::get('paris_phone', '+33 1 45 61 00');
       <a class="py-2.5 px-3 rounded hover:bg-slate-100 <?= isRouteActive('/about') ? 'bg-blue-50 text-[#002654] font-bold' : '' ?>" href="<?= url('/about') ?>">About SLFBC</a>
       <a class="py-2.5 px-3 rounded hover:bg-slate-100 <?= isRouteActive('/leadership') ? 'bg-blue-50 text-[#002654] font-bold' : '' ?>" href="<?= url('/leadership') ?>">Executive Committee &amp; Governance</a>
       <a class="py-2.5 px-3 rounded hover:bg-slate-100 <?= isRouteActive('/ambassador-message') ? 'bg-blue-50 text-[#002654] font-bold' : '' ?>" href="<?= url('/ambassador-message') ?>">Ambassador’s Message</a>
-      <a class="py-2.5 px-3 rounded hover:bg-slate-100 <?= isRouteActive('/membership') ? 'bg-blue-50 text-[#002654] font-bold' : '' ?>" href="<?= url('/membership') ?>">Membership Information</a>
+      <a class="py-2.5 px-3 rounded hover:bg-slate-100 <?= (isRouteActive('/membership') || isRouteActive('/apply')) ? 'bg-blue-50 text-[#002654] font-bold' : '' ?>" href="<?= url('/membership') ?>">Membership Information</a>
       <a class="py-2.5 px-3 rounded hover:bg-slate-100 <?= isRouteActive('/members') ? 'bg-blue-50 text-[#002654] font-bold' : '' ?>" href="<?= url('/members') ?>">Member Directory</a>
       <a class="py-2.5 px-3 rounded hover:bg-slate-100 <?= isRouteActive('/opportunities') ? 'bg-blue-50 text-[#002654] font-bold' : '' ?>" href="<?= url('/opportunities') ?>">Business Opportunities</a>
       <a class="py-2.5 px-3 rounded hover:bg-slate-100 <?= isRouteActive('/france-business') ? 'bg-blue-50 text-[#002654] font-bold' : '' ?>" href="<?= url('/france-business') ?>">Doing Business with France</a>

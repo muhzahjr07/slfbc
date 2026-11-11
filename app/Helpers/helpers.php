@@ -61,10 +61,13 @@ if (!function_exists('auth')) {
 
 if (!function_exists('isRouteActive')) {
     function isRouteActive(string $pattern): bool {
-        $current = $GLOBALS['current_request_path'] ?? '/';
-        if ($pattern === '/') {
+        $current = '/' . trim($GLOBALS['current_request_path'] ?? '/', '/');
+        $cleanPattern = '/' . trim($pattern, '/');
+
+        if ($cleanPattern === '/') {
             return $current === '/';
         }
-        return str_starts_with($current, '/' . ltrim($pattern, '/'));
+
+        return $current === $cleanPattern || str_starts_with($current, $cleanPattern . '/');
     }
 }
