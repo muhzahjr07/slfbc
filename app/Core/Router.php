@@ -54,6 +54,7 @@ class Router
     public function dispatch(Request $request, Response $response): void
     {
         $method = $request->getMethod();
+        $lookupMethod = ($method === 'HEAD') ? 'GET' : $method;
         $path = $request->getPath();
         $GLOBALS['current_request_path'] = $path;
 
@@ -63,7 +64,7 @@ class Router
             return;
         }
 
-        $routesForMethod = $this->routes[$method] ?? [];
+        $routesForMethod = $this->routes[$lookupMethod] ?? [];
 
         foreach ($routesForMethod as $route) {
             if (preg_match($route['pattern'], $path, $matches)) {
@@ -94,7 +95,9 @@ class Router
 
                 if (is_string($content)) {
                     $response->applyHeaders();
-                    echo $content;
+                    if ($method !== 'HEAD') {
+                        echo $content;
+                    }
                 }
                 return;
             }

@@ -192,6 +192,14 @@ $GLOBALS['current_request_path'] = '/members/michelin-lanka';
 $t->assert("isRouteActive('/members') is true on nested /members/...", isRouteActive('/members') === true);
 $t->assert("isRouteActive('/membership') is false on nested /members/...", isRouteActive('/membership') === false);
 
+// HTTP HEAD Request Handling
+ob_start();
+$headReq = new \App\Core\Request([], [], ['REQUEST_METHOD' => 'HEAD', 'REQUEST_URI' => '/']);
+$headRes = new \App\Core\Response();
+$router->dispatch($headReq, $headRes);
+$headOutput = ob_get_clean();
+$t->assert("HEAD '/' returns HTTP 200 with empty body", $headRes->getStatusCode() === 200 && $headOutput === '');
+
 /* -------------------------------------------------------------
  * 4. SEARCH, FILTERING, & EMPTY STATES
  * ------------------------------------------------------------- */
