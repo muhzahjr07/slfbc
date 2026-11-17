@@ -33,6 +33,7 @@ COPY . /var/www/html
 # Prepare entrypoint script and storage directories
 RUN chmod +x /var/www/html/docker-entrypoint.sh \
     && mkdir -p /var/www/html/storage/documents \
+                /var/www/html/storage/backups \
                 /var/www/html/storage/logs \
                 /var/www/html/public/uploads \
     && chown -R www-data:www-data /var/www/html/storage /var/www/html/public/uploads \

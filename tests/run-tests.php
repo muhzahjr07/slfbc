@@ -424,7 +424,20 @@ $updatedApp = \App\Models\MembershipApplication::find($applicationId);
 $t->assert("Application status updated to 'under_review' with audit note", $updatedApp['status'] === 'under_review' && !empty($updatedApp['admin_notes']));
 
 /* -------------------------------------------------------------
- * 12. FINISH REPORT
+ * 12. ALL-IN-ONE BACKUP & RESTORE ENGINE
+ * ------------------------------------------------------------- */
+echo "\n12. All-in-One Backup & Restore Engine\n";
+
+$backupController = new \App\Controllers\Admin\BackupAdminController();
+$bundle = $backupController->generateMasterBundle($config['app']['root_dir']);
+$t->assert("Backup Master Bundle generated with all 12 tables", isset($bundle['tables']) && count($bundle['tables']) === 12);
+$t->assert("Backup bundle captures active members and leadership", count($bundle['tables']['members']) > 0 && count($bundle['tables']['leadership']) > 0);
+
+$restoreStats = $backupController->applyBundleRestore($bundle, $config['app']['root_dir']);
+$t->assert("All-in-One Restore executes transactionally without error", $restoreStats['records'] > 0, "Restored records: " . $restoreStats['records']);
+
+/* -------------------------------------------------------------
+ * 13. FINISH REPORT
  * ------------------------------------------------------------- */
 $exitCode = $t->report();
 exit($exitCode);

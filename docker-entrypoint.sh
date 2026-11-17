@@ -10,6 +10,7 @@ sed -i "s/<VirtualHost \*:[0-9]*>/<VirtualHost \*:${PORT}>/" /etc/apache2/sites-
 
 # Ensure directory permissions are intact on persistent disks or container reboots
 mkdir -p /var/www/html/storage/documents \
+         /var/www/html/storage/backups \
          /var/www/html/storage/logs \
          /var/www/html/public/uploads
 

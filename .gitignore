@@ -10,6 +10,8 @@ storage/database.sqlite-journal
 storage/logs/*.log
 storage/documents/*
 !storage/documents/.gitkeep
+storage/backups/*
+!storage/backups/.gitkeep
 
 # Temporary / OS generated files
 .DS_Store

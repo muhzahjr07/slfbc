@@ -10,7 +10,10 @@
       <h1 class="text-2xl font-serif font-bold text-[#002654]">Secretariat Overview</h1>
       <p class="text-xs text-slate-500 mt-1">Live metrics and pending administrative workflows under The Ceylon Chamber of Commerce.</p>
     </div>
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-3">
+      <a href="<?= url('/admin/backups') ?>" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded bg-[#002654] hover:bg-[#001c3f] text-white text-xs font-bold uppercase tracking-wider shadow-sm transition-all">
+        <span class="material-symbols-outlined text-base">backup</span> All-in-One Backup
+      </a>
       <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span> System Operational
       </span>

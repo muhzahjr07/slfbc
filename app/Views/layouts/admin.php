@@ -74,7 +74,7 @@
         Secretariat Management
       </div>
       <nav class="flex flex-col gap-1 text-sm font-semibold text-slate-700">
-        <a class="flex items-center gap-2.5 px-3 py-2.5 rounded hover:bg-slate-100 <?= isRouteActive('/admin') && !isRouteActive('/admin/members') && !isRouteActive('/admin/news') && !isRouteActive('/admin/events') && !isRouteActive('/admin/applications') && !isRouteActive('/admin/enquiries') && !isRouteActive('/admin/leadership') && !isRouteActive('/admin/opportunities') && !isRouteActive('/admin/settings') ? 'bg-[#002654] text-white font-bold' : '' ?>" href="<?= url('/admin') ?>">
+        <a class="flex items-center gap-2.5 px-3 py-2.5 rounded hover:bg-slate-100 <?= isRouteActive('/admin') && !isRouteActive('/admin/members') && !isRouteActive('/admin/news') && !isRouteActive('/admin/events') && !isRouteActive('/admin/applications') && !isRouteActive('/admin/enquiries') && !isRouteActive('/admin/leadership') && !isRouteActive('/admin/opportunities') && !isRouteActive('/admin/settings') && !isRouteActive('/admin/backups') ? 'bg-[#002654] text-white font-bold' : '' ?>" href="<?= url('/admin') ?>">
           <span class="material-symbols-outlined text-xl">dashboard</span> Dashboard
         </a>
 
@@ -114,6 +114,10 @@
 
         <a class="flex items-center gap-2.5 px-3 py-2.5 rounded hover:bg-slate-100 <?= isRouteActive('/admin/settings') ? 'bg-[#002654] text-white font-bold' : '' ?>" href="<?= url('/admin/settings') ?>">
           <span class="material-symbols-outlined text-xl">settings</span> Site Settings
+        </a>
+
+        <a class="flex items-center gap-2.5 px-3 py-2.5 rounded hover:bg-slate-100 <?= isRouteActive('/admin/backups') ? 'bg-[#002654] text-white font-bold' : '' ?>" href="<?= url('/admin/backups') ?>">
+          <span class="material-symbols-outlined text-xl">backup</span> Backup &amp; Restore
         </a>
       </nav>
     </aside>

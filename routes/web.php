@@ -33,6 +33,7 @@ use App\Controllers\Admin\EnquiryAdminController;
 use App\Controllers\Admin\LeadershipAdminController;
 use App\Controllers\Admin\OpportunityAdminController;
 use App\Controllers\Admin\SettingsAdminController;
+use App\Controllers\Admin\BackupAdminController;
 
 /**
  * Route Declarations for Sri Lanka–France Business Council Portal
@@ -178,3 +179,12 @@ $router->post('/admin/opportunities/{id}/delete', [OpportunityAdminController::c
 // Site Settings
 $router->get('/admin/settings', [SettingsAdminController::class, 'index'], [AuthMiddleware::class]);
 $router->post('/admin/settings', [SettingsAdminController::class, 'update'], [AuthMiddleware::class, CSRFMiddleware::class]);
+
+// All-in-One Backup & Restore Center
+$router->get('/admin/backups', [BackupAdminController::class, 'index'], [AuthMiddleware::class]);
+$router->get('/admin/backups/download-zip', [BackupAdminController::class, 'downloadZip'], [AuthMiddleware::class]);
+$router->get('/admin/backups/download-json', [BackupAdminController::class, 'downloadJson'], [AuthMiddleware::class]);
+$router->get('/admin/backups/download-sql', [BackupAdminController::class, 'downloadSql'], [AuthMiddleware::class]);
+$router->post('/admin/backups/snapshot', [BackupAdminController::class, 'createSnapshot'], [AuthMiddleware::class, CSRFMiddleware::class]);
+$router->post('/admin/backups/restore', [BackupAdminController::class, 'restore'], [AuthMiddleware::class, CSRFMiddleware::class]);
+$router->post('/admin/backups/manage', [BackupAdminController::class, 'manageSnapshot'], [AuthMiddleware::class, CSRFMiddleware::class]);
