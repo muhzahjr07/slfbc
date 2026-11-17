@@ -182,3 +182,4 @@ class MediaAdminController
         $response->redirect(View::url('admin/media'));
     }
 }
+
