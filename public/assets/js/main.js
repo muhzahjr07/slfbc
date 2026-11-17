@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function startAutoPlay() {
       stopAutoPlay();
-      autoPlayTimer = setInterval(() => showSlide(currentIndex + 1), 6500);
+      autoPlayTimer = setInterval(() => showSlide(currentIndex + 1), 5000);
     }
 
     function stopAutoPlay() {
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startAutoPlay();
   }
 
-  // 7. Universal Horizontal Scroll-Snap Carousels
+  // 7. Universal Horizontal Scroll-Snap Carousels (With Auto-Slide & Pause on Hover)
   const carousels = document.querySelectorAll('[data-carousel]');
   carousels.forEach(function (carousel) {
     const track = carousel.querySelector('[data-carousel-track]');
@@ -240,25 +240,52 @@ document.addEventListener('DOMContentLoaded', function () {
     const next = carousel.querySelector('[data-carousel-next]');
     if (!track) return;
 
+    let carouselTimer = null;
+
     const getScrollStep = () => {
       const firstItem = track.firstElementChild;
       return firstItem ? firstItem.getBoundingClientRect().width + 24 : 340;
     };
 
+    const advanceCarousel = () => {
+      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 15) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+      }
+    };
+
+    const startCarouselAuto = () => {
+      stopCarouselAuto();
+      carouselTimer = setInterval(advanceCarousel, 4500);
+    };
+
+    const stopCarouselAuto = () => {
+      if (carouselTimer) {
+        clearInterval(carouselTimer);
+        carouselTimer = null;
+      }
+    };
+
     if (prev) {
       prev.addEventListener('click', () => {
         track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        startCarouselAuto();
       });
     }
     if (next) {
       next.addEventListener('click', () => {
-        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
-          track.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-        }
+        advanceCarousel();
+        startCarouselAuto();
       });
     }
+
+    carousel.addEventListener('mouseenter', stopCarouselAuto);
+    carousel.addEventListener('mouseleave', startCarouselAuto);
+    carousel.addEventListener('touchstart', stopCarouselAuto, { passive: true });
+    carousel.addEventListener('touchend', startCarouselAuto, { passive: true });
+
+    startCarouselAuto();
   });
 
   // 8. Interactive Accordions (FAQs & Constitution)
