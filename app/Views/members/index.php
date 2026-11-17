@@ -4,24 +4,37 @@
  * Sri Lanka–France Business Council (SLFBC)
  */
 ?>
-<!-- BREADCRUMBS & HERO -->
-<section class="w-full bg-slate-50 border-b border-slate-200 py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-    <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="<?= url('/') ?>">Home</a></li>
-      <li class="breadcrumb-item text-slate-800 font-semibold">Member Directory</li>
-    </ul>
-
-    <div class="inline-flex items-center gap-2 mb-2">
-      <span class="w-2.5 h-2.5 bg-[#002654] inline-block"></span>
-      <span class="text-xs font-bold uppercase tracking-widest text-[#002654]">Bilateral Enterprise Network</span>
+<!-- SPLIT VISUAL HERO BANNER -->
+<section class="w-full bg-gradient-to-r from-[#0b1e3b] via-[#002654] to-[#0b1e3b] text-white border-b border-slate-200 py-12 lg:py-16 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7">
+        <ul class="breadcrumb mb-4">
+          <li class="breadcrumb-item"><a href="<?= url('/') ?>" class="text-slate-300 hover:text-white">Home</a></li>
+          <li class="breadcrumb-item text-amber-300 font-semibold">Member Directory</li>
+        </ul>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded mb-3">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-300">Bilateral Enterprise Network</span>
+        </div>
+        <h1 class="font-serif-diplomatic text-3xl sm:text-4xl lg:text-5xl text-white font-bold tracking-tight">
+          Corporate Member Directory
+        </h1>
+        <p class="font-sans text-base sm:text-lg text-slate-200 max-w-2xl mt-4 leading-relaxed m-0">
+          Connect with leading French multinational corporations, Sri Lankan export champions, and bilateral enterprise partners accredited under The Ceylon Chamber of Commerce.
+        </p>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
+          <div class="aspect-[16/10] rounded overflow-hidden relative">
+            <img src="<?= asset('assets/images/hero-bilateral.jpg') ?>" alt="SLFBC Corporate Member Network" class="w-full h-full object-cover">
+            <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
+              Verified Chamber Roster
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <h1 class="font-serif-diplomatic text-3xl sm:text-4xl lg:text-5xl text-[#0b1e3b] font-bold tracking-tight">
-      Corporate Member Directory
-    </h1>
-    <p class="font-sans text-base sm:text-lg text-slate-600 max-w-3xl mt-4 leading-relaxed">
-      Connect with leading French multinational corporations, Sri Lankan export champions, and bilateral enterprise partners accredited under The Ceylon Chamber of Commerce.
-    </p>
   </div>
 </section>
 
@@ -111,20 +124,21 @@
       </div>
     <?php else: ?>
       <div id="member-directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <?php foreach ($members as $m): ?>
+        <?php foreach ($members as $m):
+          $isFrench = stripos($m['origin'] ?? '', 'France') !== false;
+        ?>
           <div class="member-card bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-md hover:border-[#002654] flex flex-col justify-between transition-all group"
                data-name="<?= e(strtolower($m['name'])) ?>"
                data-sector-id="<?= e($m['sector_id'] ?? '') ?>"
                data-description="<?= e(strtolower($m['short_description'] ?? '')) ?>">
             <div>
-              <!-- Header / Logo & Entity Name -->
               <div class="flex items-start gap-4 mb-4">
-                <div class="w-14 h-14 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center overflow-hidden p-1 shrink-0 group-hover:border-[#002654] transition-colors">
+                <div class="w-14 h-14 rounded-lg bg-[#002654] text-white flex items-center justify-center overflow-hidden p-1 shrink-0 shadow-sm">
                   <?php if (!empty($m['logo_path']) && file_exists(dirname(__DIR__, 2) . '/public' . $m['logo_path'])): ?>
-                    <img src="<?= asset($m['logo_path']) ?>" alt="<?= e($m['name']) ?>" class="max-w-full max-h-full object-contain">
+                    <img src="<?= asset($m['logo_path']) ?>" alt="<?= e($m['name']) ?>" class="max-w-full max-h-full object-contain bg-white p-1 rounded">
                   <?php else: ?>
-                    <span class="font-bold text-base text-[#002654]">
-                      <?= e(substr($m['name'], 0, 2)) ?>
+                    <span class="font-serif-diplomatic font-bold text-base">
+                      <?= e(strtoupper(substr(preg_replace('/[^A-Za-z]/', '', $m['name']), 0, 2))) ?>
                     </span>
                   <?php endif; ?>
                 </div>
@@ -140,20 +154,18 @@
                 </div>
               </div>
 
-              <!-- Description -->
-              <p class="text-xs text-slate-600 leading-relaxed mb-4 line-clamp-3">
-                <?= e(mb_strimwidth($m['short_description'] ?? 'Verified corporate member under The Ceylon Chamber of Commerce.', 0, 130, '...')) ?>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4 line-clamp-2">
+                <?= e($m['short_description'] ?? 'Verified corporate member under The Ceylon Chamber of Commerce.') ?>
               </p>
             </div>
 
-            <!-- Footer Meta & Profile Link -->
             <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span class="text-slate-400 font-semibold flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">flag</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold text-[11px] uppercase flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full <?= $isFrench ? 'bg-[#b91c1c]' : 'bg-[#c59b27]' ?>"></span>
                 <?= e($m['origin'] ?? 'Sri Lanka') ?>
               </span>
               <a href="<?= url('/members/' . urlencode($m['slug'])) ?>" class="font-bold text-[#002654] hover:underline flex items-center gap-1">
-                View Profile &rarr;
+                Dossier &rarr;
               </a>
             </div>
           </div>

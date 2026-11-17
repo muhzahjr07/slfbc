@@ -1,21 +1,34 @@
-<!-- BREADCRUMBS & HERO -->
-<section class="w-full bg-slate-50 border-b border-slate-200 py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-    <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="<?= url('/') ?>">Home</a></li>
-      <li class="breadcrumb-item text-slate-800 font-semibold">News &amp; Communiqués</li>
-    </ul>
-
-    <div class="inline-flex items-center gap-2 mb-2">
-      <span class="w-2.5 h-2.5 bg-[#b91c1c] inline-block"></span>
-      <span class="text-xs font-bold uppercase tracking-widest text-[#b91c1c]">Official Dispatches</span>
+<!-- SPLIT VISUAL HERO BANNER -->
+<section class="w-full bg-gradient-to-r from-[#0b1e3b] via-[#002654] to-[#0b1e3b] text-white border-b border-slate-200 py-12 lg:py-16 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7">
+        <ul class="breadcrumb mb-4">
+          <li class="breadcrumb-item"><a href="<?= url('/') ?>" class="text-slate-300 hover:text-white">Home</a></li>
+          <li class="breadcrumb-item text-amber-300 font-semibold">News &amp; Communiqués</li>
+        </ul>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded mb-3">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-300">Official Dispatches</span>
+        </div>
+        <h1 class="font-serif-diplomatic text-3xl sm:text-4xl lg:text-5xl text-white font-bold tracking-tight">
+          News, Communiqués &amp; Policy Dispatches
+        </h1>
+        <p class="font-sans text-base sm:text-lg text-slate-200 max-w-2xl mt-4 leading-relaxed m-0">
+          Stay informed on bilateral trade policy developments, chamber communiqués, diplomatic engagements, and commercial intelligence connecting Sri Lanka and France.
+        </p>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
+          <div class="aspect-[16/10] rounded overflow-hidden relative">
+            <img src="<?= asset('assets/images/news-logistics.jpg') ?>" alt="Bilateral Trade and Logistics Dispatches" class="w-full h-full object-cover">
+            <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
+              Colombo &amp; Paris Press Desk
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <h1 class="font-serif-diplomatic text-3xl sm:text-4xl lg:text-5xl text-[#0b1e3b] font-bold tracking-tight">
-      News, Communiqués &amp; Policy Dispatches
-    </h1>
-    <p class="font-sans text-base sm:text-lg text-slate-600 max-w-3xl mt-4 leading-relaxed">
-      Stay informed on bilateral trade policy developments, chamber communiqués, diplomatic engagements, and commercial intelligence connecting Sri Lanka and France.
-    </p>
   </div>
 </section>
 

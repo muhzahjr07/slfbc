@@ -1,21 +1,34 @@
-<!-- BREADCRUMBS & HERO -->
-<section class="w-full bg-slate-50 border-b border-slate-200 py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-    <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="<?= url('/') ?>">Home</a></li>
-      <li class="breadcrumb-item text-slate-800 font-semibold">Events &amp; Summits</li>
-    </ul>
-
-    <div class="inline-flex items-center gap-2 mb-2">
-      <span class="w-2.5 h-2.5 bg-[#c59b27] inline-block"></span>
-      <span class="text-xs font-bold uppercase tracking-widest text-[#002654]">Bilateral Assemblies</span>
+<!-- SPLIT VISUAL HERO BANNER -->
+<section class="w-full bg-gradient-to-r from-[#0b1e3b] via-[#002654] to-[#0b1e3b] text-white border-b border-slate-200 py-12 lg:py-16 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7">
+        <ul class="breadcrumb mb-4">
+          <li class="breadcrumb-item"><a href="<?= url('/') ?>" class="text-slate-300 hover:text-white">Home</a></li>
+          <li class="breadcrumb-item text-amber-300 font-semibold">Events &amp; Summits</li>
+        </ul>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded mb-3">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-300">Bilateral Assemblies</span>
+        </div>
+        <h1 class="font-serif-diplomatic text-3xl sm:text-4xl lg:text-5xl text-white font-bold tracking-tight">
+          Bilateral Events, Summits &amp; Delegations
+        </h1>
+        <p class="font-sans text-base sm:text-lg text-slate-200 max-w-2xl mt-4 leading-relaxed m-0">
+          Engage in high-level business forums, trade symposia, chamber assemblies, and ministerial roundtables connecting Sri Lanka and France.
+        </p>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
+          <div class="aspect-[16/10] rounded overflow-hidden relative">
+            <img src="<?= asset('assets/images/investment-forum.jpg') ?>" alt="2026 Bilateral Investment Forum" class="w-full h-full object-cover">
+            <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
+              2026 Forum Registrations Open
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <h1 class="font-serif-diplomatic text-3xl sm:text-4xl lg:text-5xl text-[#0b1e3b] font-bold tracking-tight">
-      Bilateral Events, Summits &amp; Delegations
-    </h1>
-    <p class="font-sans text-base sm:text-lg text-slate-600 max-w-3xl mt-4 leading-relaxed">
-      Engage in high-level business forums, trade symposia, chamber assemblies, and ministerial roundtables connecting Sri Lanka and France.
-    </p>
   </div>
 </section>
 
@@ -110,22 +123,28 @@
       <?php else: ?>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <?php foreach ($pastEvents as $evt): ?>
-            <article class="bg-slate-50 border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between">
+            <article class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm flex flex-col justify-between group">
               <div>
-                <div class="flex items-center justify-between text-xs font-semibold text-slate-400 mb-2">
-                  <span>Concluded: <?= date('M d, Y', strtotime($evt['start_datetime'])) ?></span>
-                  <span class="uppercase text-slate-500"><?= e($evt['location_city'] ?? 'Colombo') ?></span>
+                <div class="aspect-video bg-slate-100 overflow-hidden relative">
+                  <img src="<?= asset($evt['cover_image'] ?: 'assets/images/event-gala.jpg') ?>" alt="<?= e($evt['title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded text-[10px] font-bold uppercase bg-slate-900/80 text-white">Concluded</span>
                 </div>
-                <h3 class="font-serif-diplomatic text-lg font-bold text-[#0b1e3b] mb-2 leading-snug">
-                  <a href="<?= url('/events/' . e($evt['slug'])) ?>" class="hover:underline">
-                    <?= e($evt['title']) ?>
-                  </a>
-                </h3>
-                <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed mb-4">
-                  <?= e($evt['summary'] ?: substr(strip_tags($evt['description']), 0, 120) . '...') ?>
-                </p>
+                <div class="p-6">
+                  <div class="flex items-center justify-between text-xs font-semibold text-slate-400 mb-2">
+                    <span><?= date('M d, Y', strtotime($evt['start_datetime'])) ?></span>
+                    <span class="uppercase text-slate-500"><?= e($evt['location_city'] ?? 'Colombo') ?></span>
+                  </div>
+                  <h3 class="font-serif-diplomatic text-lg font-bold text-[#0b1e3b] mb-2 leading-snug">
+                    <a href="<?= url('/events/' . e($evt['slug'])) ?>" class="hover:underline">
+                      <?= e($evt['title']) ?>
+                    </a>
+                  </h3>
+                  <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-0">
+                    <?= e($evt['summary'] ?: substr(strip_tags($evt['description']), 0, 120) . '...') ?>
+                  </p>
+                </div>
               </div>
-              <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+              <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
                 <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-slate-200 text-slate-700">Archived Record</span>
                 <a href="<?= url('/events/' . e($evt['slug'])) ?>" class="text-xs font-bold text-[#002654] hover:underline">
                   View Report &rarr;

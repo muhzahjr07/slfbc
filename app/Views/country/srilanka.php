@@ -1,25 +1,38 @@
-<!-- BREADCRUMBS & HERO -->
-<section class="w-full bg-slate-50 border-b border-slate-200 py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-    <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="<?= url('/') ?>">Home</a></li>
-      <li class="breadcrumb-item"><a href="<?= url('/opportunities') ?>">Trade Corridors</a></li>
-      <li class="breadcrumb-item text-slate-800 font-semibold">Doing Business in Sri Lanka</li>
-    </ul>
-
-    <div class="inline-flex items-center gap-2 mb-2">
-      <span class="w-2.5 h-2.5 bg-[#c59b27] inline-block"></span>
-      <span class="text-xs font-bold uppercase tracking-widest text-[#002654]">Bilateral Investment &amp; Sourcing</span>
-    </div>
-    <h1 class="font-serif-diplomatic text-3xl sm:text-4xl lg:text-5xl text-[#0b1e3b] font-bold tracking-tight">
-      Doing Business in Sri Lanka
-    </h1>
-    <p class="font-sans text-base sm:text-lg text-slate-600 max-w-3xl mt-4 leading-relaxed">
-      A strategic briefing for French multinational corporations, industrial partners, institutional investors, and trading houses exploring the Indian Ocean hub.
-    </p>
-    <div class="mt-4 text-xs text-slate-500 font-semibold flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-      <span>Last Verified &amp; Updated: <strong><?= e($lastUpdated) ?></strong> &bull; Compiled under Ceylon Chamber Economic Research</span>
+<!-- SPLIT VISUAL HERO BANNER -->
+<section class="w-full bg-gradient-to-r from-[#0b1e3b] via-[#002654] to-[#0b1e3b] text-white border-b border-slate-200 py-12 lg:py-16 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7">
+        <ul class="breadcrumb mb-4">
+          <li class="breadcrumb-item"><a href="<?= url('/') ?>" class="text-slate-300 hover:text-white">Home</a></li>
+          <li class="breadcrumb-item"><a href="<?= url('/opportunities') ?>" class="text-slate-300 hover:text-white">Trade Corridors</a></li>
+          <li class="breadcrumb-item text-amber-300 font-semibold">Doing Business in Sri Lanka</li>
+        </ul>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded mb-3">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-300">Indian Ocean Maritime &amp; Investment Hub</span>
+        </div>
+        <h1 class="font-serif-diplomatic text-3xl sm:text-4xl lg:text-5xl text-white font-bold tracking-tight">
+          Doing Business in Sri Lanka
+        </h1>
+        <p class="font-sans text-base sm:text-lg text-slate-200 max-w-2xl mt-4 leading-relaxed m-0">
+          A strategic investment &amp; sourcing briefing for French multinational corporations, industrial contractors, and institutional investors in South Asia.
+        </p>
+        <div class="mt-4 text-xs text-slate-300 font-semibold flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Verified: <strong><?= e($lastUpdated) ?></strong> &bull; Ceylon Chamber Economic Research</span>
+        </div>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
+          <div class="aspect-[16/10] rounded overflow-hidden relative">
+            <img src="<?= asset('assets/images/corridor-srilanka.jpg') ?>" alt="Colombo Port and Indian Ocean Hub" class="w-full h-full object-cover">
+            <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
+              Colombo • Port City SEZ • Hambantota
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -29,98 +42,124 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       
-      <!-- Left 8 Columns: Strategic Briefing -->
+      <!-- Left 8 Columns -->
       <div class="lg:col-span-8 space-y-12">
-        <!-- 1. Indian Ocean Maritime & Commercial Hub -->
-        <article class="bg-slate-50 border border-slate-200 rounded-lg p-8 shadow-sm">
-          <h2 class="font-serif-diplomatic text-2xl text-[#0b1e3b] font-bold mb-4">
-            Sri Lanka as an Indian Ocean Maritime &amp; Commercial Hub
-          </h2>
-          <div class="space-y-4 text-slate-700 leading-relaxed text-base">
-            <p>
-              Positioned astride the primary East-West shipping lanes connecting Europe, the Middle East, and East Asia, Sri Lanka offers French enterprises a highly strategic commercial bridgehead into the South Asian subcontinent. The Port of Colombo ranks among the premier transshipment container hubs globally, handling over 7.2 million TEUs annually with rapid feeder connectivity to India, Bangladesh, and East Africa.
-            </p>
-            <p>
-              With a highly literate, multilingual professional workforce, modern telecommunications infrastructure, robust intellectual property laws, and a resilient private sector led by The Ceylon Chamber of Commerce (established 1839), Sri Lanka combines cost-competitive manufacturing with state-of-the-art export capability.
-            </p>
-          </div>
-        </article>
 
-        <!-- 2. Priority Sectors for French Enterprise -->
+        <!-- 1. Priority Sectors for French Enterprise (Visual Image Grid) -->
         <div>
           <h2 class="font-serif-diplomatic text-2xl text-[#0b1e3b] font-bold mb-6 pb-2 border-b border-slate-200">
-            Sectors of Strategic Interest to French Business
+            Priority Sectors for French Business in Sri Lanka
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="bg-white border-l-4 border-l-[#002654] border border-slate-200 rounded-lg p-5 shadow-sm">
-              <h3 class="font-bold text-base text-[#002654] mb-2">Maritime Logistics &amp; Port Infrastructure</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
-                Deepwater port container terminal operations, bonded freeport warehousing, ship repair, bunkering, and cold-chain logistics across Colombo and Hambantota.
+            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
+              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+                <img src="<?= asset('assets/images/corridor-maritime.jpg') ?>" alt="Maritime Logistics and Port Infrastructure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#002654] text-white text-[11px] font-bold uppercase rounded">7.2M+ TEUs</span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mb-1.5">Maritime Logistics &amp; Deepwater Ports</h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
+                  Container terminal operations, bonded freeport warehousing, bunkering, and cold-chain hubs across Colombo and Hambantota.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
+              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+                <img src="<?= asset('assets/images/opp-energy.jpg') ?>" alt="Renewable Energy and Water Engineering" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-emerald-700 text-white text-[11px] font-bold uppercase rounded">70% Clean Power Target</span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mb-1.5">Renewable Energy &amp; Water Systems</h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
+                  Offshore wind in the Mannar Basin, utility solar, green hydrogen feasibility, and municipal water purification plants.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
+              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+                <img src="<?= asset('assets/images/opp-tourism.jpg') ?>" alt="Sustainable Luxury Hospitality" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#c59b27] text-white text-[11px] font-bold uppercase rounded">Hospitality Assets</span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mb-1.5">High-End Sustainable Hospitality</h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
+                  Eco-luxury boutique resorts, heritage hotel revitalizations, and culinary partnerships serving European luxury travelers.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
+              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+                <img src="<?= asset('assets/images/opp-tech.jpg') ?>" alt="Precision Manufacturing and Graphite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#b91c1c] text-white text-[11px] font-bold uppercase rounded">BOI Zones</span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mb-1.5">Precision Manufacturing &amp; Graphite</h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
+                  99%+ pure vein graphite for EV battery anodes, solid industrial tires, medical devices, and aviation electronics.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Special Economic Zones & Port City Slider -->
+        <div id="investment" data-carousel class="bg-slate-50 border border-slate-200 rounded-lg p-6 sm:p-8 shadow-sm">
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#002654] block mb-1">Special Economic Zones</span>
+              <h2 class="font-serif-diplomatic text-2xl text-[#0b1e3b] font-bold m-0">Port City Colombo &amp; Industrial Corridors</h2>
+            </div>
+            <div class="flex items-center gap-2">
+              <button type="button" data-carousel-prev aria-label="Previous zone" class="w-9 h-9 rounded border border-slate-300 bg-white hover:bg-[#002654] hover:text-white text-slate-700 flex items-center justify-center transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-base">chevron_left</span>
+              </button>
+              <button type="button" data-carousel-next aria-label="Next zone" class="w-9 h-9 rounded border border-slate-300 bg-white hover:bg-[#002654] hover:text-white text-slate-700 flex items-center justify-center transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+              </button>
+            </div>
+          </div>
+
+          <div data-carousel-track class="flex gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
+            <div class="min-w-[270px] sm:min-w-[300px] snap-start bg-white border border-slate-200 rounded-lg p-5 shrink-0">
+              <span class="px-2.5 py-0.5 bg-[#002654] text-white text-xs font-bold uppercase rounded">Financial SEZ</span>
+              <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mt-3 mb-2">Port City Colombo</h3>
+              <p class="text-xs sm:text-sm text-slate-600 m-0 leading-relaxed">
+                English common-law regulatory jurisdiction, 100% foreign ownership, multi-currency banking, and corporate tax exemptions up to 25 years.
               </p>
             </div>
-            <div class="bg-white border-l-4 border-l-[#c59b27] border border-slate-200 rounded-lg p-5 shadow-sm">
-              <h3 class="font-bold text-base text-[#002654] mb-2">Renewable Energy &amp; Water Engineering</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
-                Offshore wind development, commercial utility solar, micro-grid electrification, green hydrogen feasibility, and climate-resilient water systems.
+            <div class="min-w-[270px] sm:min-w-[300px] snap-start bg-white border border-slate-200 rounded-lg p-5 shrink-0">
+              <span class="px-2.5 py-0.5 bg-[#b91c1c] text-white text-xs font-bold uppercase rounded">BOI Export Zone</span>
+              <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mt-3 mb-2">Katunayake &amp; Biyagama EPZs</h3>
+              <p class="text-xs sm:text-sm text-slate-600 m-0 leading-relaxed">
+                Premier industrial export processing zones adjacent to Bandaranaike International Airport, hosting global apparel, tire, and electronics plants.
               </p>
             </div>
-            <div class="bg-white border-l-4 border-l-[#b91c1c] border border-slate-200 rounded-lg p-5 shadow-sm">
-              <h3 class="font-bold text-base text-[#002654] mb-2">High-End Sustainable Hospitality</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
-                Eco-luxury resorts, heritage hotel revitalizations, wellness retreats, and culinary gastronomy partnerships catering to French and European travelers.
-              </p>
-            </div>
-            <div class="bg-white border-l-4 border-l-[#002654] border border-slate-200 rounded-lg p-5 shadow-sm">
-              <h3 class="font-bold text-base text-[#002654] mb-2">Precision Manufacturing &amp; Graphite</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
-                Aerospace-grade natural vein graphite for lithium battery anodes, solid tire manufacturing, medical devices, and precision electronic components.
+            <div class="min-w-[270px] sm:min-w-[300px] snap-start bg-white border border-slate-200 rounded-lg p-5 shrink-0">
+              <span class="px-2.5 py-0.5 bg-[#c59b27] text-white text-xs font-bold uppercase rounded">Deepwater Port Zone</span>
+              <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mt-3 mb-2">Hambantota Maritime Industrial Park</h3>
+              <p class="text-xs sm:text-sm text-slate-600 m-0 leading-relaxed">
+                Located 10 nautical miles from the main Indian Ocean shipping route, ideal for transshipment, energy bunkering, and heavy assembly.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- 3. Port City Colombo & Special Economic Zones -->
-        <article class="bg-slate-50 border border-slate-200 rounded-lg p-8">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="px-2.5 py-1 bg-[#002654] text-white text-xs font-bold uppercase rounded">Special Economic Zone</span>
-            <span class="text-xs font-bold text-[#c59b27] uppercase">International Financial Centre</span>
-          </div>
-          <h2 class="font-serif-diplomatic text-2xl text-[#0b1e3b] font-bold mb-3">
-            Port City Colombo: International Financial Centre
-          </h2>
-          <p class="text-slate-700 leading-relaxed text-sm sm:text-base mb-4">
-            A state-of-the-art master-planned city reclaimed from the Indian Ocean, designated as a multi-currency Special Economic Zone operating under an independent English common law regulatory commission. It offers French financial institutions, regional headquarters, and multinational trading desks:
-          </p>
-          <ul class="space-y-2 text-xs sm:text-sm text-slate-700 list-none p-0">
-            <li class="flex items-start gap-2">
-              <span class="material-symbols-outlined text-[#002654] text-lg shrink-0 mt-0.5">check_circle</span>
-              <span>100% foreign corporate ownership and unencumbered capital repatriation in foreign currency.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="material-symbols-outlined text-[#002654] text-lg shrink-0 mt-0.5">check_circle</span>
-              <span>Tiered corporate income tax exemptions up to 25 years for Authorized Persons (Businesses of Strategic Importance).</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="material-symbols-outlined text-[#002654] text-lg shrink-0 mt-0.5">check_circle</span>
-              <span>Expedited single-window investor licensing, residence visas for expatriate executives, and zero exchange control restrictions.</span>
-            </li>
-          </ul>
-        </article>
-
-        <!-- 4. Investment Framework & Legal Protections -->
-        <div class="bg-slate-50 border border-slate-200 rounded-lg p-8">
-          <h2 class="font-serif-diplomatic text-2xl text-[#0b1e3b] font-bold mb-4">Investment Protection &amp; Guarantees</h2>
-          <p class="text-slate-700 leading-relaxed text-sm sm:text-base mb-4">
-            Foreign investment into Sri Lanka is protected by Article 157 of the Constitution of the Democratic Socialist Republic of Sri Lanka, giving statutory force to Bilateral Investment Treaties (BITs):
-          </p>
+        <!-- 3. Investment Protection & Treaties -->
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 sm:p-8">
+          <h2 class="font-serif-diplomatic text-2xl text-[#0b1e3b] font-bold mb-4">Statutory Investment Protections (Article 157)</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700">
-            <div class="p-3 bg-white border border-slate-200 rounded">
+            <div class="p-4 bg-white border border-slate-200 rounded">
+              <span class="material-symbols-outlined text-[#002654] text-2xl mb-1">shield</span>
               <strong class="text-[#002654] block mb-1">Franco-Sri Lankan Bilateral Investment Treaty</strong>
-              <span>Guarantees fair and equitable treatment, protection against non-compensated expropriation, and full transfer of capital.</span>
+              <p class="text-xs text-slate-600 m-0">Constitutional protection under Article 157 guaranteeing fair treatment and unrestricted capital repatriation.</p>
             </div>
-            <div class="p-3 bg-white border border-slate-200 rounded">
-              <strong class="text-[#002654] block mb-1">Double Taxation Avoidance Agreement (DTAA)</strong>
-              <span>Prevents double fiscal taxation on corporate dividends, royalties, interest, and enterprise profits.</span>
+            <div class="p-4 bg-white border border-slate-200 rounded">
+              <span class="material-symbols-outlined text-[#8d4004] text-2xl mb-1">account_balance_wallet</span>
+              <strong class="text-[#002654] block mb-1">Double Taxation Avoidance (DTAA)</strong>
+              <p class="text-xs text-slate-600 m-0">Bilateral fiscal treaty eliminating double taxation on dividends, royalties, interest, and corporate profits.</p>
             </div>
           </div>
         </div>
@@ -128,7 +167,6 @@
 
       <!-- Right 4 Columns: Facilitation & Resources -->
       <div class="lg:col-span-4 space-y-6">
-        <!-- Institutional Ecosystem -->
         <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 shadow-sm">
           <h3 class="font-serif-diplomatic text-lg text-[#0b1e3b] font-bold mb-4 pb-2 border-b border-slate-200">
             Government Facilitation Agencies
@@ -136,24 +174,23 @@
           <ul class="space-y-4 text-xs text-slate-700 list-none p-0">
             <li>
               <strong class="text-[#002654] block">Board of Investment of Sri Lanka (BOI):</strong>
-              Primary statutory agency for FDI, incentive approvals, and export processing zones.
+              Primary statutory agency for FDI, Section 17 tax incentives, and export processing zones.
             </li>
             <li>
               <strong class="text-[#002654] block">Sri Lanka Export Development Board (EDB):</strong>
-              Apex state organization for export promotion and international trade missions.
+              Apex state organization for export promotion and buyer-seller missions.
             </li>
             <li>
               <strong class="text-[#002654] block">Colombo Port City Economic Commission:</strong>
-              Single-window statutory regulator for the multi-currency financial SEZ.
+              Single-window regulator for the multi-currency Special Economic Zone.
             </li>
             <li>
               <strong class="text-[#002654] block">The Ceylon Chamber of Commerce:</strong>
-              The oldest business chamber in Sri Lanka (est. 1839) and Secretariat of SLFBC.
+              Premier business chamber (est. 1839) and Secretariat of SLFBC.
             </li>
           </ul>
         </div>
 
-        <!-- Inward Investment Guide -->
         <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
           <h3 class="font-serif-diplomatic text-lg text-[#0b1e3b] font-bold mb-4 pb-2 border-b border-slate-200">
             Setup Checklist for French Firms
@@ -161,16 +198,15 @@
           <ol class="space-y-3 text-xs text-slate-600 list-decimal pl-4">
             <li>Incorporate via Registrar of Companies (ROC) e-portal.</li>
             <li>Register with the Board of Investment (BOI) under Section 16 or 17.</li>
-            <li>Open Foreign Inward Investment Account (IIA) with commercial bank.</li>
-            <li>Apply for corporate membership in the Sri Lanka–France Business Council.</li>
+            <li>Open Inward Investment Account (IIA) with an authorized bank.</li>
+            <li>Join the Sri Lanka–France Business Council.</li>
           </ol>
         </div>
 
-        <!-- Consultation Card -->
         <div class="p-6 bg-[#002654] text-white rounded-lg shadow-sm">
           <h3 class="font-serif-diplomatic text-lg font-bold mb-2">Explore Inward Investment</h3>
           <p class="text-xs text-slate-300 leading-relaxed mb-4">
-            Our Secretariat facilitates verified B2B match-making, government introductions, and site visits for French commercial missions.
+            Our Secretariat facilitates verified B2B matchmaking, ministry introductions, and site visits for French commercial missions.
           </p>
           <a href="<?= url('/contact') ?>" class="w-full py-2.5 px-4 bg-amber-400 hover:bg-amber-500 text-[#002654] font-bold text-xs uppercase tracking-wider rounded text-center block transition-all">
             Initiate Bilateral Consultation

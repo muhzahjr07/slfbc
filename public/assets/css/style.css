@@ -522,3 +522,64 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .data-table tr:hover td {
   background-color: #f8fafc;
 }
+
+/* =========================================================================
+   INTERACTIVE SLIDERS, CAROUSELS, MARQUEE & ACCORDIONS
+   ========================================================================= */
+
+/* Hide scrollbars on horizontal scroll-snap carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hero Slider Transitions */
+.hero-slide {
+  display: none;
+  animation: heroFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-slide.active {
+  display: grid;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Infinite Member Enterprise Marquee */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 34s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+

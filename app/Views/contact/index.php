@@ -8,24 +8,37 @@ $phoneColombo = \App\Models\SiteSetting::get('secretariat_phone', '+94 11 558 88
 $phoneParis = \App\Models\SiteSetting::get('paris_phone', '+33 1 45 61 00');
 $publicEmail = \App\Models\SiteSetting::get('secretariat_email', 'info@slfbc.lk');
 ?>
-<!-- BREADCRUMBS & HERO -->
-<section class="w-full bg-slate-50 border-b border-slate-200 py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-    <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="<?= url('/') ?>">Home</a></li>
-      <li class="breadcrumb-item text-slate-800 font-semibold">Contact Secretariat</li>
-    </ul>
-
-    <div class="inline-flex items-center gap-2 mb-2">
-      <span class="w-2.5 h-2.5 bg-[#002654] inline-block"></span>
-      <span class="text-xs font-bold uppercase tracking-widest text-[#002654]">Secretariat Liaison</span>
+<!-- SPLIT VISUAL HERO BANNER -->
+<section class="w-full bg-gradient-to-r from-[#0b1e3b] via-[#002654] to-[#0b1e3b] text-white border-b border-slate-200 py-12 lg:py-16 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7">
+        <ul class="breadcrumb mb-4">
+          <li class="breadcrumb-item"><a href="<?= url('/') ?>" class="text-slate-300 hover:text-white">Home</a></li>
+          <li class="breadcrumb-item text-amber-300 font-semibold">Contact Secretariat</li>
+        </ul>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded mb-3">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-300">Secretariat Liaison</span>
+        </div>
+        <h1 class="font-serif-diplomatic text-3xl sm:text-4xl lg:text-5xl text-white font-bold tracking-tight">
+          Contact the Secretariat
+        </h1>
+        <p class="font-sans text-base sm:text-lg text-slate-200 max-w-2xl mt-4 leading-relaxed m-0">
+          Connect with the official Secretariat of the Sri Lanka–France Business Council based at The Ceylon Chamber of Commerce in Colombo and our liaison desk in Paris.
+        </p>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
+          <div class="aspect-[16/10] rounded overflow-hidden relative">
+            <img src="<?= asset('assets/images/chamber-building.jpg') ?>" alt="The Ceylon Chamber of Commerce Headquarters" class="w-full h-full object-cover">
+            <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
+              Colombo 02 &amp; Paris 8e
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <h1 class="font-serif-diplomatic text-3xl sm:text-4xl lg:text-5xl text-[#0b1e3b] font-bold tracking-tight">
-      Contact the Secretariat
-    </h1>
-    <p class="font-sans text-base sm:text-lg text-slate-600 max-w-3xl mt-4 leading-relaxed">
-      Connect with the official Secretariat of the Sri Lanka–France Business Council based at The Ceylon Chamber of Commerce.
-    </p>
   </div>
 </section>
 
@@ -37,54 +50,66 @@ $publicEmail = \App\Models\SiteSetting::get('secretariat_email', 'info@slfbc.lk'
       <!-- Left 4 Columns: Secretariat Particulars -->
       <div class="lg:col-span-4 space-y-6">
         <!-- Secretariat Headquarters Card -->
-        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 shadow-sm">
-          <h3 class="font-serif-diplomatic text-lg font-bold text-[#002654] mb-4 pb-2 border-b border-slate-200">
-            Colombo Secretariat
-          </h3>
+        <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shadow-sm">
+          <div class="aspect-[16/8] bg-slate-200 overflow-hidden relative">
+            <img src="<?= asset('assets/images/chamber-building.jpg') ?>" alt="Colombo Secretariat" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#002654] text-white text-[11px] font-bold uppercase rounded">Colombo Headquarters</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif-diplomatic text-lg font-bold text-[#002654] mb-4 pb-2 border-b border-slate-200">
+              Colombo Secretariat
+            </h3>
 
-          <div class="space-y-4 text-xs sm:text-sm">
-            <div>
-              <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Headquarters</span>
-              <strong class="text-slate-800 block text-sm">The Ceylon Chamber of Commerce</strong>
-              <span class="text-slate-600 leading-relaxed block mt-0.5">
-                <?= e($address) ?>
-              </span>
-            </div>
+            <div class="space-y-4 text-xs sm:text-sm">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Headquarters</span>
+                <strong class="text-slate-800 block text-sm">The Ceylon Chamber of Commerce</strong>
+                <span class="text-slate-600 leading-relaxed block mt-0.5">
+                  <?= e($address) ?>
+                </span>
+              </div>
 
-            <div class="pt-3 border-t border-slate-200">
-              <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Telephone Inquiries</span>
-              <a href="tel:<?= e(str_replace(' ', '', $phoneColombo)) ?>" class="text-[#002654] font-bold text-sm hover:underline block">
-                <?= e($phoneColombo) ?>
-              </a>
-              <span class="text-[11px] text-slate-500 block mt-0.5">Chamber Switchboard (Ext. Bilateral Councils)</span>
-            </div>
+              <div class="pt-3 border-t border-slate-200">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Telephone Inquiries</span>
+                <a href="tel:<?= e(str_replace(' ', '', $phoneColombo)) ?>" class="text-[#002654] font-bold text-sm hover:underline block">
+                  <?= e($phoneColombo) ?>
+                </a>
+                <span class="text-[11px] text-slate-500 block mt-0.5">Chamber Switchboard (Ext. Bilateral Councils)</span>
+              </div>
 
-            <div class="pt-3 border-t border-slate-200">
-              <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Official Electronic Mail</span>
-              <a href="mailto:<?= e($publicEmail) ?>" class="text-[#002654] font-bold text-sm hover:underline block">
-                <?= e($publicEmail) ?>
-              </a>
-              <span class="text-[11px] text-slate-500 block mt-0.5">Attn: Manager – Bilateral Business Councils</span>
-            </div>
+              <div class="pt-3 border-t border-slate-200">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Official Electronic Mail</span>
+                <a href="mailto:<?= e($publicEmail) ?>" class="text-[#002654] font-bold text-sm hover:underline block">
+                  <?= e($publicEmail) ?>
+                </a>
+                <span class="text-[11px] text-slate-500 block mt-0.5">Attn: Manager – Bilateral Business Councils</span>
+              </div>
 
-            <div class="pt-3 border-t border-slate-200">
-              <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Working Hours</span>
-              <span class="text-slate-700 block">Monday &ndash; Friday: 08:30 &ndash; 17:00 (IST)</span>
+              <div class="pt-3 border-t border-slate-200">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Working Hours</span>
+                <span class="text-slate-700 block">Monday &ndash; Friday: 08:30 &ndash; 17:00 (IST)</span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Paris Liaison Office Card -->
-        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 shadow-sm">
-          <h3 class="font-serif-diplomatic text-lg font-bold text-[#002654] mb-3 pb-2 border-b border-slate-200">
-            Paris Liaison Office
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
-            27 Rue de Berri, 75008 Paris, France
-          </p>
-          <a href="tel:<?= e(str_replace(' ', '', $phoneParis)) ?>" class="text-[#002654] font-bold text-xs sm:text-sm hover:underline">
-            <?= e($phoneParis) ?>
-          </a>
+        <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shadow-sm">
+          <div class="aspect-[16/8] bg-slate-200 overflow-hidden relative">
+            <img src="<?= asset('assets/images/corridor-france.jpg') ?>" alt="Paris Liaison Office" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#b91c1c] text-white text-[11px] font-bold uppercase rounded">France Desk</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif-diplomatic text-lg font-bold text-[#002654] mb-3 pb-2 border-b border-slate-200">
+              Paris Liaison Office
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+              27 Rue de Berri, 75008 Paris, France
+            </p>
+            <a href="tel:<?= e(str_replace(' ', '', $phoneParis)) ?>" class="text-[#002654] font-bold text-xs sm:text-sm hover:underline">
+              <?= e($phoneParis) ?>
+            </a>
+          </div>
         </div>
 
         <!-- Diplomatic Inquiries Card -->

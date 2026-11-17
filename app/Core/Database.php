@@ -363,11 +363,23 @@ SQL;
             [1, 1, 'French Business Delegation Concludes Indian Ocean Logistics Tour', 'french-business-delegation-concludes-logistics-tour',
             'A high-level mission representing 14 French multinational industrial contractors evaluated deep-water port operations and off-grid green energy opportunities at the Port of Colombo.',
             '<p>A high-level commercial mission representing 14 French multinational industrial and engineering contractors recently concluded an extensive four-day evaluation tour of Sri Lanka’s logistics infrastructure and transshipment capabilities.</p><p>Coordinated by the Sri Lanka–France Business Council under the auspices of the Ceylon Chamber of Commerce and supported by the Embassy of France in Colombo, the delegation conducted strategic discussions with the Ministry of Ports and Shipping, the Board of Investment (BOI), and senior executive leadership of the Colombo Port Authority.</p><p>Key focus areas of the mission included evaluating deep-water container terminal operations, reviewing off-grid green port power transition pipelines, and exploring specialized cold-chain logistics hubs designed to serve high-value Indian Ocean shipping corridors.</p>',
-            'assets/images/bilateral-summit.jpg', 'Colombo Secretariat', '2026-03-14 10:00:00', 'published', 1,
+            'assets/images/news-logistics.jpg', 'Colombo Secretariat', '2026-03-14 10:00:00', 'published', 1,
             'French Business Delegation Concludes Logistics Tour | SLFBC',
             'High-level French trade delegation visits Port of Colombo to evaluate logistics and green energy opportunities.'],
+            [2, 2, '22nd Annual General Meeting Elects 2026/27 Executive Committee', '22nd-agm-elects-2026-27-executive-committee',
+            'Shaameel Mohideen elected President of the Sri Lanka–France Business Council alongside senior corporate leaders at the 22nd AGM held under The Ceylon Chamber of Commerce.',
+            '<p>The Sri Lanka–France Business Council (SLFBC) of The Ceylon Chamber of Commerce convened its 22nd Annual General Meeting in Colombo, graced by H.E. Rémi Lambert, Ambassador of the French Republic to Sri Lanka and the Maldives.</p><p>Shaameel Mohideen, Executive Director &amp; CEO of Spillburg Holdings (Pvt) Ltd, was elected President for the 2026/27 term, supported by Senior Vice President Zafir Hashim (John Keells Holdings PLC), Vice President Husni Salieh (Noyon Lanka), Honorary Treasurer Manura Wickramasinghe (Puritas / Hayleys Group), and Immediate Past President Andre Fernando (MAC Holdings).</p>',
+            'assets/images/agm-governance.jpg', 'Chamber Secretariat', '2026-07-24 09:30:00', 'published', 1,
+            '22nd AGM Elects 2026/27 Executive Committee | SLFBC',
+            'Shaameel Mohideen elected President of the Sri Lanka–France Business Council at the 22nd AGM.'],
+            [3, 3, 'Franco-Lankan Renewable Energy & Green Hydrogen Consortium Briefing', 'franco-lankan-renewable-energy-green-hydrogen-briefing',
+            'French clean-tech engineering firms and Sri Lankan utility operators outline joint venture frameworks for offshore wind and micro-grid deployment.',
+            '<p>Senior energy advisors from Paris and Colombo convened a technical roundtable focused on clean power grid modernization, solar storage, and green hydrogen infrastructure across Sri Lanka’s northern and western coastal corridors.</p>',
+            'assets/images/opp-energy.jpg', 'Economic Desk', '2026-05-19 14:00:00', 'published', 1,
+            'Franco-Lankan Renewable Energy Briefing | SLFBC',
+            'Joint venture frameworks for offshore wind and renewable energy between France and Sri Lanka.'],
         ];
-        $nStmt = $pdo->prepare("INSERT OR IGNORE INTO news (id, category_id, title, slug, excerpt, content, cover_image, author, published_at, status, is_featured, meta_title, meta_description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $nStmt = $pdo->prepare("INSERT OR REPLACE INTO news (id, category_id, title, slug, excerpt, content, cover_image, author, published_at, status, is_featured, meta_title, meta_description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         foreach ($news as $n) {
             $nStmt->execute($n);
         }
@@ -379,15 +391,15 @@ SQL;
             'Hôtel de Crillon, Place de la Concorde & Hybrid Video Link', 'Paris, France',
             'Convening chief executives, institutional investors, and ministry delegates on sovereign infrastructure financing and Indo-Pacific commercial partnerships.',
             '<p>The premier annual gathering of French and Sri Lankan corporate leadership, sovereign finance authorities, and trade delegates. Held under the patronage of the Embassy of France and the Ceylon Chamber of Commerce.</p><p>The three-day forum features plenary sessions on maritime transshipment hubs, renewable hydrogen co-investments, luxury sustainable tourism, and technological collaboration under EU standards.</p>',
-            'assets/images/bilateral-summit.jpg', '#register', 'open', 'published'],
+            'assets/images/investment-forum.jpg', '#register', 'open', 'published'],
             [2, 'Annual Bilateral Gala Dinner & Sovereign Trade Awards', 'annual-bilateral-gala-dinner-trade-awards',
             'Protocol Gala', '2026-02-02 19:30:00', '2026-02-02 23:00:00',
             'Official Residence of the Ambassador of France', 'Colombo, Sri Lanka',
             'Recognizing exemplary bilateral corporate achievements across specialty exports, sustainable investments, and bilateral industrial cooperation.',
             '<p>The Annual Bilateral Gala Dinner brings together council members, diplomats, and distinguished state representatives to celebrate outstanding contributions to Franco-Lankan commerce.</p><p>Awards presented include Bilateral Exporter of the Year, Sustainable Innovation Laureate, and Outstanding Bilateral Corporate Citizen.</p>',
-            'assets/images/bilateral-summit.jpg', null, 'closed', 'published'],
+            'assets/images/event-gala.jpg', null, 'closed', 'published'],
         ];
-        $eStmt = $pdo->prepare("INSERT OR IGNORE INTO events (id, title, slug, category, start_datetime, end_datetime, venue, location_city, summary, description, cover_image, registration_url, registration_status, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $eStmt = $pdo->prepare("INSERT OR REPLACE INTO events (id, title, slug, category, start_datetime, end_datetime, venue, location_city, summary, description, cover_image, registration_url, registration_status, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         foreach ($events as $ev) {
             $eStmt->execute($ev);
         }
