@@ -432,9 +432,10 @@ $backupController = new \App\Controllers\Admin\BackupAdminController();
 $bundle = $backupController->generateMasterBundle($config['app']['root_dir']);
 $t->assert("Backup Master Bundle generated with all 12 tables", isset($bundle['tables']) && count($bundle['tables']) === 12);
 $t->assert("Backup bundle captures active members and leadership", count($bundle['tables']['members']) > 0 && count($bundle['tables']['leadership']) > 0);
+$t->assert("Backup bundle captures all site images (public/assets/images/*)", isset($bundle['files']['images']) && count($bundle['files']['images']) >= 20, "Captured images: " . count($bundle['files']['images'] ?? []));
 
 $restoreStats = $backupController->applyBundleRestore($bundle, $config['app']['root_dir']);
-$t->assert("All-in-One Restore executes transactionally without error", $restoreStats['records'] > 0, "Restored records: " . $restoreStats['records']);
+$t->assert("All-in-One Restore executes transactionally (DB + Images)", $restoreStats['records'] > 0 && $restoreStats['files'] >= 20, "Records: {$restoreStats['records']}, Files: {$restoreStats['files']}");
 
 /* -------------------------------------------------------------
  * 13. FINISH REPORT

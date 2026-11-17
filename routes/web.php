@@ -34,6 +34,7 @@ use App\Controllers\Admin\LeadershipAdminController;
 use App\Controllers\Admin\OpportunityAdminController;
 use App\Controllers\Admin\SettingsAdminController;
 use App\Controllers\Admin\BackupAdminController;
+use App\Controllers\Admin\MediaAdminController;
 
 /**
  * Route Declarations for Sri Lanka–France Business Council Portal
@@ -179,6 +180,12 @@ $router->post('/admin/opportunities/{id}/delete', [OpportunityAdminController::c
 // Site Settings
 $router->get('/admin/settings', [SettingsAdminController::class, 'index'], [AuthMiddleware::class]);
 $router->post('/admin/settings', [SettingsAdminController::class, 'update'], [AuthMiddleware::class, CSRFMiddleware::class]);
+
+// Site Images & Media Gallery Manager
+$router->get('/admin/media', [MediaAdminController::class, 'index'], [AuthMiddleware::class]);
+$router->post('/admin/media/replace', [MediaAdminController::class, 'replaceSlot'], [AuthMiddleware::class, CSRFMiddleware::class]);
+$router->post('/admin/media/gallery', [MediaAdminController::class, 'storeGallery'], [AuthMiddleware::class, CSRFMiddleware::class]);
+$router->post('/admin/media/gallery/{id}/delete', [MediaAdminController::class, 'deleteGallery'], [AuthMiddleware::class, CSRFMiddleware::class]);
 
 // All-in-One Backup & Restore Center
 $router->get('/admin/backups', [BackupAdminController::class, 'index'], [AuthMiddleware::class]);

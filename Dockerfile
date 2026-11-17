@@ -36,7 +36,7 @@ RUN chmod +x /var/www/html/docker-entrypoint.sh \
                 /var/www/html/storage/backups \
                 /var/www/html/storage/logs \
                 /var/www/html/public/uploads \
-    && chown -R www-data:www-data /var/www/html/storage /var/www/html/public/uploads \
-    && chmod -R 775 /var/www/html/storage /var/www/html/public/uploads
+    && chown -R www-data:www-data /var/www/html/storage /var/www/html/public/uploads /var/www/html/public/assets/images \
+    && chmod -R 775 /var/www/html/storage /var/www/html/public/uploads /var/www/html/public/assets/images
 
 ENTRYPOINT ["/var/www/html/docker-entrypoint.sh"]

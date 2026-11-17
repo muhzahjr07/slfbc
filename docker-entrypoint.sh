@@ -14,8 +14,8 @@ mkdir -p /var/www/html/storage/documents \
          /var/www/html/storage/logs \
          /var/www/html/public/uploads
 
-chown -R www-data:www-data /var/www/html/storage /var/www/html/public/uploads
-chmod -R 775 /var/www/html/storage /var/www/html/public/uploads
+chown -R www-data:www-data /var/www/html/storage /var/www/html/public/uploads /var/www/html/public/assets/images
+chmod -R 775 /var/www/html/storage /var/www/html/public/uploads /var/www/html/public/assets/images
 
 echo "Starting Apache on port ${PORT}..."
 exec apache2-foreground

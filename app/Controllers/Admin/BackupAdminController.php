@@ -49,6 +49,7 @@ class BackupAdminController
         }
 
         $rootDir = $GLOBALS['config']['app']['root_dir'] ?? dirname(__DIR__, 3);
+        $siteImages = $this->scanDirectoryFiles($rootDir . '/public/assets/images');
         $uploadFiles = $this->scanDirectoryFiles($rootDir . '/public/uploads');
         $docFiles = $this->scanDirectoryFiles($rootDir . '/storage/documents');
         $snapshots = $this->listSavedSnapshots($rootDir . '/storage/backups');
@@ -66,8 +67,8 @@ class BackupAdminController
             'totalRecords' => $totalRecords,
             'driver' => strtoupper((string)$driver),
             'sqliteSize' => $sqliteSize,
-            'uploadCount' => count($uploadFiles),
-            'uploadBytes' => array_sum(array_column($uploadFiles, 'size')),
+            'uploadCount' => count($siteImages) + count($uploadFiles),
+            'uploadBytes' => array_sum(array_column($siteImages, 'size')) + array_sum(array_column($uploadFiles, 'size')),
             'docCount' => count($docFiles),
             'docBytes' => array_sum(array_column($docFiles, 'size')),
             'snapshots' => $snapshots,
@@ -99,6 +100,13 @@ class BackupAdminController
             $entries[] = [
                 'name' => 'database.sqlite',
                 'data' => (string)file_get_contents($sqlitePath),
+            ];
+        }
+
+        foreach (($bundle['files']['images'] ?? []) as $relPath => $fileInfo) {
+            $entries[] = [
+                'name' => 'assets/images/' . $relPath,
+                'data' => (string)base64_decode($fileInfo['content_base64']),
             ];
         }
 
@@ -293,10 +301,17 @@ class BackupAdminController
             }
         }
 
+        $imagesMap = [];
         $uploadsMap = [];
         $docsMap = [];
 
         if ($includeFiles) {
+            foreach ($this->scanDirectoryFiles($rootDir . '/public/assets/images') as $f) {
+                $imagesMap[$f['rel']] = [
+                    'size' => $f['size'],
+                    'content_base64' => base64_encode((string)file_get_contents($f['full'])),
+                ];
+            }
             foreach ($this->scanDirectoryFiles($rootDir . '/public/uploads') as $f) {
                 $uploadsMap[$f['rel']] = [
                     'size' => $f['size'],
@@ -320,6 +335,7 @@ class BackupAdminController
             ],
             'tables' => $tablesData,
             'files' => [
+                'images' => $imagesMap,
                 'uploads' => $uploadsMap,
                 'documents' => $docsMap,
             ],
@@ -373,6 +389,23 @@ class BackupAdminController
                 $pdo->exec('PRAGMA foreign_keys = ON;');
             } else {
                 $pdo->exec('SET FOREIGN_KEY_CHECKS = 1;');
+            }
+        }
+
+        // Restore site & uploaded images (public/assets/images/*)
+        $images = $bundleData['files']['images'] ?? [];
+        if (is_array($images)) {
+            foreach ($images as $relPath => $info) {
+                $safeRel = ltrim(str_replace(['..', '\\'], ['', '/'], (string)$relPath), '/');
+                if ($safeRel === '' || empty($info['content_base64'])) {
+                    continue;
+                }
+                $dest = $rootDir . '/public/assets/images/' . $safeRel;
+                if (!is_dir(dirname($dest))) {
+                    mkdir(dirname($dest), 0775, true);
+                }
+                file_put_contents($dest, base64_decode((string)$info['content_base64']));
+                $restoredFiles++;
             }
         }
 
@@ -571,6 +604,7 @@ class BackupAdminController
         $it = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator($dir, \FilesystemIterator::SKIP_DOTS)
         );
+        $normDir = rtrim(str_replace('\\', '/', $dir), '/') . '/';
         foreach ($it as $fileInfo) {
             if (!$fileInfo->isFile()) {
                 continue;
@@ -580,7 +614,8 @@ class BackupAdminController
                 continue;
             }
             $full = $fileInfo->getPathname();
-            $rel = ltrim(str_replace(['\\', $dir], ['/', ''], $full), '/');
+            $normFull = str_replace('\\', '/', $full);
+            $rel = str_starts_with($normFull, $normDir) ? substr($normFull, strlen($normDir)) : $filename;
             $result[] = [
                 'full' => $full,
                 'rel' => $rel,
@@ -608,3 +643,4 @@ class BackupAdminController
         return $list;
     }
 }
+
