@@ -33,8 +33,8 @@ $isUpcoming = strtotime($event['start_datetime']) >= time();
       <!-- Left 8 Columns: Event Overview & Proceedings -->
       <div class="lg:col-span-8 space-y-10">
         <?php if (!empty($event['cover_image'])): ?>
-          <div class="rounded-lg overflow-hidden shadow-sm border border-slate-200 bg-slate-100 max-h-[460px]">
-            <img src="<?= asset($event['cover_image']) ?>" alt="<?= e($event['title']) ?>" class="w-full h-auto object-cover">
+          <div class="rounded-lg overflow-hidden shadow-sm border border-slate-200 bg-slate-100 std-hero-img">
+            <img src="<?= asset($event['cover_image']) ?>" alt="<?= e($event['title']) ?>" class="w-full h-full object-cover">
           </div>
         <?php endif; ?>
 

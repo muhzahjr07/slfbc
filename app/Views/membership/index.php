@@ -34,7 +34,7 @@
       </div>
       <div class="lg:col-span-5">
         <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
-          <div class="aspect-[16/10] rounded overflow-hidden relative">
+          <div class="std-hero-img rounded">
             <img src="<?= asset('assets/images/gallery-b2b.jpg') ?>" alt="SLFBC Executive Networking and B2B Matchmaking" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
               70+ Accredited Corporate Members
@@ -66,53 +66,53 @@
       </div>
     </div>
 
-    <div data-carousel-track class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
-      <div class="min-w-[300px] sm:min-w-[340px] snap-start bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:border-[#002654] transition-all shrink-0">
-        <div class="aspect-[16/9] bg-slate-100 overflow-hidden">
+    <div data-carousel-track class="carousel-track-3 pb-2">
+      <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:border-[#002654] transition-all">
+        <div class="std-card-img bg-slate-100">
           <img src="<?= asset('assets/images/gallery-embassy.jpg') ?>" alt="Diplomatic and Institutional Access" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
+        <div class="p-5">
           <span class="text-xs font-bold uppercase text-[#002654] block mb-1">Privilege 01</span>
-          <h3 class="font-serif-diplomatic text-lg font-bold text-[#0b1e3b] mb-2">Diplomatic &amp; Institutional Access</h3>
+          <h3 class="font-serif-diplomatic text-base sm:text-lg font-bold text-[#0b1e3b] mb-2">Diplomatic &amp; Institutional Access</h3>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
             Direct protocol engagement with the Embassy of France, Business France, MEDEF International, and Sri Lankan trade ministries.
           </p>
         </div>
       </div>
 
-      <div class="min-w-[300px] sm:min-w-[340px] snap-start bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:border-[#002654] transition-all shrink-0">
-        <div class="aspect-[16/9] bg-slate-100 overflow-hidden">
+      <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:border-[#002654] transition-all">
+        <div class="std-card-img bg-slate-100">
           <img src="<?= asset('assets/images/corridor-france.jpg') ?>" alt="Bilateral Trade Missions" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
+        <div class="p-5">
           <span class="text-xs font-bold uppercase text-[#b91c1c] block mb-1">Privilege 02</span>
-          <h3 class="font-serif-diplomatic text-lg font-bold text-[#0b1e3b] mb-2">Bilateral Trade Missions</h3>
+          <h3 class="font-serif-diplomatic text-base sm:text-lg font-bold text-[#0b1e3b] mb-2">Bilateral Trade Missions</h3>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
             Priority participation in outbound delegations to Paris, Lyon, and Marseille, plus closed-door roundtables with visiting French missions.
           </p>
         </div>
       </div>
 
-      <div class="min-w-[300px] sm:min-w-[340px] snap-start bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:border-[#002654] transition-all shrink-0">
-        <div class="aspect-[16/9] bg-slate-100 overflow-hidden">
+      <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:border-[#002654] transition-all">
+        <div class="std-card-img bg-slate-100">
           <img src="<?= asset('assets/images/gallery-delegation.jpg') ?>" alt="Targeted B2B Matchmaking" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
+        <div class="p-5">
           <span class="text-xs font-bold uppercase text-[#8d4004] block mb-1">Privilege 03</span>
-          <h3 class="font-serif-diplomatic text-lg font-bold text-[#0b1e3b] mb-2">Targeted B2B Matchmaking</h3>
+          <h3 class="font-serif-diplomatic text-base sm:text-lg font-bold text-[#0b1e3b] mb-2">Targeted B2B Matchmaking</h3>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
             Curated introductions to French corporate buyers, joint-venture partners, industrial suppliers, and technology consortia.
           </p>
         </div>
       </div>
 
-      <div class="min-w-[300px] sm:min-w-[340px] snap-start bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:border-[#002654] transition-all shrink-0">
-        <div class="aspect-[16/9] bg-slate-100 overflow-hidden">
+      <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:border-[#002654] transition-all">
+        <div class="std-card-img bg-slate-100">
           <img src="<?= asset('assets/images/chamber-building.jpg') ?>" alt="Policy and Trade Advocacy" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
+        <div class="p-5">
           <span class="text-xs font-bold uppercase text-[#002654] block mb-1">Privilege 04</span>
-          <h3 class="font-serif-diplomatic text-lg font-bold text-[#0b1e3b] mb-2">Policy &amp; GSP+ Advocacy</h3>
+          <h3 class="font-serif-diplomatic text-base sm:text-lg font-bold text-[#0b1e3b] mb-2">Policy &amp; GSP+ Advocacy</h3>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
             Statutory representation through The Ceylon Chamber of Commerce on EU regulatory compliance, GSP+ rules of origin, and customs barriers.
           </p>

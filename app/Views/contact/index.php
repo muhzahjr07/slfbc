@@ -30,7 +30,7 @@ $publicEmail = \App\Models\SiteSetting::get('secretariat_email', 'info@slfbc.lk'
       </div>
       <div class="lg:col-span-5">
         <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
-          <div class="aspect-[16/10] rounded overflow-hidden relative">
+          <div class="std-hero-img rounded">
             <img src="<?= asset('assets/images/chamber-building.jpg') ?>" alt="The Ceylon Chamber of Commerce Headquarters" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
               Colombo 02 &amp; Paris 8e
@@ -51,7 +51,7 @@ $publicEmail = \App\Models\SiteSetting::get('secretariat_email', 'info@slfbc.lk'
       <div class="lg:col-span-4 space-y-6">
         <!-- Secretariat Headquarters Card -->
         <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shadow-sm">
-          <div class="aspect-[16/8] bg-slate-200 overflow-hidden relative">
+          <div class="std-thumb-img bg-slate-200">
             <img src="<?= asset('assets/images/chamber-building.jpg') ?>" alt="Colombo Secretariat" class="w-full h-full object-cover">
             <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#002654] text-white text-[11px] font-bold uppercase rounded">Colombo Headquarters</span>
           </div>
@@ -95,7 +95,7 @@ $publicEmail = \App\Models\SiteSetting::get('secretariat_email', 'info@slfbc.lk'
 
         <!-- Paris Liaison Office Card -->
         <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shadow-sm">
-          <div class="aspect-[16/8] bg-slate-200 overflow-hidden relative">
+          <div class="std-thumb-img bg-slate-200">
             <img src="<?= asset('assets/images/corridor-france.jpg') ?>" alt="Paris Liaison Office" class="w-full h-full object-cover">
             <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#b91c1c] text-white text-[11px] font-bold uppercase rounded">France Desk</span>
           </div>

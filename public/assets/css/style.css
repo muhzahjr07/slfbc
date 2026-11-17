@@ -527,6 +527,166 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
    INTERACTIVE SLIDERS, CAROUSELS, MARQUEE & ACCORDIONS
    ========================================================================= */
 
+/* Ensure headings inside dark/white-text containers are always legible white */
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+h1.text-white,
+h2.text-white,
+h3.text-white,
+h4.text-white,
+h5.text-white,
+h6.text-white {
+  color: #ffffff !important;
+}
+
+/* Standard Compact Image Containers (Prevents Oversized Images) */
+.std-hero-img {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  max-height: 240px;
+  overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .std-hero-img {
+    height: 265px;
+    max-height: 265px;
+  }
+}
+.std-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.std-corridor-img {
+  position: relative;
+  width: 100%;
+  height: 185px;
+  max-height: 185px;
+  overflow: hidden;
+}
+.std-corridor-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.std-card-img {
+  position: relative;
+  width: 100%;
+  height: 165px;
+  max-height: 165px;
+  overflow: hidden;
+}
+.std-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.std-thumb-img {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  max-height: 140px;
+  overflow: hidden;
+}
+.std-thumb-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Exact-Fit Multi-Column Carousel Tracks (Never Splits a Card in Half) */
+.carousel-track-3,
+.carousel-track-2,
+.carousel-track-4 {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.carousel-track-3::-webkit-scrollbar,
+.carousel-track-2::-webkit-scrollbar,
+.carousel-track-4::-webkit-scrollbar {
+  display: none;
+}
+
+/* 3-Column Carousel (1 col mobile, 2 col tablet, 3 col desktop) */
+.carousel-track-3 {
+  gap: 1.5rem;
+}
+.carousel-track-3 > * {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+}
+@media (min-width: 640px) {
+  .carousel-track-3 > * {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+    width: calc((100% - 1.5rem) / 2);
+    max-width: calc((100% - 1.5rem) / 2);
+  }
+}
+@media (min-width: 1024px) {
+  .carousel-track-3 > * {
+    flex: 0 0 calc((100% - 3rem) / 3);
+    width: calc((100% - 3rem) / 3);
+    max-width: calc((100% - 3rem) / 3);
+  }
+}
+
+/* 2-Column Carousel for 8-col Inner Pages (1 col mobile, 2 col tablet/desktop) */
+.carousel-track-2 {
+  gap: 1.25rem;
+}
+.carousel-track-2 > * {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+}
+@media (min-width: 640px) {
+  .carousel-track-2 > * {
+    flex: 0 0 calc((100% - 1.25rem) / 2);
+    width: calc((100% - 1.25rem) / 2);
+    max-width: calc((100% - 1.25rem) / 2);
+  }
+}
+
+/* 4-Column Carousel for Committee Members (1 col mobile, 2 col tablet, 4 col desktop) */
+.carousel-track-4 {
+  gap: 1.25rem;
+}
+.carousel-track-4 > * {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+}
+@media (min-width: 640px) {
+  .carousel-track-4 > * {
+    flex: 0 0 calc((100% - 1.25rem) / 2);
+    width: calc((100% - 1.25rem) / 2);
+    max-width: calc((100% - 1.25rem) / 2);
+  }
+}
+@media (min-width: 1024px) {
+  .carousel-track-4 > * {
+    flex: 0 0 calc((100% - 3.75rem) / 4);
+    width: calc((100% - 3.75rem) / 4);
+    max-width: calc((100% - 3.75rem) / 4);
+  }
+}
+
 /* Hide scrollbars on horizontal scroll-snap carousels */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

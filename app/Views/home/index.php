@@ -84,7 +84,7 @@ $oppImages = [
 
       <div class="lg:col-span-5 flex flex-col">
         <div class="relative bg-white border-2 border-slate-200 p-3 rounded-lg shadow-lg">
-          <div class="relative overflow-hidden aspect-[16/10] rounded bg-slate-100 border border-slate-200">
+          <div class="std-hero-img rounded bg-slate-100 border border-slate-200">
             <img src="<?= asset('assets/images/bilateral-summit.jpg') ?>" alt="Bilateral Summit between French and Sri Lankan delegations" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded border border-slate-200 shadow-sm flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-[#b91c1c] animate-pulse"></span>
@@ -134,7 +134,7 @@ $oppImages = [
 
       <div class="lg:col-span-5 flex flex-col">
         <div class="relative bg-white border-2 border-slate-200 p-3 rounded-lg shadow-lg">
-          <div class="relative overflow-hidden aspect-[16/10] rounded bg-slate-100 border border-slate-200">
+          <div class="std-hero-img rounded bg-slate-100 border border-slate-200">
             <img src="<?= asset('assets/images/agm-governance.jpg') ?>" alt="22nd AGM and Executive Committee Assembly" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded border border-slate-200 shadow-sm flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
@@ -184,7 +184,7 @@ $oppImages = [
 
       <div class="lg:col-span-5 flex flex-col">
         <div class="relative bg-white border-2 border-slate-200 p-3 rounded-lg shadow-lg">
-          <div class="relative overflow-hidden aspect-[16/10] rounded bg-slate-100 border border-slate-200">
+          <div class="std-hero-img rounded bg-slate-100 border border-slate-200">
             <img src="<?= asset('assets/images/corridor-maritime.jpg') ?>" alt="Colombo to Marseille Maritime Logistics Corridor" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded border border-slate-200 shadow-sm flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-[#002654]"></span>
@@ -234,7 +234,7 @@ $oppImages = [
 
       <div class="lg:col-span-5 flex flex-col">
         <div class="relative bg-white border-2 border-slate-200 p-3 rounded-lg shadow-lg">
-          <div class="relative overflow-hidden aspect-[16/10] rounded bg-slate-100 border border-slate-200">
+          <div class="std-hero-img rounded bg-slate-100 border border-slate-200">
             <img src="<?= asset('assets/images/investment-forum.jpg') ?>" alt="2026 Bilateral Investment Forum" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded border border-slate-200 shadow-sm flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
@@ -356,7 +356,7 @@ $oppImages = [
       <!-- Corridor A: Sri Lanka -->
       <div class="bg-white border-2 border-slate-200 rounded-lg overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition-all group">
         <div>
-          <div class="relative aspect-[16/7] bg-slate-900 overflow-hidden">
+          <div class="std-corridor-img bg-slate-900">
             <img src="<?= asset('assets/images/corridor-srilanka.jpg') ?>" alt="Colombo Port and Sri Lanka Maritime Hub" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-[#0b1e3b]/90 via-[#0b1e3b]/30 to-transparent"></div>
             <div class="absolute bottom-4 left-6 right-6 flex items-end justify-between">
@@ -410,7 +410,7 @@ $oppImages = [
       <!-- Corridor B: France -->
       <div class="bg-white border-2 border-slate-200 rounded-lg overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition-all group">
         <div>
-          <div class="relative aspect-[16/7] bg-slate-900 overflow-hidden">
+          <div class="std-corridor-img bg-slate-900">
             <img src="<?= asset('assets/images/corridor-france.jpg') ?>" alt="Paris Business District and European Single Market" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-[#0b1e3b]/90 via-[#0b1e3b]/30 to-transparent"></div>
             <div class="absolute bottom-4 left-6 right-6 flex items-end justify-between">
@@ -484,23 +484,23 @@ $oppImages = [
     </div>
 
     <!-- Horizontal Scroll-Snap Image Cards -->
-    <div data-carousel-track class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
+    <div data-carousel-track class="carousel-track-3 pb-2">
       <?php foreach ($opportunities as $opp):
         $imgPath = $oppImages[$opp['slug']] ?? 'assets/images/opp-maritime.jpg';
       ?>
-        <div class="min-w-[300px] sm:min-w-[350px] lg:min-w-[370px] snap-start bg-white border border-slate-200 rounded-lg overflow-hidden flex flex-col justify-between hover:border-[#002654] hover:shadow-md transition-all group shrink-0">
+        <div class="bg-white border border-slate-200 rounded-lg overflow-hidden flex flex-col justify-between hover:border-[#002654] hover:shadow-md transition-all group">
           <div>
-            <div class="relative aspect-[16/9] bg-slate-100 overflow-hidden">
+            <div class="std-card-img bg-slate-100">
               <img src="<?= asset($imgPath) ?>" alt="<?= e($opp['title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <span class="absolute top-3 left-3 px-2.5 py-1 bg-[#002654]/90 backdrop-blur-sm text-white font-bold text-[11px] uppercase rounded">
                 <?= e($opp['track']) ?>
               </span>
-              <span class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/95 text-[#002654] flex items-center justify-center shadow">
-                <span class="material-symbols-outlined text-lg"><?= e($opp['icon']) ?></span>
+              <span class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-white/95 text-[#002654] flex items-center justify-center shadow">
+                <span class="material-symbols-outlined text-base"><?= e($opp['icon']) ?></span>
               </span>
             </div>
-            <div class="p-6">
-              <h3 class="font-serif-diplomatic text-lg text-[#0b1e3b] font-bold mb-2 group-hover:text-[#002654] transition-colors">
+            <div class="p-5">
+              <h3 class="font-serif-diplomatic text-base sm:text-lg text-[#0b1e3b] font-bold mb-2 group-hover:text-[#002654] transition-colors">
                 <a href="<?= url('/opportunities/' . e($opp['slug'])) ?>" class="text-[#0b1e3b] hover:text-[#002654]">
                   <?= e($opp['title']) ?>
                 </a>
@@ -510,7 +510,7 @@ $oppImages = [
               </p>
             </div>
           </div>
-          <div class="px-6 py-3.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+          <div class="px-5 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
             <span class="text-[11px] font-semibold text-slate-500 uppercase"><?= e($opp['status_label']) ?></span>
             <a href="<?= url('/opportunities/' . e($opp['slug'])) ?>" class="text-xs font-bold text-[#002654] hover:underline flex items-center gap-1">
               Dossier <span class="material-symbols-outlined text-sm">arrow_forward</span>
@@ -541,13 +541,13 @@ $oppImages = [
         <?php foreach (array_slice($upcomingEvents, 0, 1) as $ev): ?>
           <div class="bg-white border-2 border-[#002654]/30 rounded-lg overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition-all group">
             <div>
-              <div class="relative aspect-[16/9] bg-slate-100 overflow-hidden">
+              <div class="std-card-img bg-slate-100">
                 <img src="<?= asset($ev['cover_image'] ?: 'assets/images/investment-forum.jpg') ?>" alt="<?= e($ev['title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 px-2.5 py-1 bg-[#002654] text-white font-bold text-[11px] uppercase tracking-wider rounded shadow">Upcoming Summit</span>
                 <span class="absolute bottom-3 left-3 px-2.5 py-0.5 bg-white/95 text-[#b91c1c] font-bold text-xs uppercase rounded shadow"><?= date('M d, Y', strtotime($ev['start_datetime'])) ?></span>
               </div>
-              <div class="p-6">
-                <h3 class="font-serif-diplomatic text-lg text-[#0b1e3b] font-bold mb-2 group-hover:text-[#002654] transition-colors">
+              <div class="p-5">
+                <h3 class="font-serif-diplomatic text-base sm:text-lg text-[#0b1e3b] font-bold mb-2 group-hover:text-[#002654] transition-colors">
                   <a href="<?= url('/events/' . e($ev['slug'])) ?>" class="text-[#0b1e3b] hover:text-[#002654]">
                     <?= e($ev['title']) ?>
                   </a>
@@ -561,7 +561,7 @@ $oppImages = [
                 </div>
               </div>
             </div>
-            <div class="px-6 py-3.5 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
+            <div class="px-5 py-3 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
               <span class="text-[11px] font-bold text-emerald-700 uppercase flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-emerald-600 inline-block"></span>
                 <?= strtoupper(e($ev['registration_status'])) ?>
@@ -578,15 +578,15 @@ $oppImages = [
         <?php foreach (array_slice($latestNews, 0, 2) as $art): ?>
           <div class="bg-white border border-slate-200 rounded-lg overflow-hidden flex flex-col justify-between shadow-sm hover:border-slate-300 hover:shadow-md transition-all group">
             <div>
-              <div class="relative aspect-[16/9] bg-slate-100 overflow-hidden">
+              <div class="std-card-img bg-slate-100">
                 <img src="<?= asset($art['cover_image'] ?: 'assets/images/news-logistics.jpg') ?>" alt="<?= e($art['title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 px-2.5 py-1 bg-white/95 text-[#002654] font-bold text-[11px] uppercase tracking-wider rounded shadow">
                   <?= e($art['category_name'] ?? 'Communiqué') ?>
                 </span>
               </div>
-              <div class="p-6">
+              <div class="p-5">
                 <span class="text-[11px] font-bold text-slate-400 uppercase block mb-1"><?= date('M d, Y', strtotime($art['published_at'])) ?></span>
-                <h3 class="font-serif-diplomatic text-lg text-[#0b1e3b] font-bold mb-2 group-hover:text-[#002654] transition-colors">
+                <h3 class="font-serif-diplomatic text-base sm:text-lg text-[#0b1e3b] font-bold mb-2 group-hover:text-[#002654] transition-colors">
                   <a href="<?= url('/news/' . e($art['slug'])) ?>" class="text-[#0b1e3b] hover:text-[#002654]">
                     <?= e($art['title']) ?>
                   </a>
@@ -596,7 +596,7 @@ $oppImages = [
                 </p>
               </div>
             </div>
-            <div class="px-6 py-3.5 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
+            <div class="px-5 py-3 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
               <span class="text-[11px] font-bold text-slate-500 uppercase"><?= e($art['author']) ?></span>
               <a href="<?= url('/news/' . e($art['slug'])) ?>" class="text-xs font-bold text-[#002654] hover:underline flex items-center">
                 Read Briefing <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
@@ -668,11 +668,11 @@ $oppImages = [
     </div>
 
     <!-- Committee Members Single-Row Slider -->
-    <div data-carousel-track class="flex gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
+    <div data-carousel-track class="carousel-track-4 pb-2">
       <?php foreach ($committee as $member): if ($member['category'] === 'president') continue;
         $orgInitials = strtoupper(substr(preg_replace('/[^A-Za-z]/', '', $member['organization']), 0, 2));
       ?>
-        <div class="min-w-[270px] sm:min-w-[290px] snap-start p-5 bg-slate-50 border border-slate-200 rounded-lg shadow-sm flex flex-col justify-between hover:border-[#002654] hover:bg-white transition-all shrink-0">
+        <div class="p-5 bg-slate-50 border border-slate-200 rounded-lg shadow-sm flex flex-col justify-between hover:border-[#002654] hover:bg-white transition-all">
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
               <span class="px-2.5 py-0.5 bg-white border border-slate-300 text-[#002654] text-[11px] font-bold uppercase rounded"><?= e($member['role_title']) ?></span>
@@ -703,36 +703,36 @@ $oppImages = [
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <a href="<?= url('/gallery') ?>" class="group relative aspect-[4/3] rounded-lg overflow-hidden bg-slate-900 shadow-sm border border-slate-200">
+      <a href="<?= url('/gallery') ?>" class="group std-card-img rounded-lg bg-slate-900 shadow-sm border border-slate-200 block">
         <img src="<?= asset('assets/images/bilateral-summit.jpg') ?>" alt="Bilateral Investment Summit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         <div class="absolute inset-0 bg-gradient-to-t from-[#0b1e3b]/90 via-transparent to-transparent"></div>
         <div class="absolute bottom-3 left-3 right-3 text-white">
           <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 block">Paris &amp; Colombo</span>
-          <p class="font-serif-diplomatic text-sm font-bold m-0">Bilateral Investment Summit</p>
+          <p class="font-serif-diplomatic text-sm font-bold m-0 text-white">Bilateral Investment Summit</p>
         </div>
       </a>
-      <a href="<?= url('/gallery') ?>" class="group relative aspect-[4/3] rounded-lg overflow-hidden bg-slate-900 shadow-sm border border-slate-200">
+      <a href="<?= url('/gallery') ?>" class="group std-card-img rounded-lg bg-slate-900 shadow-sm border border-slate-200 block">
         <img src="<?= asset('assets/images/agm-governance.jpg') ?>" alt="22nd Annual General Meeting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         <div class="absolute inset-0 bg-gradient-to-t from-[#0b1e3b]/90 via-transparent to-transparent"></div>
         <div class="absolute bottom-3 left-3 right-3 text-white">
           <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 block">Galle Face Hotel</span>
-          <p class="font-serif-diplomatic text-sm font-bold m-0">22nd Annual General Meeting</p>
+          <p class="font-serif-diplomatic text-sm font-bold m-0 text-white">22nd Annual General Meeting</p>
         </div>
       </a>
-      <a href="<?= url('/gallery') ?>" class="group relative aspect-[4/3] rounded-lg overflow-hidden bg-slate-900 shadow-sm border border-slate-200">
+      <a href="<?= url('/gallery') ?>" class="group std-card-img rounded-lg bg-slate-900 shadow-sm border border-slate-200 block">
         <img src="<?= asset('assets/images/gallery-embassy.jpg') ?>" alt="Embassy of France Diplomatic Reception" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         <div class="absolute inset-0 bg-gradient-to-t from-[#0b1e3b]/90 via-transparent to-transparent"></div>
         <div class="absolute bottom-3 left-3 right-3 text-white">
           <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 block">Embassy of France</span>
-          <p class="font-serif-diplomatic text-sm font-bold m-0">Diplomatic Trade Reception</p>
+          <p class="font-serif-diplomatic text-sm font-bold m-0 text-white">Diplomatic Trade Reception</p>
         </div>
       </a>
-      <a href="<?= url('/gallery') ?>" class="group relative aspect-[4/3] rounded-lg overflow-hidden bg-slate-900 shadow-sm border border-slate-200">
+      <a href="<?= url('/gallery') ?>" class="group std-card-img rounded-lg bg-slate-900 shadow-sm border border-slate-200 block">
         <img src="<?= asset('assets/images/gallery-b2b.jpg') ?>" alt="Corporate B2B Matchmaking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         <div class="absolute inset-0 bg-gradient-to-t from-[#0b1e3b]/90 via-transparent to-transparent"></div>
         <div class="absolute bottom-3 left-3 right-3 text-white">
           <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 block">Ceylon Chamber</span>
-          <p class="font-serif-diplomatic text-sm font-bold m-0">Incoming Delegation B2B Forum</p>
+          <p class="font-serif-diplomatic text-sm font-bold m-0 text-white">Incoming Delegation B2B Forum</p>
         </div>
       </a>
     </div>

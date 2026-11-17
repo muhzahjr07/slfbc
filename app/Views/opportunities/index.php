@@ -30,7 +30,7 @@ $oppImages = [
       </div>
       <div class="lg:col-span-5">
         <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
-          <div class="aspect-[16/10] rounded overflow-hidden relative">
+          <div class="std-hero-img rounded">
             <img src="<?= asset('assets/images/corridor-maritime.jpg') ?>" alt="Franco-Lankan Trade and Investment Corridors" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
               Active Bilateral Project Pipeline
@@ -67,7 +67,7 @@ $oppImages = [
       ?>
         <article class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md hover:border-[#002654] flex flex-col justify-between transition-all group">
           <div>
-            <div class="relative aspect-[16/9] bg-slate-100 overflow-hidden">
+            <div class="std-card-img bg-slate-100">
               <img src="<?= asset($imgPath) ?>" alt="<?= e($opp['title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <span class="absolute top-3 left-3 px-2.5 py-1 bg-[#002654]/90 backdrop-blur-sm text-white text-xs font-bold uppercase rounded">
                 <?= e($opp['track']) ?>

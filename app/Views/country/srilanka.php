@@ -25,7 +25,7 @@
       </div>
       <div class="lg:col-span-5">
         <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
-          <div class="aspect-[16/10] rounded overflow-hidden relative">
+          <div class="std-hero-img rounded">
             <img src="<?= asset('assets/images/corridor-srilanka.jpg') ?>" alt="Colombo Port and Indian Ocean Hub" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
               Colombo • Port City SEZ • Hambantota
@@ -52,7 +52,7 @@
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
-              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+              <div class="std-card-img bg-slate-100">
                 <img src="<?= asset('assets/images/corridor-maritime.jpg') ?>" alt="Maritime Logistics and Port Infrastructure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#002654] text-white text-[11px] font-bold uppercase rounded">7.2M+ TEUs</span>
               </div>
@@ -65,7 +65,7 @@
             </div>
 
             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
-              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+              <div class="std-card-img bg-slate-100">
                 <img src="<?= asset('assets/images/opp-energy.jpg') ?>" alt="Renewable Energy and Water Engineering" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-emerald-700 text-white text-[11px] font-bold uppercase rounded">70% Clean Power Target</span>
               </div>
@@ -78,7 +78,7 @@
             </div>
 
             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
-              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+              <div class="std-card-img bg-slate-100">
                 <img src="<?= asset('assets/images/opp-tourism.jpg') ?>" alt="Sustainable Luxury Hospitality" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#c59b27] text-white text-[11px] font-bold uppercase rounded">Hospitality Assets</span>
               </div>
@@ -91,7 +91,7 @@
             </div>
 
             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
-              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+              <div class="std-card-img bg-slate-100">
                 <img src="<?= asset('assets/images/opp-tech.jpg') ?>" alt="Precision Manufacturing and Graphite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#b91c1c] text-white text-[11px] font-bold uppercase rounded">BOI Zones</span>
               </div>
@@ -122,22 +122,22 @@
             </div>
           </div>
 
-          <div data-carousel-track class="flex gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
-            <div class="min-w-[270px] sm:min-w-[300px] snap-start bg-white border border-slate-200 rounded-lg p-5 shrink-0">
+          <div data-carousel-track class="carousel-track-2 pb-2">
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
               <span class="px-2.5 py-0.5 bg-[#002654] text-white text-xs font-bold uppercase rounded">Financial SEZ</span>
               <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mt-3 mb-2">Port City Colombo</h3>
               <p class="text-xs sm:text-sm text-slate-600 m-0 leading-relaxed">
                 English common-law regulatory jurisdiction, 100% foreign ownership, multi-currency banking, and corporate tax exemptions up to 25 years.
               </p>
             </div>
-            <div class="min-w-[270px] sm:min-w-[300px] snap-start bg-white border border-slate-200 rounded-lg p-5 shrink-0">
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
               <span class="px-2.5 py-0.5 bg-[#b91c1c] text-white text-xs font-bold uppercase rounded">BOI Export Zone</span>
               <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mt-3 mb-2">Katunayake &amp; Biyagama EPZs</h3>
               <p class="text-xs sm:text-sm text-slate-600 m-0 leading-relaxed">
                 Premier industrial export processing zones adjacent to Bandaranaike International Airport, hosting global apparel, tire, and electronics plants.
               </p>
             </div>
-            <div class="min-w-[270px] sm:min-w-[300px] snap-start bg-white border border-slate-200 rounded-lg p-5 shrink-0">
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
               <span class="px-2.5 py-0.5 bg-[#c59b27] text-white text-xs font-bold uppercase rounded">Deepwater Port Zone</span>
               <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mt-3 mb-2">Hambantota Maritime Industrial Park</h3>
               <p class="text-xs sm:text-sm text-slate-600 m-0 leading-relaxed">
@@ -204,7 +204,7 @@
         </div>
 
         <div class="p-6 bg-[#002654] text-white rounded-lg shadow-sm">
-          <h3 class="font-serif-diplomatic text-lg font-bold mb-2">Explore Inward Investment</h3>
+          <h3 class="font-serif-diplomatic text-lg font-bold text-white mb-2">Explore Inward Investment</h3>
           <p class="text-xs text-slate-300 leading-relaxed mb-4">
             Our Secretariat facilitates verified B2B matchmaking, ministry introductions, and site visits for French commercial missions.
           </p>

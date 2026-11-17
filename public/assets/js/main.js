@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startAutoPlay();
   }
 
-  // 7. Universal Horizontal Scroll-Snap Carousels (With Auto-Slide & Pause on Hover)
+  // 7. Universal Horizontal Carousels (Exact Card Alignment — Never Splits a Card)
   const carousels = document.querySelectorAll('[data-carousel]');
   carousels.forEach(function (carousel) {
     const track = carousel.querySelector('[data-carousel-track]');
@@ -241,18 +241,38 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!track) return;
 
     let carouselTimer = null;
+    let currentCardIdx = 0;
 
-    const getScrollStep = () => {
-      const firstItem = track.firstElementChild;
-      return firstItem ? firstItem.getBoundingClientRect().width + 24 : 340;
+    const getItems = () => Array.from(track.children);
+
+    const getVisibleCount = () => {
+      const items = getItems();
+      if (items.length < 2) return 1;
+      const trackWidth = track.clientWidth;
+      const itemWidth = items[0].getBoundingClientRect().width;
+      return Math.max(1, Math.round(trackWidth / itemWidth));
+    };
+
+    const scrollToCardIndex = (idx) => {
+      const items = getItems();
+      if (items.length === 0) return;
+      const visibleCount = getVisibleCount();
+      const maxIndex = Math.max(0, items.length - visibleCount);
+
+      if (idx > maxIndex) {
+        currentCardIdx = 0;
+      } else if (idx < 0) {
+        currentCardIdx = maxIndex;
+      } else {
+        currentCardIdx = idx;
+      }
+
+      const targetOffset = items[currentCardIdx].offsetLeft - items[0].offsetLeft;
+      track.scrollTo({ left: targetOffset, behavior: 'smooth' });
     };
 
     const advanceCarousel = () => {
-      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 15) {
-        track.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-      }
+      scrollToCardIndex(currentCardIdx + 1);
     };
 
     const startCarouselAuto = () => {
@@ -269,13 +289,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (prev) {
       prev.addEventListener('click', () => {
-        track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        scrollToCardIndex(currentCardIdx - 1);
         startCarouselAuto();
       });
     }
     if (next) {
       next.addEventListener('click', () => {
-        advanceCarousel();
+        scrollToCardIndex(currentCardIdx + 1);
         startCarouselAuto();
       });
     }

@@ -66,7 +66,7 @@ $curatedGallery = [
       </div>
       <div class="lg:col-span-5">
         <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
-          <div class="aspect-[16/10] rounded overflow-hidden relative">
+          <div class="std-hero-img rounded">
             <img src="<?= asset('assets/images/bilateral-summit.jpg') ?>" alt="SLFBC Bilateral Summit Media" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
               Click Any Photo to Enlarge
@@ -109,7 +109,7 @@ $curatedGallery = [
         $imgUrl = asset($item['image_path']);
       ?>
         <article data-gallery-category="<?= e($cat) ?>" class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
-          <div class="aspect-video bg-slate-100 overflow-hidden relative cursor-pointer"
+          <div class="std-card-img bg-slate-100 cursor-pointer"
                data-lightbox-src="<?= $imgUrl ?>"
                data-lightbox-title="<?= e($item['title']) ?>">
             <img src="<?= $imgUrl ?>" alt="<?= e($item['title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">

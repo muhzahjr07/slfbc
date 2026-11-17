@@ -20,7 +20,7 @@
       </div>
       <div class="lg:col-span-5">
         <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
-          <div class="aspect-[16/10] rounded overflow-hidden relative">
+          <div class="std-hero-img rounded">
             <img src="<?= asset('assets/images/investment-forum.jpg') ?>" alt="2026 Bilateral Investment Forum" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
               2026 Forum Registrations Open
@@ -65,7 +65,7 @@
             <article class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md hover:border-[#002654] flex flex-col justify-between transition-all group">
               <div>
                 <?php if (!empty($evt['cover_image'])): ?>
-                  <div class="aspect-video bg-slate-100 overflow-hidden relative">
+                  <div class="std-card-img bg-slate-100">
                     <img src="<?= asset($evt['cover_image']) ?>" alt="<?= e($evt['title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     <span class="absolute top-3 left-3 px-2.5 py-1 bg-[#c59b27] text-white text-[11px] font-bold uppercase rounded shadow">
                       <?= e($evt['category'] ?? 'Summit') ?>
@@ -125,7 +125,7 @@
           <?php foreach ($pastEvents as $evt): ?>
             <article class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm flex flex-col justify-between group">
               <div>
-                <div class="aspect-video bg-slate-100 overflow-hidden relative">
+                <div class="std-card-img bg-slate-100">
                   <img src="<?= asset($evt['cover_image'] ?: 'assets/images/event-gala.jpg') ?>" alt="<?= e($evt['title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                   <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded text-[10px] font-bold uppercase bg-slate-900/80 text-white">Concluded</span>
                 </div>

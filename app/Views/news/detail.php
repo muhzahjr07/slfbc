@@ -28,8 +28,8 @@
     
     <!-- Cover Image -->
     <?php if (!empty($article['cover_image'])): ?>
-      <div class="rounded-lg overflow-hidden mb-10 shadow-sm border border-slate-200 bg-slate-100 max-h-[480px]">
-        <img src="<?= asset($article['cover_image']) ?>" alt="<?= e($article['title']) ?>" class="w-full h-auto object-cover">
+      <div class="rounded-lg overflow-hidden mb-8 shadow-sm border border-slate-200 bg-slate-100 std-hero-img">
+        <img src="<?= asset($article['cover_image']) ?>" alt="<?= e($article['title']) ?>" class="w-full h-full object-cover">
       </div>
     <?php endif; ?>
 

@@ -20,7 +20,7 @@
       </div>
       <div class="lg:col-span-5">
         <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
-          <div class="aspect-[16/10] rounded overflow-hidden relative">
+          <div class="std-hero-img rounded">
             <img src="<?= asset('assets/images/chamber-building.jpg') ?>" alt="The Ceylon Chamber of Commerce Secretariat" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
               50, Nawam Mawatha • Colombo 02
@@ -41,8 +41,8 @@
 
         <!-- 1. Who We Are (Split Visual & Text Card) -->
         <article class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shadow-sm">
-          <div class="grid grid-cols-1 md:grid-cols-12 items-stretch">
-            <div class="md:col-span-5 relative min-h-[220px]">
+          <div class="grid grid-cols-1 md:grid-cols-12 items-center">
+            <div class="md:col-span-5 std-card-img">
               <img src="<?= asset('assets/images/hero-bilateral.jpg') ?>" alt="Franco-Lankan Diplomatic Mandate" class="w-full h-full object-cover">
               <span class="absolute top-3 left-3 px-2.5 py-1 bg-[#002654] text-white text-[11px] font-bold uppercase rounded">Mandate</span>
             </div>
@@ -75,9 +75,9 @@
             </div>
           </div>
 
-          <div data-carousel-track class="flex gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
-            <div class="min-w-[250px] sm:min-w-[270px] snap-start bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shrink-0">
-              <div class="aspect-[16/9] bg-slate-200 overflow-hidden">
+          <div data-carousel-track class="carousel-track-2 pb-2">
+            <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden">
+              <div class="std-thumb-img bg-slate-200">
                 <img src="<?= asset('assets/images/bilateral-summit.jpg') ?>" alt="2004 Council Inauguration" class="w-full h-full object-cover">
               </div>
               <div class="p-4">
@@ -87,8 +87,8 @@
               </div>
             </div>
 
-            <div class="min-w-[250px] sm:min-w-[270px] snap-start bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shrink-0">
-              <div class="aspect-[16/9] bg-slate-200 overflow-hidden">
+            <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden">
+              <div class="std-thumb-img bg-slate-200">
                 <img src="<?= asset('assets/images/corridor-france.jpg') ?>" alt="MEDEF Paris Missions" class="w-full h-full object-cover">
               </div>
               <div class="p-4">
@@ -98,8 +98,8 @@
               </div>
             </div>
 
-            <div class="min-w-[250px] sm:min-w-[270px] snap-start bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shrink-0">
-              <div class="aspect-[16/9] bg-slate-200 overflow-hidden">
+            <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden">
+              <div class="std-thumb-img bg-slate-200">
                 <img src="<?= asset('assets/images/corridor-maritime.jpg') ?>" alt="Maritime and Green Energy Expansion" class="w-full h-full object-cover">
               </div>
               <div class="p-4">
@@ -109,8 +109,8 @@
               </div>
             </div>
 
-            <div class="min-w-[250px] sm:min-w-[270px] snap-start bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shrink-0">
-              <div class="aspect-[16/9] bg-slate-200 overflow-hidden">
+            <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden">
+              <div class="std-thumb-img bg-slate-200">
                 <img src="<?= asset('assets/images/agm-governance.jpg') ?>" alt="22nd Annual General Meeting" class="w-full h-full object-cover">
               </div>
               <div class="p-4">

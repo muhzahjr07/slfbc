@@ -25,7 +25,7 @@
       </div>
       <div class="lg:col-span-5">
         <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-lg shadow-xl">
-          <div class="aspect-[16/10] rounded overflow-hidden relative">
+          <div class="std-hero-img rounded">
             <img src="<?= asset('assets/images/corridor-france.jpg') ?>" alt="Paris Business District and French Market" class="w-full h-full object-cover">
             <div class="absolute bottom-3 left-3 bg-[#0b1e3b]/90 px-3 py-1 rounded text-xs font-bold text-amber-300 uppercase">
               Paris • Lyon • Marseille • Toulouse
@@ -52,7 +52,7 @@
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
-              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+              <div class="std-card-img bg-slate-100">
                 <img src="<?= asset('assets/images/opp-apparel.jpg') ?>" alt="Ethical and Sustainable Apparel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#002654] text-white text-[11px] font-bold uppercase rounded">GSP+ Duty Free</span>
               </div>
@@ -65,7 +65,7 @@
             </div>
 
             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
-              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+              <div class="std-card-img bg-slate-100">
                 <img src="<?= asset('assets/images/opp-agri.jpg') ?>" alt="Specialty Ceylon Tea and Spices" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#c59b27] text-white text-[11px] font-bold uppercase rounded">GI Certified</span>
               </div>
@@ -78,7 +78,7 @@
             </div>
 
             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
-              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+              <div class="std-card-img bg-slate-100">
                 <img src="<?= asset('assets/images/opp-maritime.jpg') ?>" alt="Precision Industrial Rubber" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#b91c1c] text-white text-[11px] font-bold uppercase rounded">Industrial Tier</span>
               </div>
@@ -91,7 +91,7 @@
             </div>
 
             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all group">
-              <div class="aspect-[16/9] bg-slate-100 overflow-hidden relative">
+              <div class="std-card-img bg-slate-100">
                 <img src="<?= asset('assets/images/opp-tech.jpg') ?>" alt="ICT and Digital Engineering" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 px-2.5 py-0.5 bg-[#002654] text-white text-[11px] font-bold uppercase rounded">Station F &amp; Tech</span>
               </div>
@@ -122,29 +122,29 @@
             </div>
           </div>
 
-          <div data-carousel-track class="flex gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
-            <div class="min-w-[270px] sm:min-w-[300px] snap-start bg-white border border-slate-200 rounded-lg p-5 shrink-0">
+          <div data-carousel-track class="carousel-track-2 pb-2">
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
               <span class="px-2.5 py-0.5 bg-blue-50 text-[#002654] text-xs font-bold uppercase rounded">31% of French GDP</span>
               <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mt-3 mb-2">Île-de-France (Greater Paris)</h3>
               <p class="text-xs sm:text-sm text-slate-600 m-0 leading-relaxed">
                 Headquarters powerhouse for luxury retail conglomerates, corporate procurement desks, Station F startup campus, and European trade finance.
               </p>
             </div>
-            <div class="min-w-[270px] sm:min-w-[300px] snap-start bg-white border border-slate-200 rounded-lg p-5 shrink-0">
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
               <span class="px-2.5 py-0.5 bg-red-50 text-[#b91c1c] text-xs font-bold uppercase rounded">Industrial Engine</span>
               <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mt-3 mb-2">Auvergne-Rhône-Alpes (Lyon)</h3>
               <p class="text-xs sm:text-sm text-slate-600 m-0 leading-relaxed">
                 Specializing in precision engineering, advanced chemicals, biotechnology, and clean energy innovation near Switzerland and Italy.
               </p>
             </div>
-            <div class="min-w-[270px] sm:min-w-[300px] snap-start bg-white border border-slate-200 rounded-lg p-5 shrink-0">
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
               <span class="px-2.5 py-0.5 bg-amber-50 text-[#8d4004] text-xs font-bold uppercase rounded">Aerospace &amp; Agribusiness</span>
               <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mt-3 mb-2">Occitanie &amp; Nouvelle-Aquitaine</h3>
               <p class="text-xs sm:text-sm text-slate-600 m-0 leading-relaxed">
                 Toulouse &amp; Bordeaux: Global benchmark in civil aviation (Airbus), spatial systems, gourmet agribusiness, and oceanic commerce.
               </p>
             </div>
-            <div class="min-w-[270px] sm:min-w-[300px] snap-start bg-white border border-slate-200 rounded-lg p-5 shrink-0">
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
               <span class="px-2.5 py-0.5 bg-blue-50 text-[#002654] text-xs font-bold uppercase rounded">Mediterranean Port</span>
               <h3 class="font-serif-diplomatic font-bold text-base text-[#0b1e3b] mt-3 mb-2">Provence-Alpes-Côte d'Azur</h3>
               <p class="text-xs sm:text-sm text-slate-600 m-0 leading-relaxed">
@@ -220,7 +220,7 @@
         </div>
 
         <div class="p-6 bg-[#002654] text-white rounded-lg shadow-sm">
-          <h3 class="font-serif-diplomatic text-lg font-bold mb-2">Need Market Entry Advisory?</h3>
+          <h3 class="font-serif-diplomatic text-lg font-bold text-white mb-2">Need Market Entry Advisory?</h3>
           <p class="text-xs text-slate-300 leading-relaxed mb-4">
             Connect with our Secretariat for verified buyer introductions, French trade regulations, and delegation participation.
           </p>
