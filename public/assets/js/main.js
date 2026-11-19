@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 6000);
   });
 
-  // 6. Interactive Hero Content & Image Slider
+  // 6. Interactive Hero Content & Image Slider (with Fade-Out -> Fade-In Transition)
   const heroSlider = document.getElementById('hero-slider');
   if (heroSlider) {
     const slides = heroSlider.querySelectorAll('.hero-slide');
@@ -169,21 +169,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextBtn = heroSlider.querySelector('[data-hero-next]');
     let currentIndex = 0;
     let autoPlayTimer = null;
+    let fadeTimeout = null;
 
-    function showSlide(index) {
-      if (slides.length === 0) return;
-      currentIndex = (index + slides.length) % slides.length;
-      slides.forEach((slide, idx) => {
-        if (idx === currentIndex) {
-          slide.classList.add('active');
-          slide.removeAttribute('aria-hidden');
-        } else {
-          slide.classList.remove('active');
-          slide.setAttribute('aria-hidden', 'true');
-        }
-      });
+    function updateDots(activeIdx) {
       dots.forEach((dot, idx) => {
-        if (idx === currentIndex) {
+        if (idx === activeIdx) {
           dot.classList.add('w-8', 'bg-[#002654]');
           dot.classList.remove('w-2.5', 'bg-slate-300');
           dot.setAttribute('aria-current', 'true');
@@ -193,6 +183,51 @@ document.addEventListener('DOMContentLoaded', function () {
           dot.removeAttribute('aria-current');
         }
       });
+    }
+
+    function showSlide(index) {
+      if (slides.length === 0) return;
+      const nextIndex = (index + slides.length) % slides.length;
+      if (nextIndex === currentIndex && slides[currentIndex].classList.contains('active')) {
+        return;
+      }
+
+      if (fadeTimeout) {
+        clearTimeout(fadeTimeout);
+        fadeTimeout = null;
+      }
+
+      const outgoingSlide = slides[currentIndex];
+      currentIndex = nextIndex;
+      updateDots(currentIndex);
+
+      // Clear any leftover transition classes on other slides
+      slides.forEach((slide, idx) => {
+        if (slide !== outgoingSlide && idx !== currentIndex) {
+          slide.classList.remove('active', 'fading-out');
+          slide.setAttribute('aria-hidden', 'true');
+        }
+      });
+
+      if (outgoingSlide && outgoingSlide !== slides[currentIndex]) {
+        outgoingSlide.classList.remove('active');
+        outgoingSlide.classList.add('fading-out');
+        outgoingSlide.setAttribute('aria-hidden', 'true');
+
+        fadeTimeout = setTimeout(() => {
+          outgoingSlide.classList.remove('fading-out');
+          const incomingSlide = slides[currentIndex];
+          incomingSlide.classList.remove('fading-out');
+          incomingSlide.classList.add('active');
+          incomingSlide.removeAttribute('aria-hidden');
+          fadeTimeout = null;
+        }, 250);
+      } else {
+        const incomingSlide = slides[currentIndex];
+        incomingSlide.classList.remove('fading-out');
+        incomingSlide.classList.add('active');
+        incomingSlide.removeAttribute('aria-hidden');
+      }
     }
 
     function startAutoPlay() {
@@ -232,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startAutoPlay();
   }
 
-  // 7. Universal Horizontal Carousels (Exact Card Alignment — Never Splits a Card)
+  // 7. Universal Horizontal Carousels (Exact Card Alignment + Fade-Out / Fade-In Transition)
   const carousels = document.querySelectorAll('[data-carousel]');
   carousels.forEach(function (carousel) {
     const track = carousel.querySelector('[data-carousel-track]');
@@ -241,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!track) return;
 
     let carouselTimer = null;
+    let carouselFadeTimer = null;
     let currentCardIdx = 0;
 
     const getItems = () => Array.from(track.children);
@@ -267,8 +303,19 @@ document.addEventListener('DOMContentLoaded', function () {
         currentCardIdx = idx;
       }
 
+      if (carouselFadeTimer) {
+        clearTimeout(carouselFadeTimer);
+      }
+
+      // Trigger smooth fade-out while scrolling, then fade back in
+      track.classList.add('carousel-fading');
       const targetOffset = items[currentCardIdx].offsetLeft - items[0].offsetLeft;
       track.scrollTo({ left: targetOffset, behavior: 'smooth' });
+
+      carouselFadeTimer = setTimeout(() => {
+        track.classList.remove('carousel-fading');
+        carouselFadeTimer = null;
+      }, 210);
     };
 
     const advanceCarousel = () => {

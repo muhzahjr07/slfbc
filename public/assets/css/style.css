@@ -609,13 +609,23 @@ h6.text-white {
 /* Exact-Fit Multi-Column Carousel Tracks (Never Splits a Card in Half) */
 .carousel-track-3,
 .carousel-track-2,
-.carousel-track-4 {
+.carousel-track-4,
+[data-carousel-track] {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  transition: opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1), transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 1;
 }
+
+/* Carousel Fade-Out / Fade-In State During Slide Change */
+[data-carousel-track].carousel-fading {
+  opacity: 0.15;
+  transform: translateY(3px) scale(0.995);
+}
+
 .carousel-track-3::-webkit-scrollbar,
 .carousel-track-2::-webkit-scrollbar,
 .carousel-track-4::-webkit-scrollbar {
@@ -696,24 +706,42 @@ h6.text-white {
   scrollbar-width: none;
 }
 
-/* Hero Slider Transitions */
+/* Hero Slider Fade-In & Fade-Out Transitions */
 .hero-slide {
   display: none;
-  animation: heroFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
 }
 
 .hero-slide.active {
   display: grid;
+  animation: heroFadeIn 0.48s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-slide.fading-out {
+  display: grid;
+  animation: heroFadeOut 0.26s ease-out forwards;
+  pointer-events: none;
 }
 
 @keyframes heroFadeIn {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
   }
 }
 
